@@ -1,0 +1,188 @@
+.ce_form {
+
+  &#form-ki-check {
+    @media screen and (min-width: $break2){
+      max-width: 70%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  h1 {
+    margin-bottom: $abstandAussen;
+    @media screen and (min-width: $break2) {
+      margin-bottom: $abstandAussen*3;
+    }
+  }
+
+  .formbody {
+
+  }
+
+  .widget, .antwort {
+    margin-bottom: $abstandAussen;
+    @media screen and (min-width: $break2) {
+      margin-bottom: $abstandAussen*3;
+    }
+  }
+
+  .widget {
+
+    &-explanation {
+
+    }
+
+    &-radio {
+      display: flex;
+      justify-content: center;
+
+      .radio_container {
+        span {
+          display: inline-block;
+        }
+
+        input, legend {
+          display: none;
+        }
+
+        label {
+          @include button();
+        }
+
+        input {
+          &:checked {
+            + label {
+              background-color: rgb(72,72,72);
+            }
+          }
+        }
+
+        &.error {
+          position: relative;
+          input {
+            outline: red;
+          }
+
+        }
+      }
+    }
+
+    &-pagebreak {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      button[value="continue"]:only-child {
+        margin-left: auto;
+      }
+
+      button {
+        @include button();
+        font-size: 0.875rem;
+        &[value="back"] {
+          margin-right: 0.5rem;
+        }
+        &[value="continue"] {
+          margin-left: 0.5rem;
+        }
+        @media screen and (min-width: $break2) {
+          font-size: 1rem;
+        }
+      }
+
+    }
+
+    &-placeholder {
+      .label {
+        font-weight: 800;
+        color: black;
+      }
+      .value {
+        &:nth-of-type(4n+2) {
+          font-weight: 800;
+          &:before {
+            content: 'Ihre Antwort: ';
+          }
+
+        }
+        &:nth-of-type(4n+4) {
+          margin-bottom: $abstandAussen*2;
+          @media screen and (min-width: $break2){
+            margin-bottom: $abstandAussen*4;
+          }
+
+        }
+      }
+    }
+  }
+
+  .frage, .antwort {
+    position: relative;
+
+    > .widget {
+      margin-bottom: 0;
+    }
+  }
+
+  .antwort {
+
+    @mixin borderLegend() {
+      legend {
+        font-size: $h2Size;
+        font-family: $font2;
+        color: $color1;
+      }
+    }
+
+    &-ja {
+      @include borderLegend();
+    }
+
+    &-nein {
+      @include borderLegend();
+    }
+  }
+
+}
+
+// mp_forms
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em 0;
+  &-bar {
+    width: 100%;
+    border-bottom: 1px solid rgb(185,185,185);
+    &-inner {
+      height: 8px;
+      background-color: rgb(185,185,185);
+    }
+  }
+  .numbers {
+    font-size: 0.75em;
+  }
+}
+
+.extraFunctions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  button {
+    @include button(white, rgb(220,220,220));
+    color: $fontColor;
+    font-family: $font1;
+    font-size: 0.875rem;
+    a {
+      color: $fontColor;
+      text-decoration: none;
+    }
+    &:only-child {
+      margin-left: auto;
+    }
+    @media screen and (min-width: $break2) {
+      font-size: 1rem;
+    }
+  }
+
+}

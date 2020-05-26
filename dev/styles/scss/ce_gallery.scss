@@ -1,0 +1,106 @@
+.ce_gallery {
+  ul {
+    li {
+      &:first-of-type {
+        figure {
+          margin-left: 0;
+        }
+      }
+
+      &:last-of-type {
+        figure {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .cols_2, .cols_3, .cols_4, .cols_5, .cols_6 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+  }
+
+  .cols_2 {
+
+    > li {
+      width: 50%;
+
+      > * {
+        margin: $spaltenAbstand;
+      }
+    }
+  }
+
+  .cols_3 {
+    > li {
+      width: 33.333%;
+
+      > * {
+        margin: $spaltenAbstand;
+      }
+    }
+  }
+
+  .cols_4 {
+
+    > li {
+      width: 50%;
+
+      > * {
+        margin: $spaltenAbstand;
+      }
+    }
+  }
+
+  .cols_5 {
+
+    > li {
+      width: 33.333%;
+
+      > * {
+        margin: $spaltenAbstand;
+      }
+    }
+  }
+
+  .cols_6 {
+
+    > li {
+      width: 50%;
+
+      > * {
+        margin: $spaltenAbstand;
+      }
+    }
+  }
+
+  @media screen and (min-width: $break2) {
+    .cols_2, .cols_3, .cols_4, .cols_5, .cols_6 {
+      > li {
+        >* {
+          margin: $spaltenAbstand*3;
+        }
+      }
+    }
+    .cols_4 {
+      > li {
+        width: 25%;
+      }
+    }
+    .cols_5 {
+      > li {
+        width: 20%;
+      }
+    }
+    .cols_6 {
+      > li {
+        width: 16.666%;
+      }
+    }
+  }
+}
+
+// ce_galery ende

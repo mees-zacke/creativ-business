@@ -1,0 +1,119 @@
+.mod_newslist {
+  grid-column: 1/3;
+
+  .layout_latest, .layout_short {
+    display: grid;
+    margin-bottom: $spaltenAbstand*3;
+
+    .news-container {
+      color: $fontColor;
+
+      h1, h2, h3, h4, h5, h6 {
+        @include transition()
+        color: $color2;
+        font-weight: 400;
+      }
+
+      .more {
+        @include transition()
+        color: $color2;
+        font-weight: 400;
+      }
+
+      &:hover {
+        h1, h2, h3, h4, h5, h6 {
+          color: $color1;
+        }
+
+        .more {
+          color: $color1;
+        }
+      }
+    }
+
+    @media screen and (min-width: $break2) {
+      grid-template-columns: $grid-columns;
+      grid-gap: $spaltenAbstand*3;
+      figure {
+        grid-column: 1/2;
+        max-width: 45%;
+        margin-right: 0;
+        margin-left: auto;
+
+        .caption {
+          display: none;
+        }
+      }
+      .news-container {
+        grid-column: 2/3;
+      }
+    }
+  }
+  &.archiv{
+    display: grid;
+    grid-template-columns: $grid-columns;
+    grid-gap: $spaltenAbstand*3;
+    .pagination{
+      grid-column: 2/3;
+    }
+    .layout_short{
+      grid-column: 1/3;
+      figure{
+        max-width: 25%;
+      }
+    }
+  }
+}
+
+.mod_newsreader {
+  grid-column: 1/3;
+
+  .layout_full {
+    h1, h2, h3, h4, h5, h6 {
+      text-align: end;
+    }
+  }
+
+  .back {
+    a {
+      padding: .5rem 1rem;
+      border: 1px solid rgb(198, 198, 198);
+      display: inline-block;
+      color: $fontColor;
+      font-size: 2.25rem;
+      font-weight: 300;
+      line-height: 1.3;
+
+      &:hover, &:focus {
+        background-color: $color1;
+        color: white;
+        border-color: $color2;
+      }
+    }
+  }
+
+  @media screen and (min-width: $break2) {
+    display: grid;
+    grid-template-columns: $grid-columns;
+    grid-gap: $spaltenAbstand*3;
+    margin-bottom: $abstandAussen;
+    .layout_full {
+      grid-column: 1/3;
+      display: grid;
+      grid-template-columns: $grid-columns;
+      grid-gap: $spaltenAbstand*3;
+
+      h1, h2, h3, h4, h5, h6 {
+        grid-column: 1/2;
+        text-align: end;
+      }
+
+      .newsreader-content {
+        grid-column: 2/3;
+      }
+    }
+    .back {
+      grid-column: 2/3;
+    }
+  }
+}

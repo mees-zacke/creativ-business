@@ -1,0 +1,36 @@
+.abstandUnten {
+  margin-bottom: 30px;
+}
+
+.ohneAbstandUnten {
+  margin-bottom: 0!important;
+}
+
+// 16x9 Verhältnis bei Iframes
+.iframeWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  &.ratio4x3 {
+    padding-bottom: 75%;
+  }
+}
+
+@media all and (min-width: $break1) {
+  .nurMobile {
+    display: none;
+  }
+}

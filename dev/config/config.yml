@@ -1,0 +1,74 @@
+# Contao configuration
+contao:
+    url_suffix: '/'
+    image:
+        imagine_options:
+            jpeg_quality: 100
+        sizes:
+            2zu1:
+                width: 1920
+                height: 960
+                resizeMode: 'crop'
+                zoom: 100
+                cssClass: '2zu1-image'
+                densities: '1x, 2x'
+                sizes: '100vw'
+                items:
+                    - width: 1200
+                      height: 600
+                      resizeMode: 'crop'
+                      zoom: 100
+                      densities: '0.5x, 2x'
+                      sizes: '100vw'
+                      media: '(max-width: 1200px)'
+                    - width: 900
+                      height: 450
+                      resizeMode: 'crop'
+                      zoom: 100
+                      densities: '0.5x, 2x'
+                      sizes: '100vw'
+                      media: '(max-width: 900px)'
+                    - width: 450
+                      height: 225
+                      resizeMode: 'crop'
+                      zoom: 100
+                      densities: '0.5x, 2x'
+                      sizes: '100vw'
+                      media: '(max-width: 450px)'
+            4zu3:
+                width: 1920
+                height: 1440
+                resizeMode: 'crop'
+                zoom: 100
+                cssClass: '2zu1-image'
+                densities: '1x, 2x'
+                sizes: '100vw'
+                items:
+                    - width: 1200
+                      height: 900
+                      resizeMode: 'crop'
+                      zoom: 100
+                      densities: '0.5x, 2x'
+                      sizes: '100vw'
+                      media: '(max-width: 1200px)'
+                    - width: 900
+                      height: 675
+                      resizeMode: 'crop'
+                      zoom: 100
+                      densities: '0.5x, 2x'
+                      sizes: '100vw'
+                      media: '(max-width: 900px)'
+                    - width: 450
+                      height: 338
+                      resizeMode: 'crop'
+                      zoom: 100
+                      densities: '0.5x, 2x'
+                      sizes: '100vw'
+                      media: '(max-width: 450px)'
+doctrine:
+  dbal:
+    connections:
+      default:
+        default_table_options:
+          charset: utf8
+          collate: utf8_unicode_ci

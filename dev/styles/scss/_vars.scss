@@ -1,0 +1,100 @@
+// Breakpoints
+$break1: 30em;
+$break2: 48em;
+$break3: 64em;
+$break4: 90em;
+
+// Farben
+$color1: rgb(0,80,140);
+$color2: rgb(0,75,154);
+$color3: rgb(0,160,230);
+$color4: rgb(205,20,15);
+$color5: rgb(255,255,0);
+$color6: rgb(60,165,50);
+
+$colorPG1: rgb(255,250,125);
+$colorPG2: rgb(255,210,125);
+$colorPG3: rgb(255,170,125);
+$colorPG4: rgb(255,130,125);
+$colorPG5: rgb(255,90,125);
+
+$backgroundColor1: rgb(255, 255, 255);
+
+
+// Schrift
+$font1: 'Open Sans', Helvetica, sans-serif;
+$font2: 'Anton', Helvetica, Verdana, sans-serif;
+
+// Schrift Farben
+$fontColor: rgb(72,72,72);
+$fontColor2: rgb(0, 0, 0);
+
+$hColor: $color1;
+$linkColor: $color2;
+
+$colorImageCaption: $fontColor;
+
+// Schrift Größen
+$fontSize: calc(16px + (22 - 16) * ((100vw - 320px) / (1600 - 300)));
+$fontWidth: 400;
+$lineHeight: 1.666;
+
+$hWidth: 300;
+$h1Size: calc(22px + (46 - 22) * ((100vw - 320px) / (1600 - 300)));
+$h2Size: calc(18px + (36 - 18) * ((100vw - 320px) / (1600 - 300)));
+$h3Size: $fontSize;
+$h4Size: $fontSize;
+$h5Size: $fontSize;
+$h6Size: $fontSize;
+$hLineHeight: 1.4;
+
+$contentWidth: 100rem;
+@mixin contentWidth{
+  max-width: $contentWidth;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+$abstandAussen: 0.75rem;
+
+$spaltenAbstand: 1rem;
+
+$borderRadius: 3px;
+
+$grid-columns: 5fr 7fr;
+
+// MIXINS
+@mixin pageWidth {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: $abstandAussen;
+  padding-right: $abstandAussen;
+}
+
+@mixin transition($time: 0.3s) {
+  -webkit-transition: ease all $time;
+  -moz-transition: ease all $time;
+  -o-transition: ease all $time;
+  transition: ease all $time;
+}
+
+$linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%, $color3 30%, $color4 30%, $color4 40%, $color5 40%, $color5 50%, $color6 50%, $color6 60%, $color1 60%, $color1 68%, $color2 68%, $color2 76%, $color3 76%, $color3 83%, $color4 83%, $color4 88%, $color5 88%, $color5 93%, $color6 93%, $color6 97%, $color1 97%, $color1 100%);
+
+@mixin button($normal: rgb(205,110,5), $active: rgb(72,72,72)) {
+  appearance: none;
+  border: none;
+  background-color: $normal;
+  border-radius: 3px;
+  color: #ffffff;
+  padding: 0.25rem .5rem;
+  font-family: $font2;
+  @include transition();
+  &:hover, &:focus {
+    background-color: $active;
+    cursor: pointer;
+    outline: none;
+  }
+  @media screen and (min-width: $break2){
+    padding: 0.5rem 2rem;
+  }
+}

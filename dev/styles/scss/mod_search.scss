@@ -1,0 +1,52 @@
+.mod_search {
+  > .searchWrapper {
+    form {
+      .formbody {
+        .widget {
+          display: inline-block;
+        }
+      }
+    }
+
+    .header {
+      font-size: 0.75rem;
+      font-style: italic;
+      margin-top: 0.5em;
+    }
+  }
+
+  > div {
+    margin: 1rem 0;
+    padding: 1rem 0;
+
+    &:not(.searchWrapper) {
+      @include transition;
+
+      &:hover {
+        background-color: rgb(220, 220, 220);
+      }
+    }
+
+    a {
+      color: $fontColor;
+      display: block;
+    }
+
+    h2 {
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      background-color: transparent;
+      color: $color1;
+    }
+
+    .url {
+      font-size: 0.75em;
+    }
+  }
+}
