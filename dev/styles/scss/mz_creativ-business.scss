@@ -3,6 +3,11 @@
     www.mees-zacke.de
     Florian Krohmer
 **/
+
+.mod_article{
+  @include grid(6, auto, 2vw, 2vh);
+}
+
 body {
 
   #wrapper {
@@ -25,7 +30,7 @@ body {
       #main {
         .inside{
           .mod_article{
-            @include grid(6, auto, 2vw, 2vh);
+
           }
         }
       }

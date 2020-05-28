@@ -1,11 +1,17 @@
-<?php $this->extend('block_searchable'); ?>
+<?php $this->extend('block_searchable_text'); ?>
 
 <?php $this->block('content'); ?>
 
   <?php if (!$this->addBefore): ?>
-	  <div class="text">
-	    <?= $this->text ?>
-	  </div>
+    <div class="text-container">
+        <?php if ($this->headline): ?>
+            <<?= $this->hl ?> class="headline"><?= $this->headline ?></<?= $this->hl ?>>
+        <?php endif; ?>
+
+        <div class="text">
+            <?= $this->text ?>
+        </div>
+    </div>
   <?php endif; ?>
 
   <?php if ($this->addImage): ?>
@@ -13,9 +19,14 @@
   <?php endif; ?>
 
   <?php if ($this->addBefore): ?>
-	  <div class="text">
-	    <?= $this->text ?>
-	  </div>
+    <div class="text-container">
+        <?php if ($this->headline): ?>
+        <<?= $this->hl ?> class="headline"><?= $this->headline ?></<?= $this->hl ?>>
+    <?php endif; ?>
+
+    <div class="text">
+        <?= $this->text ?>
+    </div>
   <?php endif; ?>
 
 <?php $this->endblock(); ?>

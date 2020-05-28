@@ -12,6 +12,16 @@
           grid-column: span $i;
         }
       }
+      &.cce-schwarzer-kasten{
+        display: block;
+        .text-container{
+          display: grid;
+          grid-template-columns: repeat($i, 1fr);
+          grid-template-rows: $rows;
+          grid-column-gap: $column-gap;
+          grid-row-gap: $row-gap;
+        }
+      }
     }
   }
 }
