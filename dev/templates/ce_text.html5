@@ -7,7 +7,6 @@
         <?php if ($this->headline): ?>
             <<?= $this->hl ?> class="headline"><?= $this->headline ?></<?= $this->hl ?>>
         <?php endif; ?>
-
         <div class="text">
             <?= $this->text ?>
         </div>
@@ -21,11 +20,11 @@
   <?php if ($this->addBefore): ?>
     <div class="text-container">
         <?php if ($this->headline): ?>
-        <<?= $this->hl ?> class="headline"><?= $this->headline ?></<?= $this->hl ?>>
-    <?php endif; ?>
-
-    <div class="text">
-        <?= $this->text ?>
+            <<?= $this->hl ?> class="headline"><?= $this->headline ?></<?= $this->hl ?>>
+        <?php endif; ?>
+        <div class="text">
+            <?= $this->text ?>
+        </div>
     </div>
   <?php endif; ?>
 

@@ -5,6 +5,19 @@
     }
   }
 
+  .text{
+    a{
+      &:after{
+        content: url("/files/layout/images/pfeil-forward.svg");
+        color: $linkColor;
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+
   ul {
     > li {
       padding-left: 1.5rem;
