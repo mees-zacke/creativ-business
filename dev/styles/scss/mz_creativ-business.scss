@@ -4,9 +4,6 @@
     Florian Krohmer
 **/
 
-.mod_article{
-  @include grid(6, auto, 2vw, 2vh);
-}
 
 body {
 
@@ -16,22 +13,96 @@ body {
     //////// HEADER ////////
     ////////////////////////////
     #header {
+      .inside{
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 10px 10px;
+        @include pageWidth;
+        #head-nav-suche-container{
+          #opener-suche-container{
+            display: flex;
+            .suche{
+              .formbody{
+                display: flex;
+                padding: 10px;
+                .widget-{
+                  &text{
+                    width: 175px;
+                    input{
+                      width: 100%;
+                      border: none;
+                    }
+                  }
+                  &submit{
+                    width: 28px;
+                  }
+                }
+              }
+            }
+            #mobile-opener{
 
+            }
+          }
+          #mainnav{
+            ul{
+              padding-top: 18px;
+              display: flex;
+              margin-left: 10px;
+              li{
+                margin-right: 1rem;
+                &:last-of-type{
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+        }
+        #head-logo-container{
+          figure{
+            padding: 1rem;
+            img{
+            }
+          }
+        }
+      }
     }
 
     // Ende #Header
 
+    /////////////////////////////
+    ////////// CUSTOM //////////
+    ////////////////////////////
+
+    .custom{
+      #kopfbild{
+        .inside{
+          .mod_article{
+            figure{
+              img{
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+    }
 
     /////////////////////////////
     //////// CONTAINER ////////
     ////////////////////////////
     #container {
+
       // Anfang #main
+      .mod_article{
+        @include grid(6, auto, 2vw, 2vh);
+      }
+
       #main {
         .inside{
-          .mod_article{
-
-          }
+          @include pageWidth;
+          padding-top: 150px;
         }
       }
 
@@ -46,7 +117,9 @@ body {
     //////// FOOTER ////////
     ////////////////////////////
     #footer {
-
+      .inside{
+        @include pageWidth;
+      }
     }
 
     // Ende #Footer

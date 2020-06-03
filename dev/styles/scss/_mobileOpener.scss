@@ -1,0 +1,81 @@
+//mobile opener
+$height-icon: 25px;
+$width-line: 40px;
+$height-line: 3px;
+
+$transition-time: 0.4s;
+$rotation: 45deg;
+$translateY: ($height-icon / 2);
+$translateX: 0;
+
+#mobile-opener {
+  margin-right: 5rem;
+  #hamburger-icon-container{
+    display: block;
+    padding: 10px;
+    #hamburger-icon {
+      width: $width-line;
+      height: $height-icon;
+      position: relative;
+      display: block;
+      border-bottom: none;
+
+      .line {
+        display: block;
+        background: $color1;
+        width: $width-line;
+        height: $height-line;
+        position: absolute;
+        left: 0;
+        transition: all $transition-time;
+
+        &.line-1 {
+          top: 0;
+          width: 30px;
+        }
+
+        &.line-2 {
+          top: 50%;
+
+        }
+
+        &.line-3 {
+          top: 100%;
+          width: 30px;
+        }
+      }
+
+      /*    &:hover {
+            .line-1 {
+              transform: translateY($height-line / 1 * -1);
+              -webkit-transform: translateY($height-line / 1 * -1);
+              -moz-transform: translateY($height-line / 1 * -1);
+            }
+            .line-3 {
+              transform: translateY($height-line / 1 );
+              -webkit-transform: translateY($height-line / 1);
+              -moz-transform: translateY($height-line / 1);
+            }
+          }
+          &.active {
+            .line-1 {
+              transform: translateY($translateY) translateX($translateX) rotate($rotation);
+              -webkit-transform: translateY($translateY) translateX($translateX) rotate($rotation);
+              -moz-transform: translateY($translateY) translateX($translateX) rotate($rotation);
+            }
+            .line-2 {
+              opacity:0;
+            }
+            .line-3 {
+              transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+              -webkit-transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+              -moz-transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+            }
+          }
+        }
+
+       */
+
+    }
+  }
+}
