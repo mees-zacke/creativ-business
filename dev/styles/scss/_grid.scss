@@ -1,5 +1,5 @@
 @mixin spans($columns, $rows, $column-gap, $row-gap) {
-  @for $i from 1 through $columns {
+  @for $i from 1 through 6 {
     .span-#{$i} {
       grid-column: auto / span ($i*2);
       &[class*='cce']{
@@ -27,7 +27,7 @@
 }
 
 @mixin starts($columns) {
-  @for $i from 1 through $columns {
+  @for $i from 1 through 6 {
     .starts-#{$i} {
       grid-column-start: (($i*2)-1);
     }

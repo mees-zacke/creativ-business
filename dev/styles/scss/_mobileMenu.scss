@@ -1,0 +1,94 @@
+body {
+  #wrapper {
+    .custom {
+      #mmenu {
+        .inside {
+          position: static;
+          #mobile-menu {
+            @include transition(0.2s);
+            z-index: 2;
+            top: 0;
+            left: -100vw;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            padding: 30px;
+            position: fixed;
+
+            .opener-suche-container {
+              display: flex;
+              justify-content: space-between;
+
+              .mobile-opener {
+                .hamburger-icon-container {
+                  .hamburger-icon {
+                    width: 22px;
+
+                    span {
+                      background-color: white;
+                    }
+
+                    .line-1 {
+                      transform: translateY(2.5px) translateX($translateX) rotate($rotation);
+                    }
+
+                    .line-3 {
+                      transform: translateY(-2.5px) translateX($translateX) rotate($rotation * -1);
+                    }
+                  }
+                }
+              }
+
+              .mod_form {
+                display: block;
+                padding-top: 10px;
+
+                .suche {
+                  .formbody {
+                    display: flex;
+
+                    .widget-text {
+                      input {
+                        color: white;
+                        background-color: black;
+                        border: 1px solid white;
+                        width: 90%;
+                        padding: 3px;
+
+                        &:focus {
+                          outline: none;
+                        }
+                      }
+                    }
+
+                    .widget-submit {
+                      width: 28px;
+                      padding: 4px;
+                      filter: invert(1);
+                    }
+                  }
+                }
+              }
+            }
+
+            .mod_navigation {
+              padding-top: 2rem;
+              padding-left: 10px;
+
+              ul.level_1 {
+                li {
+                  font-size: $h2Size;
+                }
+              }
+            }
+
+            &.active {
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

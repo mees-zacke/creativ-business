@@ -19,3 +19,33 @@ jQuery(function ($) {
 
 });
 
+//// Funktionalität beim Scrollen ////
+
+(function($){
+    $(window).scroll(function(){
+        if($(window).scrollTop() >= 1) {
+            $('body').addClass('onScroll');
+        } else {
+            $('body').removeClass('onScroll');
+        }
+    });
+})(jQuery);
+
+//// Mobile Menu Opener ////
+
+$( document ).ready(function() {
+    var hamburger_closed = $('#hamburger-closed'),
+        hamburger_open = $('#hamburger-open'),
+        mm = $('#mobile-menu');
+    hamburger_closed.click(function() {
+        hamburger_closed.toggleClass('active');
+        mm.toggleClass('active');
+        return false;
+    });
+    hamburger_open.click(function() {
+        hamburger_closed.toggleClass('active');
+        mm.toggleClass('active');
+        return false;
+    });
+});
+

@@ -20,6 +20,8 @@ $colorPG5: rgb(255,90,125);
 
 $backgroundColor1: rgb(255, 255, 255);
 
+$shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+
 
 // Schrift
 $font1: 'Open Sans', Helvetica, sans-serif;
@@ -39,9 +41,9 @@ $fontSize: calc(16px + (22 - 16) * ((100vw - 320px) / (1600 - 300)));
 $fontWidth: 400;
 $lineHeight: 1.666;
 
-$hWidth: 300;
-$h1Size: calc(22px + (46 - 22) * ((100vw - 320px) / (1600 - 300)));
-$h2Size: calc(18px + (36 - 18) * ((100vw - 320px) / (1600 - 300)));
+$hWidth: 100;
+$h1Size: calc(40px + (100 - 40) * ((100vw - 320px) / (1600 - 300)));
+$h2Size: calc(30px + (80 - 30) * ((100vw - 320px) / (1600 - 300)));
 $h3Size: $fontSize;
 $h4Size: $fontSize;
 $h5Size: $fontSize;

@@ -13,15 +13,26 @@ body {
     //////// HEADER ////////
     ////////////////////////////
     #header {
+      @include transition();
+      *{
+        @include transition();
+      }
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-height: 110px;
+      width: 100%;
+      z-index: 1;
+      background-color: white;
       .inside{
         display: flex;
         justify-content: space-between;
         padding: 30px 10px 10px;
         @include pageWidth;
-        #head-nav-suche-container{
-          #opener-suche-container{
+        .head-nav-suche-container{
+          .opener-suche-container{
             display: block;
-            .suche{
+            .mod_form{
               display: none;
             }
             #mobile-opener{
@@ -43,24 +54,33 @@ body {
 
       @media all and (min-width: $break3){
         .inside{
-          #head-nav-suche-container{
-            #opener-suche-container{
+          .head-nav-suche-container{
+            .opener-suche-container{
               display: flex;
-              .suche{
+              .mod_form{
                 display: block;
-                .formbody{
-                  display: flex;
-                  padding: 10px;
-                  .widget-{
-                    &text{
-                      width: 175px;
-                      input{
-                        width: 100%;
-                        border: none;
+                .suche{
+                  display: block;
+                  .formbody{
+                    display: flex;
+                    padding: 10px;
+                    .widget-{
+                      &text{
+                        width: 175px;
+                        input{
+                          box-shadow: inset 0 1px 4px rgba(0,0,0,0.5);
+                          padding: 3px;
+                          width: 90%;
+                          border: none;
+                          &:focus{
+                            outline: none;
+                          }
+                        }
                       }
-                    }
-                    &submit{
-                      width: 28px;
+                      &submit{
+                        width: 28px;
+                        padding: 4px;
+                      }
                     }
                   }
                 }
@@ -71,6 +91,7 @@ body {
             }
             #mainnav{
               display: block;
+              height: 64px;
               ul{
                 padding-top: 18px;
                 display: flex;
@@ -79,6 +100,12 @@ body {
                   margin-right: 1rem;
                   &:last-of-type{
                     margin-right: 0;
+                  }
+                  a{
+                    @include transition(0.2s);
+                    span{
+                      transition: none;
+                    }
                   }
                 }
               }
@@ -102,6 +129,7 @@ body {
     ////////////////////////////
 
     .custom{
+      margin-top: 70px;
       #kopfbild{
         .inside{
           .mod_article{
@@ -143,6 +171,9 @@ body {
         .inside{
           @include pageWidth;
           padding-top: 1rem;
+          h1{
+            margin-bottom: 1rem;
+          }
         }
         @media all and (min-width: $break3) {
           padding-top: 150px;
@@ -175,7 +206,7 @@ body {
             justify-content: flex-end;
             margin-bottom: 5rem;
             li{
-              margin-left: 4rem;
+              margin-left: 2rem;
               &:first-of-type{
                 margin-left: 0;
               }
@@ -222,4 +253,50 @@ body {
   }
 
   // Ende #wrapper
+
+
+  //////// OnScroll ////////
+
+  &.onScroll{
+    #wrapper{
+      #header{
+        min-height: 70px;
+        box-shadow: $shadow;
+        .inside{
+          padding-top: 10px;
+          max-height: 100%;
+          #head-nav-suche-container{
+            #opener-suche-container{
+            }
+            #mainnav{
+              height: 0;
+            }
+          }
+          #head-logo-container{
+            max-height: 100%;
+            padding-top: 10px;
+            *{
+              max-height: 100%;
+            }
+            figure{
+              padding-left: 45%;
+            }
+          }
+        }
+      }
+    }
+    @media all and (min-width: $break3) {
+      #wrapper{
+        #header{
+          .inside{
+            #head-logo-container{
+              figure{
+                padding: 0 0 0 45%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
