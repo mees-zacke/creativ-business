@@ -4,6 +4,7 @@ body {
       #mmenu {
         .inside {
           position: static;
+
           #mobile-menu {
             @include transition(0.2s);
             z-index: 2;
@@ -33,11 +34,13 @@ body {
                     }
 
                     .line-3 {
-                      transform: translateY(-2.5px) translateX($translateX) rotate($rotation * -1);
+                      transform: translateY(-2px) translateX($translateX) rotate($rotation * -1);
                     }
                   }
                 }
               }
+
+              /////// Suchfeld //////
 
               .mod_form {
                 display: block;
@@ -71,13 +74,48 @@ body {
               }
             }
 
+            ////// Navigation ///////
+
             .mod_navigation {
               padding-top: 2rem;
               padding-left: 10px;
 
               ul.level_1 {
+                width: 100%;
+
                 li {
-                  font-size: $h2Size;
+                  font-size: 1.625rem;
+                  margin-bottom: 10px;
+                  a {
+                    @include hover-background(black);
+                  }
+
+                  .nav-link-container {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .sub-opener {
+                      @include transition(0.2s);
+                      height: 1em;
+                      width: 1em;
+                      background-image: url("/files/layout/images/Mobile-menu-nav-closed.svg");
+                      margin-top: 0.2em;
+                      background-repeat: no-repeat;
+
+                      &.sub-opener-open {
+                        transform: rotate(45deg);
+                      }
+                    }
+                  }
+
+                  ul.level_2 {
+                    display: none;
+                    overflow: hidden;
+
+                    li {
+                      font-size: $fontSize;
+                    }
+                  }
                 }
               }
             }
@@ -85,7 +123,56 @@ body {
             &.active {
               left: 0;
             }
+
+            @media all and (min-width: $break3) {
+              left: 0;
+              height: auto;
+              top: -100%;
+              box-shadow: $shadow;
+              .opener-suche-container {
+                justify-content: flex-start;
+              }
+              .mod_navigation {
+                padding: 10px 2rem 0;
+
+                ul.level_1 {
+                  display: flex;
+                  justify-content: space-around;
+                  flex-wrap: wrap;
+
+                  > li {
+                    font-size: 30px;
+                    margin-right: 1rem;
+
+                    &:last-of-type {
+                      margin-right: 0;
+                    }
+
+                    .sub-opener {
+                      display: none;
+                    }
+
+                    ul.level_2 {
+                      display: block;
+
+                      li {
+                        font-size: 1rem;
+
+                        span {
+                          margin-bottom: 2px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              &.active {
+                top: 0;
+              }
+            }
           }
+
+
         }
       }
     }

@@ -49,3 +49,15 @@ $( document ).ready(function() {
     });
 });
 
+// Mobile Menu Navigation Level_2 Openers //
+
+function sub_open(id) {
+    var open_element = $('#' + id + '> ul'),
+        opener = $('#' + id + ' .sub-opener');
+
+    open_element.toggleClass('sub-open').slideToggle(200);
+    opener.toggleClass('sub-opener-open');
+    $('.sub-open').not(open_element).slideToggle(200).removeClass('sub-open');
+    $('.sub-opener').not(opener).removeClass('sub-opener-open');
+}
+

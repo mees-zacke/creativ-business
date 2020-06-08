@@ -1,0 +1,25 @@
+
+<ul class="<?= $this->level ?>">
+  <?php foreach ($this->items as $item): ?>
+    <?php if ($item['isActive']): ?>
+		<li class="<?= $item['class'] ?>" id="<?= $item['alias'] ?>">
+	      	<div class="nav-link-container">
+		      	<strong class="<?= $item['class'] ?>" <?php if (!empty($item['subitems'])): ?> aria-haspopup="true"<?php endif; ?> itemprop="name"><?= $item['link'] ?>
+		      	</strong>
+	  	      	<?php if (!empty($item['subitems'])): ?><div class="sub-opener" onclick="sub_open('<?= $item['alias'] ?>')"></div><?php endif; ?>
+	      	</div>
+	      	<?= $item['subitems'] ?>
+  		</li>
+    <?php else: ?>
+      <li id="<?= $item['alias'] ?>" <?php if ($item['class']): ?> class="<?= $item['class'] ?>"<?php endif; ?>>
+      	<div class="nav-link-container">
+	      	<a href="<?= $item['href'] ?: './' ?>" title="<?= $item['pageTitle'] ?: $item['title'] ?>"<?php if ($item['class']): ?> class="<?= $item['class'] ?>"<?php endif; ?><?php if ('' !== $item['accesskey']): ?> accesskey="<?= $item['accesskey'] ?>"<?php endif; ?><?php if ($item['tabindex']): ?> tabindex="<?= $item['tabindex'] ?>"<?php endif; ?><?= $item['target'] ?><?= $item['rel'] ?><?php if (!empty($item['subitems'])): ?> aria-haspopup="true"<?php endif; ?> itemprop="url">
+	      		<span itemprop="name"><?= $item['link'] ?></span>
+	      	</a>
+	      	<?php if (!empty($item['subitems'])): ?><div class="sub-opener" onclick="sub_open('<?= $item['alias'] ?>')" ></div><?php endif; ?>
+      	</div>
+      	<?= $item['subitems'] ?>
+      	</li>
+    <?php endif; ?>
+  <?php endforeach; ?>
+</ul>

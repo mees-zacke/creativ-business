@@ -196,9 +196,6 @@ body {
       .inside{
         @include pageWidth;
         padding: 20px;
-        *{
-          color: white;
-        }
         nav{
           ul{
             display: flex;
@@ -210,12 +207,18 @@ body {
               &:first-of-type{
                 margin-left: 0;
               }
+              a{
+                @include hover-background(black);
+              }
             }
           }
         }
         #footer-info-container{
           display: flex;
           flex-wrap: nowrap;
+          *{
+            color: white;
+          }
           #footer-bsp-logo{
             figure{
               margin-right: 2rem;
@@ -289,6 +292,11 @@ body {
       #wrapper{
         #header{
           .inside{
+            .head-nav-suche-container{
+              #mainnav{
+                height: 0;
+              }
+            }
             #head-logo-container{
               figure{
                 padding: 0 0 0 45%;

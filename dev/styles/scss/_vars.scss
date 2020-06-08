@@ -80,6 +80,19 @@ $grid-columns: 5fr 7fr;
   transition: ease all $time;
 }
 
+@mixin hover-background($background: white){
+    @include transition(0.2s);
+    background-size: 210%;
+    background-position-x: 100%;
+    background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
+
+    &:hover {
+      background-position-x: -2px;
+      color: $background;
+    }
+
+}
+
 $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%, $color3 30%, $color4 30%, $color4 40%, $color5 40%, $color5 50%, $color6 50%, $color6 60%, $color1 60%, $color1 68%, $color2 68%, $color2 76%, $color3 76%, $color3 83%, $color4 83%, $color4 88%, $color5 88%, $color5 93%, $color6 93%, $color6 97%, $color1 97%, $color1 100%);
 
 @mixin button($normal: rgb(205,110,5), $active: rgb(72,72,72)) {

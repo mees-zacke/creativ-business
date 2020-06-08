@@ -14,11 +14,6 @@ $navColor: white;
   a {
     color: $navColor;
     text-decoration: none;
-    @include transition;
-
-    &:hover {
-      color: $navColor;
-    }
   }
 
   ul {
