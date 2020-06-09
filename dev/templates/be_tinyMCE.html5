@@ -70,6 +70,12 @@ setTimeout(function() {
             classes: 'kleinerText',
             exact: true,
           },
+          {
+              title: 'weiterlesen',
+              block: 'span',
+              classes: 'weiterlesen',
+              wrapper: true,
+          },
         ]}
     ]
   });

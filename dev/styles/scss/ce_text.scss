@@ -5,15 +5,29 @@
     }
   }
 
-  .text{
+  .text {
     a{
-      &:after{
-        content: url("/files/layout/images/pfeil-forward.svg");
-        color: $linkColor;
-        display: inline-block;
-        height: 1rem;
-        width: 1rem;
-        margin-left: 1rem;
+      @include hover-background(white);
+    }
+    .weiterlesen {
+      a {
+        padding: 5px;
+        &:after {
+          @include transition(0.2s);
+          content: " ";
+          display: inline-block;
+          background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
+          background-repeat: no-repeat;
+          background-position-y: bottom;
+          height: 1em;
+          width: 6rem;
+          margin-left: 1rem;
+        }
+        &:hover{
+          &:after{
+            background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
+          }
+        }
       }
     }
   }
@@ -38,16 +52,19 @@
 
   figure {
     margin-bottom: 1em;
+
     &.float_left, &.float-left {
       float: left;
       max-width: 45%;
       margin-right: 2em;
     }
+
     &.float_right, &.float-right {
       float: right;
       max-width: 45%;
       margin-left: 2em;
     }
+
     &.float_left, &.float_right, &.float-left, &.float-right {
       margin-top: 0.3125em;
       @media screen and (max-width: 650px) {
@@ -65,6 +82,7 @@
       column-gap: $abstandAussen;
     }
   }
+
   &.withoutFigcaption {
     figcaption {
       display: none;

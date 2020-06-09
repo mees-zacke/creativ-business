@@ -37,15 +37,15 @@ $linkColor: $fontColor;
 $colorImageCaption: $fontColor;
 
 // Schrift Größen
-$fontSize: calc(16px + (22 - 16) * ((100vw - 320px) / (1600 - 300)));
+$fontSize: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 300)));
 $fontWidth: 400;
 $lineHeight: 1.666;
 
 $hWidth: 100;
-$h1Size: calc(40px + (100 - 40) * ((100vw - 320px) / (1600 - 300)));
-$h2Size: calc(30px + (80 - 30) * ((100vw - 320px) / (1600 - 300)));
-$h3Size: $fontSize;
-$h4Size: $fontSize;
+$h1Size: calc(40px + (90 - 40) * ((100vw - 320px) / (1600 - 300)));
+$h2Size: calc(35px + (80 - 35) * ((100vw - 320px) / (1600 - 300)));
+$h3Size: calc(30px + (60 - 30) * ((100vw - 320px) / (1600 - 300)));
+$h4Size: calc(25px + (40 - 25) * ((100vw - 320px) / (1600 - 300)));
 $h5Size: $fontSize;
 $h6Size: $fontSize;
 $hLineHeight: 1.4;
@@ -111,5 +111,32 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
   }
   @media screen and (min-width: $break2){
     padding: 0.5rem 2rem;
+  }
+}
+
+.schwarzer-kasten{
+  &.ce_text{
+    .text{
+      padding: 1rem;
+      background-color: black;
+      a{
+        @include hover-background(black);
+      }
+      *{
+        color: white;
+      }
+      .weiterlesen{
+        a{
+          &:after{
+            background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
+          }
+          &:hover{
+            &:after{
+              background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
+            }
+          }
+        }
+      }
+    }
   }
 }

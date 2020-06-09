@@ -5,7 +5,26 @@ body{
         .mod_article{
           .cce-{
             &schwarzer-kasten{
-              .headline{
+              padding: 1rem;
+              background-color: black;
+              a{
+                @include hover-background(black);
+              }
+              *{
+                color: white;
+              }
+              .weiterlesen{
+                &:after{
+                  background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
+                }
+                &:hover{
+                  &:after{
+                    background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
+                  }
+                }
+              }
+
+         /*     .headline{
                 grid-column: 1 / 2;
                 color: white;
                 padding-top: 40%;
@@ -24,7 +43,9 @@ body{
               }
               .text{
                 grid-column: 2/-1 ;
-              }
+              }*/
+
+
             }
             &bild-2-links{
               figure{
