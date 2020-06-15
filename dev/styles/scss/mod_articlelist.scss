@@ -1,8 +1,145 @@
-.mod_articlelist{
-  ul{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+#ankernav-container {
+  @include transition();
+  position: sticky;
+  top: 65px;
+  box-sizing: border-box;
+  background-color: white;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  padding-bottom: 10px;
 
+  .ankernav-inner-container {
+    @include pageWidth;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .page-anker{
+      grid-column: 1/2;
+      grid-row: 1/2;
+      ul{
+        margin-bottom: 0;
+        li{
+          a{
+            @include hover-background(white);
+            display: block;
+            margin-right: 1rem;
+            padding-bottom: 5px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .mod_articlelist {
+      grid-column: 1/3;
+      grid-row-start: 2;
+      margin-top: 1rem;
+      ul {
+        @include pageWidth;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 0;
+        padding-left: 0;
+        li {
+          a {
+            @include hover-background(white);
+            display: block;
+            margin-right: 1rem;
+            padding: 0 0.625rem 5px;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+          }
+
+          &:first-of-type {
+            a {
+            }
+          }
+
+          &:last-of-type {
+            a {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .jetzt-bewerben {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      position: relative;
+      margin-left: auto;
+      @include link-pfeil;
+      @include hover-background(black);
+      color: white;
+      background-color: black;
+      span{
+        position: relative;
+        margin-right: 2vw;
+        padding-right: 2px;
+        background-color: black;
+        z-index: 1;
+        @media all and (min-width: $break2){
+          margin-right: 5vw;
+        }
+      }
+      &:after{
+        position: absolute;
+        top: 15%;
+        right: 0;
+        @include transition(0.1s);
+        content: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
+        height: 1rem;
+        object-fit: cover;
+        background-image: none;
+      }
+      &:hover, &:focus{
+        span{
+          background-color: white;
+        }
+        &:after{
+          content: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
+          background-image: none;
+        }
+      }
+    }
+  }
+  &.hidden{
+    top: -10px;
+  }
+  @media all and (min-width: 1050px){
+    .ankernav-inner-container{
+      display: flex;
+      justify-content: flex-start;
+
+      .page-anker{
+        ul{
+          li{
+            a{
+              padding: 0 0.625rem 5px;
+              min-width: 15rem;
+              border-bottom: 1px solid black;
+
+            }
+          }
+        }
+      }
+      .mod_articlelist{
+        margin-top: 0;
+        ul{
+          li{
+            a{
+
+            }
+          }
+        }
+      }
+      .jetzt-bewerben{
+
+      }
+    }
+    &.hidden{
+      top: 0;
+    }
   }
 }

@@ -2,6 +2,7 @@ jQuery(function ($) {
 
   $(document).ready(function () {
     isIE();
+    setHeaderStates();
  });
 
   /* https://jsfiddle.net/alvaroAV/svvz7tkn/ */
@@ -61,3 +62,52 @@ function sub_open(id) {
     $('.sub-opener').not(opener).removeClass('sub-opener-open');
 }
 
+function setHeaderStates() {
+
+    // Höhe des Headers bestimmen
+    var headerHeight = $('#header').height();
+    var resizeTimer;
+    $(window).resize(function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(itsResized, 250)
+    });
+
+    function itsResized() {
+        headerHeight = $('#header').height();
+    }
+
+
+// Menü bei Scroll verstecken und wieder anzeigen
+    var body = $('body');
+    $(window).ready(function () {
+        if ($(this).scrollTop() > 1) {
+            hiddenClass()
+        }
+    })
+/*    $(window).scroll(function () {
+        if ($(this).scrollTop() <= headerHeight) {
+            hiddenClass()
+        }
+    })
+*/
+    function hiddenClass() {
+        if (!body.hasClass('ios')) {
+            var prev = 0;
+            var header = $('#header');
+            var ankernav = $('#ankernav-container');
+            $(window).on('scroll', function () {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(classHidden, 0)
+            });
+
+            function classHidden() {
+                var scrollTop = $(window).scrollTop();
+                header.toggleClass('hidden', scrollTop > prev);
+                ankernav.toggleClass('hidden', scrollTop > prev);
+                header.toggleClass('visible', scrollTop < headerHeight);
+                prev = scrollTop;
+            }
+        }
+
+    }
+}

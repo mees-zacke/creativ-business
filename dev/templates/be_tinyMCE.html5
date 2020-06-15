@@ -52,11 +52,6 @@ setTimeout(function() {
             block: 'span',
             classes: 'teaser',
             exact: true,
-            styles: {
-              'color':'#000000',
-              'font-size':'1.1875rem',
-              'line-height':'1.5em'
-            }
           },
           {
             title: 'Zwei Spalten',

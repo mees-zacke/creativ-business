@@ -11,23 +11,7 @@
     }
     .weiterlesen {
       a {
-        padding: 5px;
-        &:after {
-          @include transition(0.2s);
-          content: " ";
-          display: inline-block;
-          background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
-          background-repeat: no-repeat;
-          background-position-y: bottom;
-          height: 1em;
-          width: 6rem;
-          margin-left: 1rem;
-        }
-        &:hover{
-          &:after{
-            background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
-          }
-        }
+        @include link-pfeil;
       }
     }
   }
