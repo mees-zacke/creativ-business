@@ -80,22 +80,14 @@ function setHeaderStates() {
 // Menü bei Scroll verstecken und wieder anzeigen
     var body = $('body');
     $(window).ready(function () {
-        if ($(this).scrollTop() > 1) {
             hiddenClass()
-        }
-    })
-/*    $(window).scroll(function () {
-        if ($(this).scrollTop() <= headerHeight) {
-            hiddenClass()
-        }
-    })
-*/
+    });
+
     function hiddenClass() {
-        if (!body.hasClass('ios')) {
             var prev = 0;
             var header = $('#header');
             var ankernav = $('#ankernav-container');
-            $(window).on('scroll', function () {
+            $(window).on('scroll'  , function () {
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(classHidden, 0)
             });
@@ -107,7 +99,6 @@ function setHeaderStates() {
                 header.toggleClass('visible', scrollTop < headerHeight);
                 prev = scrollTop;
             }
-        }
 
     }
 }
