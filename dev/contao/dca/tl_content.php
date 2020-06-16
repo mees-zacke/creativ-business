@@ -15,10 +15,6 @@ PaletteManipulator::create()
 
     ->addField('linkTo', 'link_legend', PaletteManipulator::POSITION_APPEND)
     ->addField('target', 'link_legend', PaletteManipulator::POSITION_APPEND)
-    ->addField('linkTitle', 'link_legend', PaletteManipulator::POSITION_APPEND)
-    ->addField('embed', 'link_legend', PaletteManipulator::POSITION_APPEND)
-    ->addField('titleText', 'link_legend', PaletteManipulator::POSITION_APPEND)
-    ->addField('rel', 'link_legend', PaletteManipulator::POSITION_APPEND)
 
     ->applyToPalette('text', 'tl_content')
     ;

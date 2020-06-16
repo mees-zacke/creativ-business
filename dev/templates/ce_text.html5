@@ -1,9 +1,6 @@
 <?php $this->extend('block_searchable_text'); ?>
 
 <?php $this->block('content'); ?>
-    <?php if($this->linkTo): ?>
-        <a href="<?= $this->linkTo ?>">
-    <?php endif; ?>
             <?php if (!$this->addBefore): ?>
             <div class="text-container">
                 <?php if ($this->headline): ?>
@@ -29,8 +26,4 @@
             </div>
             </div>
             <?php endif; ?>
-    <?php if($this->linkTo): ?>
-        </a>
-    <?php endif; ?>
-
 <?php $this->endblock(); ?>
