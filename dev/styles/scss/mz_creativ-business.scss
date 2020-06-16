@@ -186,6 +186,7 @@ body {
       }
       #teaser{
         @include pageWidth;
+        text-align: center;
       }
       #uber-footer{
         padding: 2rem 0;
@@ -209,12 +210,20 @@ body {
     #container {
 
       // Anfang #main
-      .mod_article{
+
+        [class*='ce_']{
+          grid-column: 1/ span 12;
+          &.ce_text{
+            grid-column: 2/span 12;
+          }
+        }
+
+        .mod_article{
         @include grid(12, auto, 2vw, 2vh);
         margin-bottom: 3rem;
         @include pageWidth;
+        }
 
-      }
       .teaser{
         font-size: calc(22px + (30 - 22) * ((100vw - 320px) / (1600 - 300)));
       }
@@ -370,6 +379,9 @@ body {
       #container{
         .mod_article{
           padding-top: 82px;
+          &:last-of-type{
+            padding-bottom: 82px;
+          }
         }
       }
     }
