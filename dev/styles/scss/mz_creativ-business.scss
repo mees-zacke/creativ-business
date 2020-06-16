@@ -214,7 +214,7 @@ body {
         [class*='ce_']{
           grid-column: 1/ span 12;
           &.ce_text{
-            grid-column: 2/span 12;
+            grid-column: 2/span 11;
           }
         }
 

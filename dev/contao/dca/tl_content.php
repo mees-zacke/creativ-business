@@ -19,13 +19,13 @@ PaletteManipulator::create()
     ->applyToPalette('text', 'tl_content')
     ;
 
-$GLOBALS['TL_DCA']['tl_content']['palettes'] = str_replace(',cssID',',gridSpan,gridStart,cssID',$GLOBALS['TL_DCA']['tl_content']['palettes']);
+$GLOBALS['TL_DCA']['tl_content']['palettes'] = str_replace(',cssID',',gridStart,gridSpan,cssID',$GLOBALS['TL_DCA']['tl_content']['palettes']);
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['gridSpan'] = [
     'label' => ['Breite', 'Breite des Elements innerhalb des 12er Rasters'],
     'inputType' => 'select',
     'options' => ['default', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-    'eval' => ['maxlength'=>12, 'tl_class'=>'w50 clr' ],
+    'eval' => ['maxlength'=>12, 'tl_class'=>'w50' ],
     'sql' => [
         'type' => 'string',
         'length' => 32,
@@ -34,10 +34,10 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['gridSpan'] = [
 ];
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['gridStart'] = [
-    'label' => ['Position', 'Position des Elements im 12er Raster (Breite und Position dürfen zusammen nicht größergleich 12 sein)'],
+    'label' => ['Position', 'Position des Elements im 12er Raster (Breite und Position dürfen zusammen nicht größer als 13 sein)'],
     'inputType' => 'select',
     'options' => ['default', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-    'eval' => ['maxlength'=>12, 'tl_class'=>'w50' ],
+    'eval' => ['maxlength'=>12, 'tl_class'=>'w50 clr' ],
     'sql' => [
         'type' => 'string',
         'length' => 32,
