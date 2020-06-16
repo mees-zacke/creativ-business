@@ -1,16 +1,10 @@
 .ce_player {
-  .mejs__container {
+  .video_container {
     max-width: 100%;
-
     video {
-      height: 100%;
-      width: 100%;
-    }
-
-    .mejs__layers {
-      .mejs__layer {
-        max-width: 100%;
-      }
+      filter: grayscale(1);
+      height: 100% !important;
+      width: 100% !important;
     }
   }
 }

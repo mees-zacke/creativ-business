@@ -14,9 +14,9 @@ body {
     //////// HEADER ////////
     ////////////////////////////
     #header {
-      @include transition();
+      @include transition(0.3s);
       *{
-        @include transition();
+        @include transition(0.3s);
       }
       position: fixed;
       top: 0;
@@ -106,7 +106,7 @@ body {
                   }
                   a{
                     &:after{
-                      @include transition(0.2s);
+                      @include transition();
                       content: " ";
                       height: 1px;
                       width: 100%;
@@ -152,7 +152,7 @@ body {
 
     .custom{
       #kopfbild{
-        @include transition();
+        @include transition(0.3s);
         margin-top: 100px;
         .inside{
           .mod_article{
@@ -212,9 +212,11 @@ body {
       // Anfang #main
 
         [class*='ce_']{
-          grid-column: 1/ span 12;
+          grid-column-start: 1;
+          grid-column-end: 13;
           &.ce_text{
-            grid-column: 2/span 11;
+            grid-column-start: 2;
+            grid-column-end: 13;
           }
         }
 

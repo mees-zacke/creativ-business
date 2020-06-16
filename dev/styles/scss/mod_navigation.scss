@@ -40,7 +40,7 @@ $navColor: white;
         }
         a{
           &:after{
-            @include transition(0.2s);
+            @include transition();
             content: " ";
             height: 1px;
             width: 100%;

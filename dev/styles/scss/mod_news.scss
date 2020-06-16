@@ -9,13 +9,13 @@
       color: $fontColor;
 
       h1, h2, h3, h4, h5, h6 {
-        @include transition()
+        @include transition();
         color: $color2;
         font-weight: 400;
       }
 
       .more {
-        @include transition()
+        @include transition();
         color: $color2;
         font-weight: 400;
       }

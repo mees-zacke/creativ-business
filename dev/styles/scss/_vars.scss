@@ -73,7 +73,7 @@ $grid-columns: 5fr 7fr;
   padding-right: $abstandAussen;
 }
 
-@mixin transition($time: 0.3s) {
+@mixin transition($time: 0.2s) {
   -webkit-transition: ease all $time;
   -moz-transition: ease all $time;
   -o-transition: ease all $time;
@@ -81,7 +81,7 @@ $grid-columns: 5fr 7fr;
 }
 
 @mixin hover-background($background: white){
-    @include transition(0.2s);
+    @include transition();
     background-size: 210%;
     background-position-x: 100%;
     background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
@@ -117,7 +117,7 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
 @mixin link-pfeil{
   padding: 5px;
   &:after {
-    @include transition(0.2s);
+    @include transition();
     content: " ";
     display: inline-block;
     background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");

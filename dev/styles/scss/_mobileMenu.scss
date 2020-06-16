@@ -6,7 +6,7 @@ body {
           position: static;
 
           #mobile-menu {
-            @include transition(0.2s);
+            @include transition();
             z-index: 2;
             top: 0;
             left: -100vw;
@@ -105,7 +105,7 @@ body {
                     justify-content: space-between;
 
                     .sub-opener {
-                      @include transition(0.2s);
+                      @include transition();
                       height: 1em;
                       width: 1em;
                       background-image: url("/files/layout/images/Mobile-menu-nav-closed.svg");
