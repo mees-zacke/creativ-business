@@ -3,7 +3,7 @@
 }
 
 .ohneAbstandUnten {
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
 // 16x9 Verhältnis bei Iframes
@@ -32,5 +32,67 @@
 @media all and (min-width: $break1) {
   .nurMobile {
     display: none;
+  }
+}
+
+.schwarzer-hintergrund {
+  padding: 1rem;
+  background-color: black;
+
+  &.ce_text {
+    padding: 0;
+    background: none;
+
+    .text {
+      padding: 1rem;
+      background-color: black;
+
+      a {
+        @include hover-background(black);
+      }
+
+      * {
+        color: white;
+      }
+
+      .weiterlesen {
+        &:after {
+          background-image: $link-pfeil-weis;
+        }
+      }
+    }
+
+    @include link-block(black);
+
+    &.link-block {
+      .text-container {
+        .headline {
+          @include transition();
+          background-size: 210%;
+          background-position-x: 100%;
+          background-image: linear-gradient(90deg, black 50%, white 50%);
+        }
+      }
+
+      &:hover, &:focus {
+        .text-container {
+          .headline {
+            background-position-x: -2px;
+            color: white;
+          }
+
+          .text {
+            .weiterlesen {
+              background-position-x: -2px;
+              color: black;
+
+              &:after {
+                background-image: $link-pfeil-schwarz;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

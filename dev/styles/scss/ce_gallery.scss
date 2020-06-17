@@ -27,6 +27,17 @@
 
     > li {
       width: 50%;
+      &:nth-of-type(2n){
+        figure{
+          margin-right: 0;
+        }
+      }
+      &:nth-of-type(2n-1){
+        figure{
+          margin-left: 0;
+        }
+      }
+
 
       > * {
         margin: $spaltenAbstand;

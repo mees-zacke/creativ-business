@@ -1,4 +1,16 @@
 .ce_download, .ce_downloads {
+  a{
+    border: 1px white solid;
+    padding: 5px;
+    color: white;
+    background-color: black;
+    @include transition();
+    &:hover{
+      border-color: black;
+      background-color: white;
+      color: black;
+    }
+  }
   .size {
     font-size: 0.75em;
     font-weight: 300;

@@ -215,14 +215,13 @@ body {
           grid-column-start: 1;
           grid-column-end: 13;
           &.ce_text{
-            grid-column-start: 2;
-            grid-column-end: 13;
+            grid-column-start: 3;
+            grid-column-end: 11;
           }
         }
 
         .mod_article{
-        @include grid(12, auto, 2vw, 2vh);
-        margin-bottom: 3rem;
+        @include grid(12, auto, 2vw, 8vh);
         @include pageWidth;
         }
 

@@ -6,13 +6,14 @@
   }
 
   .text {
+    .headline{
+      display: inline-block;
+    }
     a{
       @include hover-background(white);
     }
     .weiterlesen {
-      a {
         @include link-pfeil;
-      }
     }
   }
 
@@ -71,5 +72,42 @@
     figcaption {
       display: none;
     }
+  }
+
+
+  &.link-block{
+    .headline{
+      @include transition();
+      background-size: 210%;
+      background-position-x: 100%;
+      background-image: linear-gradient(90deg, black 50%, white 50%);
+    }
+    .text{
+      .weiterlesen{
+        @include transition();
+        background-size: 210%;
+        background-position-x: 100%;
+        background-image: linear-gradient(90deg, black 50%, white 50%);
+      }
+    }
+    &:hover, &:focus {
+      .text-container{
+        .headline{
+          background-position-x: -2px;
+          color: white;
+        }
+        .text{
+          .weiterlesen{
+            background-position-x: -2px;
+            color: white;
+
+            &:after{
+              background-image: $link-pfeil-weis ;
+            }
+          }
+        }
+      }
+    }
+
   }
 }

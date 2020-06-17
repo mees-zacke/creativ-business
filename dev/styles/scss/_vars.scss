@@ -27,6 +27,9 @@ $shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 $font1: 'Balboa', Helvetica, sans-serif;
 $font2: 'Balboa', Helvetica, Verdana, sans-serif;
 
+$link-pfeil-schwarz: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
+$link-pfeil-weis: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
+
 // Schrift Farben
 $fontColor: rgb(72,72,72);
 $fontColor2: rgb(0, 0, 0);
@@ -38,7 +41,7 @@ $colorImageCaption: $fontColor;
 
 // Schrift Größen
 $fontSize: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 300)));
-$fontWidth: 400;
+$fontWidth: 200;
 $lineHeight: 1.666;
 
 $hWidth: 100;
@@ -121,7 +124,7 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
     position: absolute;
     top: 15%;
     right: 5px;
-    content: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
+    content: $link-pfeil-weis ;
     height: 1rem;
     object-fit: cover;
     background-image: none;
@@ -136,7 +139,7 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
       color: $normal;
     }
     &:after{
-      content: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
+      content: $link-pfeil-schwarz;
       background-image: none;
     }
   }
@@ -151,7 +154,7 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
     @include transition();
     content: " ";
     display: inline-block;
-    background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
+    background-image: $link-pfeil-schwarz ;
     background-repeat: no-repeat;
     background-position-y: bottom;
     height: 1em;
@@ -160,31 +163,43 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
   }
   &:hover, &:focus{
     &:after{
-      background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
+      background-image: $link-pfeil-weis;
     }
   }
 
 }
 
-.schwarzer-kasten{
-  &.ce_text{
-    .text{
-      padding: 1rem;
-      background-color: black;
-      a{
-        @include hover-background(black);
+@mixin link-block($background: white){
+  &.link-block{
+    .text-container{
+      .headline{
+        @include transition();
+        background-size: 210%;
+        background-position-x: 100%;
+        background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
       }
-      *{
-        color: white;
+      .text{
+        .weiterlesen{
+          @include transition();
+          background-size: 210%;
+          background-position-x: 100%;
+          background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
+        }
       }
-      .weiterlesen{
-        a{
-          &:after{
-            background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
-          }
-          &:hover, &:focus{
+    }
+    &:hover, &:focus {
+      .text-container{
+        .headline{
+          background-position-x: -2px;
+          color: $background;
+        }
+        .text{
+          .weiterlesen{
+            background-position-x: -2px;
+            color: $background;
+
             &:after{
-              background-image: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
+              background-image: $link-pfeil-weis ;
             }
           }
         }
