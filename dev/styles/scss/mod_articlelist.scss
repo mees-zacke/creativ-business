@@ -76,38 +76,7 @@
       position: relative;
       margin-left: auto;
       @include link-pfeil;
-      @include hover-background(black);
-      color: white;
-      background-color: black;
-      span{
-        position: relative;
-        margin-right: 2vw;
-        padding-right: 2px;
-        background-color: black;
-        z-index: 1;
-        @media all and (min-width: $break2){
-          margin-right: 5vw;
-        }
-      }
-      &:after{
-        position: absolute;
-        top: 15%;
-        right: 0;
-        @include transition(0.1s);
-        content: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
-        height: 1rem;
-        object-fit: cover;
-        background-image: none;
-      }
-      &:hover, &:focus{
-        span{
-          background-color: white;
-        }
-        &:after{
-          content: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
-          background-image: none;
-        }
-      }
+      @include button();
     }
   }
   &.hidden{

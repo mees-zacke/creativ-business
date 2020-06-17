@@ -24,8 +24,8 @@ $shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 
 
 // Schrift
-$font1: 'Open Sans', Helvetica, sans-serif;
-$font2: 'Anton', Helvetica, Verdana, sans-serif;
+$font1: 'Balboa', Helvetica, sans-serif;
+$font2: 'Balboa', Helvetica, Verdana, sans-serif;
 
 // Schrift Farben
 $fontColor: rgb(72,72,72);
@@ -95,24 +95,55 @@ $grid-columns: 5fr 7fr;
 
 $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%, $color3 30%, $color4 30%, $color4 40%, $color5 40%, $color5 50%, $color6 50%, $color6 60%, $color1 60%, $color1 68%, $color2 68%, $color2 76%, $color3 76%, $color3 83%, $color4 83%, $color4 88%, $color5 88%, $color5 93%, $color6 93%, $color6 97%, $color1 97%, $color1 100%);
 
-@mixin button($normal: rgb(205,110,5), $active: rgb(72,72,72)) {
+@mixin button($normal: rgb(0,0,0), $active: rgb(255,255,255)) {
+  position: relative;
+  @include link-pfeil();
   appearance: none;
-  border: none;
+  border: 1px solid $active;
+  padding: 5px;
   background-color: $normal;
-  border-radius: 3px;
-  color: #ffffff;
-  padding: 0.25rem .5rem;
-  font-family: $font2;
+  font-family: $font1;
   @include transition();
+  span{
+    @include transition();
+    color: $active;
+    position: relative;
+    margin-right: 2vw;
+    padding-right: 2px;
+    background-color: $normal;
+    z-index: 1;
+    @media all and (min-width: $break2){
+      margin-right: 5vw;
+    }
+  }
+  &:after{
+    @include transition();
+    position: absolute;
+    top: 15%;
+    right: 5px;
+    content: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
+    height: 1rem;
+    object-fit: cover;
+    background-image: none;
+  }
   &:hover, &:focus {
     background-color: $active;
+    border: 1px solid $normal;
     cursor: pointer;
     outline: none;
+    span{
+      background-color: $active;
+      color: $normal;
+    }
+    &:after{
+      content: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
+      background-image: none;
+    }
   }
   @media screen and (min-width: $break2){
-    padding: 0.5rem 2rem;
   }
 }
+
 
 @mixin link-pfeil{
   padding: 5px;
