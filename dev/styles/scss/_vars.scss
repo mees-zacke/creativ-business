@@ -31,7 +31,7 @@ $link-pfeil-schwarz: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
 $link-pfeil-weis: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
 
 // Schrift Farben
-$fontColor: rgb(72,72,72);
+$fontColor: rgb(0,0,0);
 $fontColor2: rgb(0, 0, 0);
 
 $hColor: $color1;
@@ -89,7 +89,8 @@ $grid-columns: 5fr 7fr;
     background-position-x: 100%;
     background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
 
-    &:hover, &:focus {
+  &:hover, &:focus {
+      background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
       background-position-x: -2px;
       color: $background;
     }
@@ -150,6 +151,7 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
 
 @mixin link-pfeil{
   padding: 5px;
+  white-space: nowrap;
   &:after {
     @include transition();
     content: " ";

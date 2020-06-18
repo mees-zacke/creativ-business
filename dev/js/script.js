@@ -102,3 +102,9 @@ function setHeaderStates() {
 
     }
 }
+
+// video player farbig bei Laufen
+
+/*$(window).ready(function () {
+    $('video').on('playing' , )
+});*/

@@ -48,6 +48,7 @@
         padding-left: 0;
         li {
           a {
+             white-space: nowrap;
             @include hover-background(white);
             display: block;
             margin-right: 1rem;
@@ -75,6 +76,15 @@
       grid-row: 1/2;
       position: relative;
       margin-left: auto;
+      padding-left: 0;
+      min-width: 60%;
+      @media all and (min-width: $break3){
+        min-width: 0;
+      }
+      span{
+        white-space: nowrap;
+        padding-left: 5px;
+      }
       @include link-pfeil;
       @include button();
     }

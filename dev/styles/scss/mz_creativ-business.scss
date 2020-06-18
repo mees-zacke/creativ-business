@@ -193,7 +193,7 @@ body {
         }
 
         @media all and (min-width: $break3) {
-          padding-bottom: 150px;
+          padding-bottom: 60px;
         }
         @media all and (min-width: 1920px) {
           .inside {
@@ -262,8 +262,12 @@ body {
           }
 
           .ce_text{
-            grid-column-start: 3;
-            grid-column-end: 11;
+            grid-column-start: 2;
+            grid-column-end: 13;
+            @media all and (min-width: $break3){
+              grid-column-start: 3;
+              grid-column-end: 11;
+            }
           }
           .inside {
             padding-top: 1rem;

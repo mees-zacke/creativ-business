@@ -5,13 +5,15 @@ body {
         .inside {
           .mod_article {
             .cce-schwarzer-kasten {
-              text-align: center;
 
               .text-container {
-                display: inline-block;
-                padding: 1rem;
-                background-color: black;
-                color: white;
+                text-align: center;
+                .text-container-inner{
+                  display: inline-block;
+                  padding: 1rem;
+                  background-color: black;
+                  color: white;
+                }
 
                 .headline {
                   background: none;

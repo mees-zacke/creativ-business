@@ -85,7 +85,7 @@ $row-gap: 2vh;
 
       &[class*='cce'] {
         display: grid;
-        grid-template-columns: repeat($i, 1fr);
+        grid-template-columns: repeat(($columns - 1), 1fr);
         grid-template-rows: $rows;
         grid-column-gap: $column-gap;
         grid-row-gap: $row-gap;
@@ -100,7 +100,7 @@ $row-gap: 2vh;
       &.ce_text {
         &.rechts, &.links {
           display: grid;
-          grid-template-columns: repeat($i, 1fr);
+          grid-template-columns: repeat(($columns - 1), 1fr);
           grid-template-rows: $rows;
           grid-column-gap: $column-gap;
           grid-row-gap: $row-gap;
@@ -111,12 +111,12 @@ $row-gap: 2vh;
             &.image-span-#{$k} {
               .text-container {
                 grid-column-start: 1;
-                grid-column-end: ($i - 1);
+                grid-column-end: ($columns - 1);
               }
 
               figure {
-                grid-column-start: (($i + 1) - $k);
-                grid-column-end: ($i + 1);
+                grid-column-start: 1;
+                grid-column-end: $columns;
               }
             }
           }
@@ -127,12 +127,12 @@ $row-gap: 2vh;
             &.image-span-#{$j} {
               figure {
                 grid-column-start: 1;
-                grid-column-end: $j;
+                grid-column-end: $columns;
               }
 
               .text-container {
-                grid-column-start: 3;
-                grid-column-end: ($i + 1);
+                grid-column-start: 2;
+                grid-column-end: $columns;
               }
             }
           }

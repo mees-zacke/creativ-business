@@ -26,6 +26,17 @@ $navColor: white;
   }
 
   &#mainnav{
+
+    strong {
+      color: black;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+
+    }
+
     display: block;
     height: 64px;
     ul{

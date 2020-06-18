@@ -1,6 +1,10 @@
 .ce_text {
-  grid-column-start: 3;
-  grid-column-end: 11;
+    grid-column-start: 2;
+  grid-column-end: 13;
+  @media all and (min-width: $break3){
+    grid-column-start: 3;
+    grid-column-end: 11;
+  }
 
   p, h1, h2, h3, h4, h5, h6 {
     & ~ ul, & ~ ol {
@@ -126,9 +130,16 @@
     grid-template-rows: $rows;
     grid-column-gap: $column-gap;
     grid-row-gap: $row-gap;
-
     > * {
       grid-column: span;
+    }
+    @media all and (min-width: $break3){
+      position: relative;
+      .text-container{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 
@@ -152,6 +163,20 @@
         grid-column: 6/9;
       }
     }
+    @for $k from 1 through 5 {
+      &.image-span-#{$k} {
+        figure {
+          grid-column-start: 1;
+          grid-column-end: ($k + 1);
+        }
+
+        .text-container {
+          grid-column-start: ($k + 2);
+          grid-column-end: 9;
+        }
+      }
+
+    }
   }
 
   &.rechts {
@@ -172,6 +197,20 @@
       .text-container {
         grid-row-start: 1;
         grid-column: 1/4;
+      }
+    }
+
+    @for $j from 1 through 5 {
+      &.image-span-#{$j} {
+        .text-container {
+          grid-column-start: 1;
+          grid-column-end: (9 - ($j+ 1));
+        }
+
+        figure {
+          grid-column-start: (9 - $j);
+          grid-column-end: 9;
+        }
       }
     }
   }

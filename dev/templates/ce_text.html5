@@ -3,12 +3,14 @@
 <?php $this->block('content'); ?>
             <?php if (!$this->addBefore): ?>
             <div class="text-container">
-                <?php if ($this->headline): ?>
-                <<?= $this->hl ?> class="headline"><?= $this->headline ?></<?= $this->hl ?>>
-            <?php endif; ?>
-            <div class="text">
-                <?= $this->text ?>
-            </div>
+                <div class="text-container-inner">
+                    <?php if ($this->headline): ?>
+                        <<?= $this->hl ?> class="headline"><?= $this->headline ?></<?= $this->hl ?>>
+                    <?php endif; ?>
+                    <div class="text">
+                        <?= $this->text ?>
+                    </div>
+              </div>
             </div>
             <?php endif; ?>
 
@@ -18,12 +20,14 @@
 
             <?php if ($this->addBefore): ?>
             <div class="text-container">
-                <?php if ($this->headline): ?>
-                <<?= $this->hl ?> class="headline"><?= $this->headline ?></<?= $this->hl ?>>
-            <?php endif; ?>
-            <div class="text">
-                <?= $this->text ?>
-            </div>
+                <div class="text-container-inner">
+                    <?php if ($this->headline): ?>
+                        <<?= $this->hl ?> class="headline"><?= $this->headline ?></<?= $this->hl ?>>
+                    <?php endif; ?>
+                    <div class="text">
+                        <?= $this->text ?>
+                    </div>
+                </div>
             </div>
             <?php endif; ?>
 <?php $this->endblock(); ?>
