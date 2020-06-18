@@ -1,4 +1,7 @@
 .ce_text {
+  grid-column-start: 3;
+  grid-column-end: 11;
+
   p, h1, h2, h3, h4, h5, h6 {
     & ~ ul, & ~ ol {
       margin-top: -1em;
@@ -6,14 +9,16 @@
   }
 
   .text {
-    .headline{
+    .headline {
       display: inline-block;
     }
-    a{
+
+    a {
       @include hover-background(white);
     }
+
     .weiterlesen {
-        @include link-pfeil;
+      @include link-pfeil;
     }
   }
 
@@ -57,6 +62,7 @@
         float: none;
       }
     }
+
   }
 
   &.text2columns {
@@ -75,39 +81,98 @@
   }
 
 
-  &.link-block{
-    .headline{
+  &.link-block {
+    .headline {
       @include transition();
       background-size: 210%;
       background-position-x: 100%;
       background-image: linear-gradient(90deg, black 50%, white 50%);
     }
-    .text{
-      .weiterlesen{
+
+    .text {
+      .weiterlesen {
         @include transition();
         background-size: 210%;
         background-position-x: 100%;
         background-image: linear-gradient(90deg, black 50%, white 50%);
       }
     }
+
     &:hover, &:focus {
-      .text-container{
-        .headline{
+      .text-container {
+        .headline {
           background-position-x: -2px;
           color: white;
         }
-        .text{
-          .weiterlesen{
+
+        .text {
+          .weiterlesen {
             background-position-x: -2px;
             color: white;
 
-            &:after{
-              background-image: $link-pfeil-weis ;
+            &:after {
+              background-image: $link-pfeil-weis;
             }
           }
         }
       }
     }
 
+  }
+
+  &.links, &.rechts {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: $rows;
+    grid-column-gap: $column-gap;
+    grid-row-gap: $row-gap;
+
+    > * {
+      grid-column: span;
+    }
+  }
+
+  &.links {
+    figure {
+      grid-column: 1/9;
+    }
+
+    .text-container {
+      grid-column: 1/9;
+    }
+
+    @media all and (min-width: $break3) {
+      figure {
+        grid-row-start: 1;
+        grid-column: 1/5;
+      }
+
+      .text-container {
+        grid-row-start: 1;
+        grid-column: 6/9;
+      }
+    }
+  }
+
+  &.rechts {
+    figure {
+      grid-column: 1/9;
+    }
+
+    .text-container {
+      grid-column: 1/9;
+    }
+
+    @media all and (min-width: $break3) {
+      figure {
+        grid-row-start: 1;
+        grid-column: 5/9;
+      }
+
+      .text-container {
+        grid-row-start: 1;
+        grid-column: 1/4;
+      }
+    }
   }
 }

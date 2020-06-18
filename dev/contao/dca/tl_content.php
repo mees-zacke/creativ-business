@@ -19,6 +19,17 @@ PaletteManipulator::create()
     ->applyToPalette('text', 'tl_content')
     ;
 
+$GLOBALS['TL_DCA']['tl_content']['fields']['linkTo'] = [
+    'label'                   => &$GLOBALS['TL_LANG']['MSC']['url'],
+    'search'                  => true,
+    'inputType'               => 'text',
+    'eval'                    => ['maxlength'=>255, 'dcaPicker'=>true, 'tl_class'=>'w50'],
+    'sql'                     => "varchar(255) NOT NULL default ''"
+
+];
+
+// Auswählbare Position und Breite von Inhaltselementen
+
 $GLOBALS['TL_DCA']['tl_content']['palettes'] = str_replace(',cssID',',gridStart,gridSpan,cssID',$GLOBALS['TL_DCA']['tl_content']['palettes']);
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['gridSpan'] = [
@@ -45,11 +56,37 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['gridStart'] = [
     ],
 ];
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['linkTo'] = [
-    'label'                   => &$GLOBALS['TL_LANG']['MSC']['url'],
-    'search'                  => true,
-    'inputType'               => 'text',
-    'eval'                    => ['maxlength'=>255, 'dcaPicker'=>true, 'tl_class'=>'w50'],
-    'sql'                     => "varchar(255) NOT NULL default ''"
+// Auswählbare Bildbreite und Bildposition im Element
 
+PaletteManipulator::create()
+
+    ->addField('imagePosition', 'singleSRC' , PaletteManipulator::POSITION_AFTER)
+    ->addField('imageSpan', 'imagePosition' , PaletteManipulator::POSITION_AFTER)
+
+    ->applytoSubpalette('addImage', 'tl_content')
+;
+
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['imageSpan'] = [
+    'label' => ['Bildbreite', 'Breite des Bildes im Elementraster (Muss kleiner sein als Elementbreite - 3)'],
+    'inputType' => 'select',
+    'options' => ['default', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+    'eval' => ['tl_class'=>'w50' ],
+    'sql' => [
+        'type' => 'string',
+        'length' => 32,
+        'default' => ''
+    ],
+];
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['imagePosition'] = [
+    'label' => ['Bildposition', 'Position des Bildes vom Text'],
+    'inputType' => 'select',
+    'options' => ['keine Ausrichtung','links', 'rechts'],
+    'eval' => ['tl_class'=>'w50 clr' ],
+    'sql' => [
+        'type' => 'string',
+        'length' => 32,
+        'default' => ''
+    ],
 ];

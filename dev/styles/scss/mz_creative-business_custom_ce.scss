@@ -1,41 +1,52 @@
-body{
-  #container{
-    #main{
-      .inside{
-        .mod_article{
-          .cce-schwarzer-kasten{
-            .text-container{
-              display: inline-block;
-              padding: 1rem;
-              background-color: black;
-              color: white;
-              .headline{
-                background: none;
+body {
+  #wrapper {
+    #container {
+      #main {
+        .inside {
+          .mod_article {
+            .cce-schwarzer-kasten {
+              text-align: center;
+
+              .text-container {
+                display: inline-block;
+                padding: 1rem;
+                background-color: black;
                 color: white;
-              }
-              .text{
-                background: none;
-                .weiterlesen{
-                  @include hover-background(black);
-                  &:after{
-                    content: $link-pfeil-weis;
-                  }
-                  &:hover, &:focus{
-                    &:after{
-                      content: $link-pfeil-schwarz;
+
+                .headline {
+                  background: none;
+                  color: white;
+                }
+
+                .text {
+                  background: none;
+
+                  .weiterlesen {
+                    @include hover-background(black);
+
+                    &:after {
+                      content: $link-pfeil-weis;
+                    }
+
+                    &:hover, &:focus {
+                      &:after {
+                        content: $link-pfeil-schwarz;
+                      }
                     }
                   }
                 }
               }
-            }
-            @include link-block(black);
-            &.link-block{
-              &:hover, &:focus{
-                .text-container{
-                  .text{
-                    .weiterlesen{
-                      &:after{
-                        content: $link-pfeil-schwarz;
+
+              @include link-block(black);
+
+              &.link-block {
+                &:hover, &:focus {
+                  .text-container {
+                    .text {
+                      .weiterlesen {
+                        &:after {
+                          content: $link-pfeil-schwarz;
+                        }
                       }
                     }
                   }
