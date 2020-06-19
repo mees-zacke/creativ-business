@@ -35,59 +35,78 @@
   }
 }
 
-.schwarzer-hintergrund {
-  padding: 1rem;
-  background-color: black;
-
-  &.ce_text {
-    padding: 0;
-    background: none;
-
-    .text {
-      padding: 1rem;
-      background-color: black;
-
-      a {
-        @include hover-background(black);
-      }
-
-      * {
-        color: white;
-      }
-
-      .weiterlesen {
-        &:after {
-          background-image: $link-pfeil-weis;
+#wrapper{
+  .schwarzer-hintergrund {
+    padding: 1rem;
+    background-color: black;
+    *{
+      color: white;
+    }
+    a{
+      @include hover-background(black);
+      &:hover, &:focus{
+        >*{
+          color: black;
         }
       }
     }
 
-    @include link-block(black);
+    &.ce_text, .ce_text {
+      padding: 0;
+      background: none;
 
-    &.link-block {
-      .text-container {
-        .headline {
-          @include transition();
-          background-size: 210%;
-          background-position-x: 100%;
-          background-image: linear-gradient(90deg, black 50%, white 50%);
+      .text {
+        padding: 1rem;
+        background-color: black;
+
+        a {
+          @include hover-background(black);
+        }
+
+        * {
+          color: white;
+        }
+
+        .weiterlesen {
+          &:after {
+            background-image: $link-pfeil-weis;
+          }
+          &:hover, &:focus{
+            color: black;
+            &:after{
+              background-image: $link-pfeil-schwarz;
+            }
+          }
         }
       }
 
-      &:hover, &:focus {
+      @include link-block(black);
+
+      &.link-block {
         .text-container {
           .headline {
-            background-position-x: -2px;
-            color: white;
+            @include transition();
+            background-size: 210%;
+            background-position-x: 100%;
+            background-image: linear-gradient(90deg, black 50%, white 50%);
           }
+        }
 
-          .text {
-            .weiterlesen {
+        &:hover, &:focus {
+          .text-container {
+            .headline {
               background-position-x: -2px;
-              color: black;
+              color: white;
+            }
 
-              &:after {
-                background-image: $link-pfeil-schwarz;
+            .text {
+              .weiterlesen {
+                background-position-x: -2px;
+                color: black;
+
+                &:after {
+                  background-image: $link-pfeil-schwarz;
+                }
               }
             }
           }
@@ -95,4 +114,19 @@
       }
     }
   }
+}
+
+.vertikal-zentriert{
+  @media all and (min-width: $break3){
+    position: relative;
+    .text-container{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.horizontal-zentriert{
+  text-align: center;
 }

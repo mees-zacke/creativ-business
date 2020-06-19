@@ -1,0 +1,10 @@
+.ce_colsetStart{
+  >div{
+  }
+  @media all and (max-width: $break2){
+    >div{
+      clear: both;
+      width: 100%;
+    }
+  }
+}

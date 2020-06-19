@@ -30,7 +30,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['linkTo'] = [
 
 // Auswählbare Position und Breite von Inhaltselementen
 
-$GLOBALS['TL_DCA']['tl_content']['palettes'] = str_replace(',cssID',',gridStart,gridSpan,cssID',$GLOBALS['TL_DCA']['tl_content']['palettes']);
+$GLOBALS['TL_DCA']['tl_content']['palettes'] = str_replace(',type',',type,gridStart,gridSpan',$GLOBALS['TL_DCA']['tl_content']['palettes']);
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['gridSpan'] = [
     'label' => ['Breite', 'Breite des Elements innerhalb des 12er Rasters'],

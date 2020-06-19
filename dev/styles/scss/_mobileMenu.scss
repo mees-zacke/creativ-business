@@ -103,6 +103,7 @@ body {
                   .nav-link-container {
                     display: flex;
                     justify-content: space-between;
+                    margin-bottom: 0.25em;
 
                     .sub-opener {
                       @include transition();
@@ -140,7 +141,6 @@ body {
               top: -100%;
               box-shadow: $shadow;
               .opener-suche-container {
-                justify-content: flex-start;
                 .mobile-opener{
                   .hamburger-icon-container{
                     &:hover{
@@ -178,6 +178,7 @@ body {
 
                     ul.level_2 {
                       display: block;
+                      max-width: 8em;
 
                       li {
                         font-size: 1rem;

@@ -1,9 +1,30 @@
 .ce_text {
+  margin-bottom: 3rem;
     grid-column-start: 2;
   grid-column-end: 13;
   @media all and (min-width: $break3){
     grid-column-start: 3;
     grid-column-end: 11;
+  }
+  &[class*='cce'] {
+    display: grid;
+    grid-template-columns: repeat(($columns - 1), 1fr);
+    grid-template-rows: $rows;
+    grid-column-gap: $column-gap;
+    grid-row-gap: $row-gap;
+    > * {
+      grid-column: span ($columns - 1);
+    }
+    @media all and (min-width: $break3){
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: $rows;
+      grid-column-gap: $column-gap;
+      grid-row-gap: $row-gap;
+      > * {
+        grid-column: span 8;
+      }
+    }
   }
 
   p, h1, h2, h3, h4, h5, h6 {
@@ -18,11 +39,17 @@
     }
 
     a {
+      display: inline-block;
+      text-decoration: underline;
       @include hover-background(white);
+      >*{
+        text-decoration: underline;
+      }
     }
 
     .weiterlesen {
       @include link-pfeil;
+      text-decoration: none;
     }
   }
 
@@ -126,7 +153,7 @@
 
   &.links, &.rechts {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(($columns - 1), 1fr);
     grid-template-rows: $rows;
     grid-column-gap: $column-gap;
     grid-row-gap: $row-gap;
@@ -134,22 +161,19 @@
       grid-column: span;
     }
     @media all and (min-width: $break3){
-      position: relative;
-      .text-container{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-      }
+      grid-template-columns: repeat(8 , 1fr);
     }
   }
 
   &.links {
     figure {
-      grid-column: 1/9;
+      grid-column-start: 1;
+      grid-column-end: $columns;
     }
 
     .text-container {
-      grid-column: 1/9;
+      grid-column-start: 2;
+      grid-column-end: $columns;
     }
 
     @media all and (min-width: $break3) {
@@ -181,11 +205,11 @@
 
   &.rechts {
     figure {
-      grid-column: 1/9;
+      grid-column: 1/($columns + 1);
     }
 
     .text-container {
-      grid-column: 1/9;
+      grid-column: 1/($columns - 1);
     }
 
     @media all and (min-width: $break3) {

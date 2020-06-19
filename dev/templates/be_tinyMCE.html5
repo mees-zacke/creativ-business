@@ -39,30 +39,9 @@ setTimeout(function() {
     style_formats: [
       {title: 'Styles', items: [
           {
-            title: 'Author',
-            block: 'strong',
-            classes: 'author',
-            exact: true,
-            styles: {
-              color:'#858585'
-            }
-          },
-          {
             title: 'Teaser',
             block: 'span',
             classes: 'teaser',
-            exact: true,
-          },
-          {
-            title: 'Zwei Spalten',
-            block: 'div',
-            classes: 'zweiSpalten',
-            wrapper: true,
-          },
-          {
-            title: 'kleiner Text',
-            block: 'p',
-            classes: 'kleinerText',
             exact: true,
           },
           {

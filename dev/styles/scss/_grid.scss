@@ -91,7 +91,7 @@ $row-gap: 2vh;
         grid-row-gap: $row-gap;
 
         > * {
-          grid-column: span $i;
+          grid-column: span ($columns - 1);
         }
       }
 

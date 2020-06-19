@@ -228,10 +228,16 @@ body {
           * {
             color: white;
           }
-
+          .mod_article{
+            >*:not(.ce_swiperStart){
+              @include pageWidth();
+              width: 100%;
+              display: block;
+            }
+          }
           .ce_headline {
             @include pageWidth;
-            margin-bottom: 0.5em;
+            padding-bottom: 0.5em;
           }
 
         }
@@ -259,6 +265,11 @@ body {
           .mod_article {
             @include grid(12, auto, 2vw, 2vh);
             @include pageWidth;
+            >*{
+              &:last-of-type{
+                margin-bottom: 4rem;
+              }
+            }
           }
 
           .ce_text{
