@@ -17,6 +17,7 @@ PaletteManipulator::create()
     ->addField('target', 'link_legend', PaletteManipulator::POSITION_APPEND)
 
     ->applyToPalette('text', 'tl_content')
+    ->applyToPalette('headline', 'tl_content')
     ;
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['linkTo'] = [

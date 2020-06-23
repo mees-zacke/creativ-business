@@ -210,7 +210,7 @@ body {
         @media all and (min-width: $break3) {
           padding-bottom: 60px;
         }
-        @media all and (min-width: 3000px) {
+        @media all and (min-width: 3300px) {
           .inside {
             .mod_article {
               figure {
@@ -478,6 +478,31 @@ body {
 
             &:last-of-type {
               padding-bottom: 82px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.bewerbung{
+    #wrapper{
+      #container{
+        #main{
+          .mod_article{
+            .ce_headline{
+              &.link-block{
+                @include transition();
+                background: none;
+                >*{
+                  color: lighten($fontColor, 60%);
+                }
+                &:hover, &:focus{
+                  >*{
+                    color: $fontColor;
+                  }
+                }
+              }
             }
           }
         }

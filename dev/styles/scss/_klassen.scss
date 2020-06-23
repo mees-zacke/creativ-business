@@ -50,6 +50,18 @@
         }
       }
     }
+    .ce_hyperlink{
+      .hyperlink_txt{
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    .ce_headline{
+      &.link-block{
+        @include hover-background(black);
+      }
+    }
 
     &.ce_text, .ce_text {
       padding: 0;
@@ -57,6 +69,7 @@
 
       .text {
         background-color: black;
+        padding: 1rem;
 
         a {
           @include hover-background(black);
@@ -110,6 +123,16 @@
             }
           }
         }
+      }
+    }
+    &.ce_text{
+      .headline{
+        color: black;
+      }
+    }
+    .ce_text{
+      .text{
+        padding: 0;
       }
     }
   }
