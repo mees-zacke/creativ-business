@@ -3,19 +3,16 @@
     li {
       &:first-of-type {
         figure {
-          margin-left: 0;
-        }
-      }
-
-      &:last-of-type {
-        figure {
-          margin-right: 0;
+          margin-left: -($galerieAbstand / 2);
         }
       }
     }
   }
 
-  .cols_2, .cols_3, .cols_4, .cols_5, .cols_6 {
+
+
+
+  .cols_2, .cols_3, .cols_4, .cols_5, .cols_6, .cols_7, .cols_8, .cols_9, .cols_10, .cols_11, .cols_12 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -23,92 +20,86 @@
 
   }
 
-  .cols_2 {
-
-    > li {
-      width: 50%;
-      &:nth-of-type(2n){
-        figure{
-          margin-right: 0;
+  @media all and (max-width: $break3){
+    @for $col from 1 through 12{
+      @if($col % 2 == 0){
+        .cols_#{$col}{
+          > li {
+            width: 50%;
+            &:nth-of-type(2n){
+              figure{
+                margin-left: ($galerieAbstand / 2);
+              }
+            }
+            &:nth-of-type(2n+1){
+              figure{
+                margin-left: -($galerieAbstand / 2);
+              }
+            }
+            > * {
+              padding: ($galerieAbstand / 2);
+              width: 100%;
+              margin-bottom: ($galerieAbstand / 2);
+            }
+          }
         }
       }
-      &:nth-of-type(2n-1){
-        figure{
-          margin-left: 0;
-        }
-      }
-
-
-      > * {
-        margin: $spaltenAbstand;
-      }
-    }
-  }
-
-  .cols_3 {
-    > li {
-      width: 33.333%;
-
-      > * {
-        margin: $spaltenAbstand;
-      }
-    }
-  }
-
-  .cols_4 {
-
-    > li {
-      width: 50%;
-
-      > * {
-        margin: $spaltenAbstand;
-      }
-    }
-  }
-
-  .cols_5 {
-
-    > li {
-      width: 33.333%;
-
-      > * {
-        margin: $spaltenAbstand;
-      }
-    }
-  }
-
-  .cols_6 {
-
-    > li {
-      width: 50%;
-
-      > * {
-        margin: $spaltenAbstand;
-      }
-    }
-  }
-
-  @media screen and (min-width: $break2) {
-    .cols_2, .cols_3, .cols_4, .cols_5, .cols_6 {
-      > li {
-        >* {
-          margin: $spaltenAbstand*3;
+      @if ($col % 2 != 0){
+        .cols_#{$col}{
+          > li {
+            width: 33.333%;
+            &:nth-of-type(3n){
+              figure{
+                margin-left: ($galerieAbstand / 2);
+              }
+            }
+            &:nth-of-type(3n+1){
+              figure{
+                margin-left: -($galerieAbstand / 2);
+              }
+            }
+            > * {
+              padding: ($galerieAbstand / 2);
+              width: 100%;
+              margin-bottom: ($galerieAbstand / 2);
+            }
+          }
         }
       }
     }
-    .cols_4 {
-      > li {
-        width: 25%;
+  }
+
+  @media screen and (min-width: $break3) {
+    ul {
+      li {
+        &:first-of-type {
+          figure {
+            margin-left: -($galerieAbstand);
+          }
+        }
       }
     }
-    .cols_5 {
-      > li {
-        width: 20%;
-      }
-    }
-    .cols_6 {
-      > li {
-        width: 16.666%;
+
+    @for $col from 1 through 12{
+      .cols_#{$col}{
+        >li{
+          width: (100% / $col);
+          &:nth-of-type(#{$col}n){
+            figure{
+              margin-left: $galerieAbstand;
+            }
+          }
+          &:nth-of-type(#{$col}n+1){
+            figure{
+              margin-left: -($galerieAbstand);
+            }
+          }
+          > * {
+            padding: $galerieAbstand;
+            width: 100%;
+            margin-bottom: $galerieAbstand;
+          }
+        }
       }
     }
   }
