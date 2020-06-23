@@ -40,18 +40,108 @@ $linkColor: $fontColor;
 $colorImageCaption: $fontColor;
 
 // Schrift Größen
-$fontSize: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 300)));
+
+$max-fontSize: 22; // Font Size bei größter Größe
+$min-fontSize: 18; // Font Size bei mobiler Größe
+
+$max-teaserSize: 27; // Teaser Size bei größter Größe
+$min-teaserSize: 22; // Teaser Size bei mobiler Größe
+
+$max-linkSize: 18; // Link Size bei größter Größe
+$min-linkSize: 14; // Link Size bei mobiler Größe
+
 $fontWidth: 400;
-$lineHeight: 1.666;
+$lineHeight: 1.5;
+
+// Überschrift Größen
+
+// h1
+$max-h1Size: 90; // h1 Size bei größter Größe
+$min-h1Size: 40; // h1 Size bei mobiler Größe
+
+// h2
+$max-h2Size: 72; // h2 Size bei größter Größe
+$min-h2Size: 35; // h2 Size bei mobiler Größe
+
+// h3
+$max-h3Size: 54; // h3 bei größter Größe
+$min-h3Size: 30; // h3 bei mobiler Größe
+
+// h4
+$max-h4Size: 36; // h4 bei größter Größe
+$min-h4Size: 25; // h4 bei mobiler Größe
+
+// h5
+$max-h5Size: $max-teaserSize; // h5 bei größter Größe
+$min-h5Size: $min-teaserSize; // h5 bei mobiler Größe
+
+// h6
+$max-h6Size: $max-fontSize; // h6 bei größter Größe
+$min-h6Size: $min-fontSize; // h6 bei mobiler Größe
 
 $hWidth: 400;
-$h1Size: calc(40px + (90 - 40) * ((100vw - 320px) / (1600 - 300)));
-$h2Size: calc(35px + (80 - 35) * ((100vw - 320px) / (1600 - 300)));
-$h3Size: calc(30px + (60 - 30) * ((100vw - 320px) / (1600 - 300)));
-$h4Size: calc(25px + (40 - 25) * ((100vw - 320px) / (1600 - 300)));
-$h5Size: $fontSize;
-$h6Size: $fontSize;
-$hLineHeight: 1.4;
+$hLineHeight: 1.5;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////// Berechnungen von Schriften ////////////////////////////////////////////////////////////////////////////
+//////////// Fließtext
+$max-fontSize-rem-base: ($max-fontSize / 16);
+$max-fontSize-rem: #{$max-fontSize-rem-base}rem;
+$min-fontSize-rem-base: ($min-fontSize / 16);
+$min-fontSize-rem: #{$min-fontSize-rem-base}rem;
+$fontSize: calc(#{$min-fontSize}px + (#{$max-fontSize} - #{$min-fontSize}) * ((100vw - 320px) / (1600 - 300)));
+//////////// Teasertext
+$max-teaserSize-rem-base: ($max-teaserSize / 16);
+$max-teaserSize-rem: #{$max-teaserSize-rem-base}rem;
+$min-teaserSize-rem-base: ($min-teaserSize / 16);
+$min-teaserSize-rem: #{$min-teaserSize-rem-base}rem;
+$teaserSize: calc(#{$min-teaserSize}px + (#{$max-teaserSize} - #{$min-teaserSize}) * ((100vw - 320px) / (1600 - 300)));
+//////////// Link
+$max-linkSize-rem-base: ($max-linkSize / 16);
+$max-linkSize-rem: #{$max-linkSize-rem-base}rem;
+$min-linkSize-rem-base: ($min-linkSize / 16);
+$min-linkSize-rem: #{$min-linkSize-rem-base}rem;
+$linkSize: calc(#{$min-linkSize}px + (#{$max-linkSize} - #{$min-linkSize}) * ((100vw - 320px) / (1600 - 300)));
+
+//////////// Überschriften
+/////////// h1
+$max-h1Size-rem-base: ($max-h1Size / 16);
+$max-h1Size-rem: #{$max-h1Size-rem-base}rem;
+$min-h1Size-rem-base: ($min-h1Size / 16);
+$min-h1Size-rem: #{$min-h1Size-rem-base}rem;
+$h1Size: calc(#{$min-h1Size}px + (#{$max-h1Size} - #{$min-h1Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////// h2
+$max-h2Size-rem-base: ($max-h2Size / 16);
+$max-h2Size-rem: #{$max-h2Size-rem-base}rem;
+$min-h2Size-rem-base: ($min-h2Size / 16);
+$min-h2Size-rem: #{$min-h2Size-rem-base}rem;
+$h2Size: calc(#{$min-h2Size}px + (#{$max-h2Size} - #{$min-h2Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////// h3
+$max-h3Size-rem-base: ($max-h3Size / 16);
+$max-h3Size-rem: #{$max-h3Size-rem-base}rem;
+$min-h3Size-rem-base: ($min-h3Size / 16);
+$min-h3Size-rem: #{$min-h3Size-rem-base}rem;
+$h3Size: calc(#{$min-h3Size}px + (#{$max-h3Size} - #{$min-h3Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////// h4
+$max-h4Size-rem-base: ($max-h4Size / 16);
+$max-h4Size-rem: #{$max-h4Size-rem-base}rem;
+$min-h4Size-rem-base: ($min-h4Size / 16);
+$min-h4Size-rem: #{$min-h4Size-rem-base}rem;
+$h4Size: calc(#{$min-h4Size}px + (#{$max-h4Size} - #{$min-h4Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////// h5
+$max-h5Size-rem-base: ($max-h5Size / 16);
+$max-h5Size-rem: #{$max-h5Size-rem-base}rem;
+$min-h5Size-rem-base: ($min-h5Size / 16);
+$min-h5Size-rem: #{$min-h5Size-rem-base}rem;
+$h5Size: calc(#{$min-h5Size}px + (#{$max-h5Size} - #{$min-h5Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////// h6
+$max-h6Size-rem-base: ($max-h6Size / 16);
+$max-h6Size-rem: #{$max-h6Size-rem-base}rem;
+$min-h6Size-rem-base: ($min-h6Size / 16);
+$min-h6Size-rem: #{$min-h6Size-rem-base}rem;
+$h6Size: calc(#{$min-h6Size}px + (#{$max-h6Size} - #{$min-h6Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $contentWidth: 100rem;
 @mixin contentWidth{
@@ -87,10 +177,10 @@ $grid-columns: 5fr 7fr;
     @include transition();
     background-size: 210%;
     background-position-x: 100%;
-    background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
+    background-image: linear-gradient(90deg, (invert($background, 100%) 50%),rgba(0,0,0,0) 50%);
 
   &:hover, &:focus {
-      background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
+      background-image: linear-gradient(90deg, (invert($background, 100%) 50%),rgba(0,0,0,0) 50%);
       background-position-x: -2px;
       color: $background;
     }
@@ -152,6 +242,13 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
 @mixin link-pfeil{
   padding: 5px;
   white-space: nowrap;
+  font-size: $linkSize;
+  @media all and (max-width: 300px){
+    font-size: $min-linkSize-rem;
+  }
+  @media all and (min-width: 1600px) {
+    font-size: $max-linkSize-rem;
+  }
   &:after {
     @include transition();
     content: " ";

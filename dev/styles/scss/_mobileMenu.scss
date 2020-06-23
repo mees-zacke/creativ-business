@@ -7,7 +7,7 @@ body {
 
           #mobile-menu {
             @include transition();
-            z-index: 2;
+            z-index: 1500;
             top: 0;
             left: -100vw;
             width: 100vw;
@@ -64,12 +64,25 @@ body {
                         color: white;
                         background-color: black;
                         border: none;
-                        border-bottom: 1px solid white;
                         width: 90%;
                         padding: 3px;
 
                         &:focus {
                           outline: none;
+                        }
+                      }
+                      &:after{
+                        @include transition();
+                        content: " ";
+                        height: 1px;
+                        width: 100%;
+                        display: block;
+                        background-color: white;
+                        transform: translateX(-98%);
+                      }
+                      &:hover, &:focus-within {
+                        &:after{
+                          transform: translateX(0);
                         }
                       }
                     }
@@ -157,7 +170,7 @@ body {
                 }
               }
               .mod_navigation {
-                padding: 10px 2rem 0;
+                padding: 20px 2rem 0;
 
                 ul.level_1 {
                   display: flex;

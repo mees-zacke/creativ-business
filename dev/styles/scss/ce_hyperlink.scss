@@ -1,4 +1,5 @@
 .ce_hyperlink {
+  margin-bottom: 1rem;
   a {
     @include button();
     text-decoration: none;
@@ -8,5 +9,19 @@
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+#wrapper{
+  .schwarzer-hintergrund{
+    .ce_hyperlink{
+      a{
+        &:hover, &:focus{
+          color: black;
+          >*{
+            color: black;
+          }
+        }
+      }
+    }
   }
 }
