@@ -1,6 +1,50 @@
 .mod_search {
+  grid-column: 1/ span 12;
+
   > .searchWrapper {
     form {
+      .formbody {
+        display: flex;
+        padding: 10px;
+
+        .widget- {
+          &text {
+            width: 175px;
+
+            input {
+              padding: 3px;
+              width: 90%;
+              border: none;
+
+              &:focus {
+                outline: none;
+              }
+            }
+
+            &:after {
+              @include transition();
+              content: " ";
+              height: 1px;
+              width: 100%;
+              display: block;
+              background-color: black;
+              transform: translateX(-98%);
+            }
+
+            &:hover, &:focus-within {
+              &:after {
+                transform: translateX(0);
+              }
+            }
+          }
+
+          &submit {
+            width: 28px;
+            padding: 4px;
+          }
+        }
+      }
+
       .formbody {
         .widget {
           display: inline-block;

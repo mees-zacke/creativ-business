@@ -46,6 +46,11 @@ function templates() {
 	return src('dev/templates/**/*.+(html|html5|tl)')
 			.pipe(dest('dist/templates'))
 }
+function fontawesome() {
+	return src('dev/fontawesome')
+		.pipe(dest('dist/files/layout/'));
+
+}
 
 function ymlTransport() {
 	return src('dev/config/*.yml')
@@ -130,7 +135,7 @@ function clear() {
 
 // Complex Tasks
 const style = series(makeSass, compressCSS, makeCSS);
-const copy = series(templates, ymlTransport, appResTransport, fontsTransport);
+const copy = series(templates, fontawesome, ymlTransport, appResTransport, fontsTransport);
 const pwa = series(pwaFiles, pwaWeb);
 const build = series(clear, parallel(style, javaScript, copy, images));
 

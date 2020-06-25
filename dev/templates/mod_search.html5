@@ -12,7 +12,8 @@
         <input type="search" name="keywords" id="ctrl_keywords_<?= $this->uniqueId ?>" class="text" value="<?= $this->keyword ?>">
       </div>
       <div class="widget widget-submit">
-        <button type="submit" id="ctrl_submit_<?= $this->uniqueId ?>" class="submit"><?= $this->search ?></button>
+          <input type="image" src="files/layout/images/lupe.svg" id="ctrl_submit_<?= $this->uniqueId ?>" class="submit">
+          <!--<button type="submit" id="ctrl_submit_<?= $this->uniqueId ?>" class="submit"><?= $this->search ?></button> -->
       </div>
       <?php if ($this->advanced): ?>
         <div class="widget widget-radio">

@@ -91,3 +91,4 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['imagePosition'] = [
         'default' => ''
     ],
 ];
+

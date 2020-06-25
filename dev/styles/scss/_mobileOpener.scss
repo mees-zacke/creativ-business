@@ -9,7 +9,9 @@ $translateY: ($height-icon / 2);
 $translateX: 0;
 
 .mobile-opener {
-  margin-right: 5rem;
+  @media all and (min-width: $break1) {
+    margin-right: 5rem;
+  }
 
   .hamburger-icon-container {
     display: block;
