@@ -1,0 +1,42 @@
+
+<div class="layout_full block<?= $this->class ?>" itemscope itemtype="http://schema.org/Article">
+
+
+  <?php if ($this->hasMetaFields): ?>
+  <?php
+      $Monate = array("Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember");
+      $Tag = date("d",$this->time);
+  $Monat = date("n",$this->time)-1;
+  $Jahr = date("Y",$this->time);
+  $theDatum = $Tag." ".$Monate[$Monat]." ".$Jahr;
+  ?>
+  <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= $theDatum ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
+  <?php endif; ?>
+
+  <h1 itemprop="name"><?= $this->newsHeadline ?></h1>
+
+  <?php if ($this->hasText): ?>
+    <?= $this->text ?>
+  <?php else: ?>
+    <div class="ce_text block">
+      <?php if (!$this->addBefore): ?>
+        <?= $this->teaser ?>
+      <?php endif; ?>
+
+      <?php if ($this->addBefore): ?>
+        <?= $this->teaser ?>
+      <?php endif; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($this->enclosure): ?>
+    <ul class="enclosure">
+      <?php foreach ($this->enclosure as $enclosure): ?>
+        <li class="download-element ext-<?= $enclosure['extension'] ?>">
+           <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>"><?= $enclosure['link'] ?> <span class="size">(<?= $enclosure['filesize'] ?>)</span></a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  <?php endif; ?>
+
+</div>

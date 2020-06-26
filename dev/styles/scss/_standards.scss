@@ -93,6 +93,7 @@ h3 {
 
 h4 {
   font-size: $h4Size;
+  font-weight: 800;
   display: inline-block;
   @media all and (max-width: 300px){
     font-size: $min-h4Size-rem;

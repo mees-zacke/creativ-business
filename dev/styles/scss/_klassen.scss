@@ -96,28 +96,32 @@
 
       &.link-block {
         .text-container {
-          .headline {
-            @include transition();
-            background-size: 210%;
-            background-position-x: 100%;
-            background-image: linear-gradient(90deg, black 50%, white 50%);
+          .text-container-inner{
+            .headline {
+              @include transition();
+              background-size: 210%;
+              background-position-x: 100%;
+              background-image: linear-gradient(90deg, black 50%, white 50%);
+            }
           }
         }
 
         &:hover, &:focus {
           .text-container {
-            .headline {
-              background-position-x: -2px;
-              color: white;
-            }
-
-            .text {
-              .weiterlesen {
+            .text-container-inner{
+              .headline {
                 background-position-x: -2px;
-                color: black;
+                color: white !important;
+              }
 
-                &:after {
-                  background-image: $link-pfeil-schwarz;
+              .text {
+                .weiterlesen {
+                  background-position-x: -2px;
+                  color: black;
+
+                  &:after {
+                    background-image: $link-pfeil-schwarz;
+                  }
                 }
               }
             }

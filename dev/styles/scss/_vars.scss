@@ -5,18 +5,18 @@ $break3: 64em;
 $break4: 90em;
 
 // Farben
-$color1: rgb(0,0,0);
-$color2: rgb(0,75,154);
-$color3: rgb(0,160,230);
-$color4: rgb(205,20,15);
-$color5: rgb(255,255,0);
-$color6: rgb(60,165,50);
+$color1: rgb(0, 0, 0);
+$color2: rgb(0, 75, 154);
+$color3: rgb(0, 160, 230);
+$color4: rgb(205, 20, 15);
+$color5: rgb(255, 255, 0);
+$color6: rgb(60, 165, 50);
 
-$colorPG1: rgb(255,250,125);
-$colorPG2: rgb(255,210,125);
-$colorPG3: rgb(255,170,125);
-$colorPG4: rgb(255,130,125);
-$colorPG5: rgb(255,90,125);
+$colorPG1: rgb(255, 250, 125);
+$colorPG2: rgb(255, 210, 125);
+$colorPG3: rgb(255, 170, 125);
+$colorPG4: rgb(255, 130, 125);
+$colorPG5: rgb(255, 90, 125);
 
 $backgroundColor1: rgb(255, 255, 255);
 
@@ -31,7 +31,7 @@ $link-pfeil-schwarz: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
 $link-pfeil-weis: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
 
 // Schrift Farben
-$fontColor: rgb(0,0,0);
+$fontColor: rgb(0, 0, 0);
 $fontColor2: rgb(0, 0, 0);
 
 $hColor: $color1;
@@ -144,7 +144,7 @@ $h6Size: calc(#{$min-h6Size}px + (#{$max-h6Size} - #{$min-h6Size}) * ((100vw - 3
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $contentWidth: 100rem;
-@mixin contentWidth{
+@mixin contentWidth {
   max-width: $contentWidth;
   margin-left: auto;
   margin-right: auto;
@@ -175,20 +175,21 @@ $galerieAbstand: 0.5rem;
   transition: ease all $time;
 }
 
-@mixin hover-background($background: white){
-    @include transition();
-    background-size: 210%;
-    background-position-x: 100%;
-    background-image: linear-gradient(90deg, (invert($background, 100%) 50%),rgba(0,0,0,0) 50%);
+@mixin hover-background($background: white) {
+  @include transition();
+  background-size: 210%;
+  background-position-x: 100%;
+  background-image: linear-gradient(90deg, (invert($background, 100%) 50%), rgba(0, 0, 0, 0) 50%);
 
   &:hover, &:focus {
-      background-image: linear-gradient(90deg, (invert($background, 100%) 50%),rgba(0,0,0,0) 50%);
-      background-position-x: -2px;
-      color: $background;
-    >*{
+    background-image: linear-gradient(90deg, (invert($background, 100%) 50%), rgba(0, 0, 0, 0) 50%);
+    background-position-x: -2px;
+    color: $background;
+
+    > * {
       color: $background;
     }
-    }
+  }
 
 }
 
@@ -203,7 +204,7 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
   background-color: $normal;
   font-family: $font1;
   @include transition();
-  span{
+  span {
     @include transition();
     color: $active;
     position: relative;
@@ -211,16 +212,16 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
     padding-right: 2px;
     background-color: $normal;
     z-index: 1;
-    @media all and (min-width: $break2){
+    @media all and (min-width: $break2) {
       margin-right: 5vw;
     }
   }
-  &:after{
+  &:after {
     @include transition();
     position: absolute;
     top: 15%;
     right: 5px;
-    content: $link-pfeil-weis ;
+    content: $link-pfeil-weis;
     height: 1rem;
     object-fit: cover;
     background-image: none;
@@ -230,25 +231,27 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
     border: 1px solid $normal;
     cursor: pointer;
     outline: none;
-    span{
+
+    span {
       background-color: $active;
       color: $normal;
     }
-    &:after{
+
+    &:after {
       content: $link-pfeil-schwarz;
       background-image: none;
     }
   }
-  @media screen and (min-width: $break2){
+  @media screen and (min-width: $break2) {
   }
 }
 
 
-@mixin link-pfeil{
+@mixin link-pfeil {
   padding: 5px;
   white-space: nowrap;
   font-size: $linkSize;
-  @media all and (max-width: 300px){
+  @media all and (max-width: 300px) {
     font-size: $min-linkSize-rem;
   }
   @media all and (min-width: 1600px) {
@@ -258,54 +261,55 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
     @include transition();
     content: " ";
     display: inline-block;
-    background-image: $link-pfeil-schwarz ;
+    background-image: $link-pfeil-schwarz;
     background-repeat: no-repeat;
     background-position-y: bottom;
     height: 1em;
     width: 6rem;
     margin-left: 1rem;
   }
-  &:hover, &:focus{
-    &:after{
+  &:hover, &:focus {
+    &:after {
       background-image: $link-pfeil-weis;
     }
   }
 
 }
 
-@mixin link-block($background: white){
-  &.link-block{
-    .text-container{
-      .headline{
-        @include transition();
-        background-size: 210%;
-        background-position-x: 100%;
-        background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
-      }
-      .text{
-        .weiterlesen{
-          @include transition();
-          background-size: 210%;
-          background-position-x: 100%;
-          background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
-        }
-      }
+@mixin link-block($background: white) {
+  &.link-block {
+    h1, h2, h3, h4, h5, h6 {
+      @include transition();
+      background-size: 210%;
+      background-position-x: 100%;
+      background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
     }
-    &:hover, &:focus {
-      .text-container{
-        .headline{
-          background-position-x: -2px;
-          color: $background;
-        }
-        .text{
-          .weiterlesen{
-            background-position-x: -2px;
-            color: $background;
 
-            &:after{
-              background-image: $link-pfeil-weis ;
-            }
-          }
+    .text, .ce_text {
+    }
+
+    .weiterlesen {
+      @include transition();
+      background-size: 210%;
+      background-position-x: 100%;
+      background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
+    }
+
+    &:hover, &:focus {
+      h1, h2, h3, h4, h5, h6 {
+        background-position-x: -2px;
+        color: $background;
+      }
+
+      .text, .ce_text {
+      }
+
+      .weiterlesen {
+        background-position-x: -2px;
+        color: $background;
+
+        &:after {
+          background-image: $link-pfeil-weis;
         }
       }
     }
