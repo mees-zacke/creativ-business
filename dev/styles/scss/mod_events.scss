@@ -1,10 +1,159 @@
 .mod_eventlist {
-  display: flex;
-  flex-wrap: wrap;
+  margin-top: 4rem;
+  @include grid(12, auto, 2vw, 2vh);
   margin-left: ($abstandAussen/-4);
   margin-right: ($abstandAussen/-4);
+  .layout_teaser{
+    grid-column: span 12;
+    >a{
+      @include link-block();
+      .event-image{
+        position: relative;
+        .date{
+          background-color: black;
+          width: 15%;
+          height: 33%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          margin-bottom: 0;
+          time{
+            span{
+              color: white;
+              display: block;
+              text-align: center;
+              &.tag{
+                line-height: 0.5;
+                font-size: 12vw;
+                margin-top: 30%;
+                @media all and (min-width: $break2) {
+                  font-size: 5.5vw;
+                }
+                @media all and (min-width: $break3) {
+                  font-size: 4vw;
+                  line-height: 0.6;
+                }
+                @media all and (min-width: 1600px) {
+                  font-size: 64px;
+                }
+              }
+              &.monat{
+                font-size: 8vw;
+                @media all and (min-width: $break2) {
+                  font-size: 4vw;
+                }
+                @media all and (min-width: $break3) {
+                  font-size: 2.4vw;
+                }
+                @media all and (min-width: 1600px) {
+                  font-size: 38.4px;
+                }
+              }
+            }
+          }
+        }
+      }
+      h5{
+        display: inline-block;
+      }
+        p{
+          margin-bottom: 0;
+        }
+      .more-container{
+        text-align: end;
+        .more{
+          font-size: $linkSize;
+          color: lighten($fontColor, 60%);
+          @include link-pfeil;
+          display: inline-block;
+
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $break2) {
+    .layout_teaser{
+      grid-column: span 6;
+      margin-bottom: 2rem;
+    }
+  }
+  @media all and (min-width: $break3) {
+    .layout_teaser{
+      grid-column: span 4;
+      margin-bottom: 4rem;
+    }
+  }
 }
 
-.mod_eventmenu {
 
+.mod_eventreader{
+  .layout_full{
+    @include grid(12, auto, 2vw, 2vh);
+    .info{
+      grid-column: span 12;
+      display: flex;
+      align-items: flex-end;
+      margin-left: 10px;
+      .date{
+        display: inline-block;
+        background-color: black;
+        padding: 2vw 3vw 0;
+        margin-right: 5%;
+
+        @media all and (min-width: $break2) {
+          padding: 0.5vw 1vw 0;
+        }
+        @media all and (min-width: $break3) {
+        }
+        @media all and (min-width: 1600px) {
+          padding: 8px 16px 0;
+        }
+        time{
+          span{
+            color: white;
+            display: block;
+            text-align: center;
+            &.tag{
+              line-height: 0.5;
+              font-size: 12vw;
+              margin-top: 30%;
+              @media all and (min-width: $break2) {
+                font-size: 5.5vw;
+              }
+              @media all and (min-width: $break3) {
+                font-size: 4vw;
+                line-height: 0.6;
+              }
+              @media all and (min-width: 1600px) {
+                font-size: 64px;
+              }
+            }
+            &.monat{
+              font-size: 8vw;
+              text-transform: uppercase;
+              @media all and (min-width: $break2) {
+                font-size: 4vw;
+              }
+              @media all and (min-width: $break3) {
+                font-size: 2.4vw;
+              }
+              @media all and (min-width: 1600px) {
+                font-size: 38.4px;
+              }
+            }
+          }
+        }
+      }
+      .time{
+        margin-right: 2%;
+      }
+    }
+  }
+  .back{
+    margin-top: 3rem;
+    a{
+      @include hover-background(white);
+      @include link-pfeil-back;
+    }
+  }
 }

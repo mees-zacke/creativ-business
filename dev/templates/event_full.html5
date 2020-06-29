@@ -1,0 +1,59 @@
+
+<div class="event layout_full block<?= $this->class ?>" itemscope itemtype="http://schema.org/Event">
+
+  <div class="info">
+    <p class="date">
+      <?php
+      $Monate = array("Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez");
+      $Tag = date("d",$this->startTime);
+      $Monat = date("n",$this->startTime)-1;
+      $theDatum = $Tag." ".$Monate[$Monat];
+      ?>
+      <time datetime="<?= $this->date ?>" itemprop="datePublished"><span class="tag"><?= $Tag ?></span><span class="monat"><?= $Monate[$Monat] ?></span></time>
+    </p>
+
+    <?php if ($this->time): ?>
+    <p class="time"><time datetime="<?= $this->datetime ?>" itemprop="startTime"><?= \Date::parse("H:i", $this->startTime) ?><?php if ( $this->endDate):?><?php if( ($this->startTime - $this->startDate) !== ($this->endTime - $this->endDate) ): ?> bis <?= \Date::parse("H:i", $this->endTime) ?> Uhr<?php else: ?> Uhr<?php endif; ?><?php else: ?><?php if($this->startTime !== $this->endTime ): ?> bis <?= \Date::parse("H:i", $this->endTime) ?> Uhr<?php else: ?> Uhr<?php endif; ?><?php endif; ?></time></p>
+    <?php endif; ?>
+
+    <?php if ($this->location): ?>
+    <p class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+      <span itemprop="name"><?= $this->location ?></span>
+      <?php if ($this->address): ?>
+      (<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><?= $this->address ?></span>)
+      <?php endif; ?>
+    </p>
+    <?php endif; ?>
+  </div>
+
+  <?php if ($this->details): ?>
+    <?= $this->details ?>
+  <?php else: ?>
+    <div class="ce_text block">
+      <h1 itemprop="name"><?= $this->title ?></h1>
+
+      <?php if (!$this->addBefore): ?>
+        <?= $this->teaser ?>
+      <?php endif; ?>
+
+      <?php if ($this->addImage): ?>
+        <?php $this->insert('image', $this->arrData); ?>
+      <?php endif; ?>
+
+      <?php if ($this->addBefore): ?>
+        <?= $this->teaser ?>
+      <?php endif; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($this->enclosure): ?>
+    <ul class="enclosure">
+      <?php foreach ($this->enclosure as $enclosure): ?>
+        <li class="download-element ext-<?= $enclosure['extension'] ?>">
+           <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>"><?= $enclosure['link'] ?> <span class="size">(<?= $enclosure['filesize'] ?>)</span></a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  <?php endif; ?>
+
+</div>

@@ -276,6 +276,37 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
 
 }
 
+@mixin link-pfeil-back {
+  padding: 5px;
+  white-space: nowrap;
+  font-size: $linkSize;
+  @media all and (max-width: 300px) {
+    font-size: $min-linkSize-rem;
+  }
+  @media all and (min-width: 1600px) {
+    font-size: $max-linkSize-rem;
+  }
+  &:before {
+    @include transition();
+    content: " ";
+    display: inline-block;
+    background-image: $link-pfeil-schwarz;
+    background-repeat: no-repeat;
+    background-position-y: top;
+    transform: rotate(180deg);
+    height: 1em;
+    width: 6rem;
+    margin-right: 1rem;
+  }
+  &:hover, &:focus {
+    &:before {
+      background-image: $link-pfeil-weis;
+    }
+  }
+
+}
+
+
 @mixin link-block($background: white) {
   &.link-block {
     h1, h2, h3, h4, h5, h6 {

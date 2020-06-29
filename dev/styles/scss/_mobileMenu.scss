@@ -138,6 +138,11 @@ body {
 
                     li {
                       font-size: $fontSize;
+                      .level_3{
+                        margin-left: 1rem;
+                        display: none;
+                        overflow: hidden;
+                      }
                     }
                   }
                 }
@@ -198,6 +203,10 @@ body {
 
                         span {
                           margin-bottom: 2px;
+                        }
+                        .level_3{
+                          margin-left: 1rem;
+                          display: block;
                         }
                       }
                     }

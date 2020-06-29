@@ -1,6 +1,5 @@
 .mod_newslist {
   @include grid(12, auto, 2vw, 2vh);
-
   .layout_latest, .layout_short {
     grid-column: span 12;
     >a{
@@ -67,7 +66,7 @@
     margin-top: 3rem;
     a{
       @include hover-background(white);
-      @include link-pfeil;
+      @include link-pfeil-back;
     }
   }
 }

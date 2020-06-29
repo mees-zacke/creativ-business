@@ -1,14 +1,12 @@
 
 <div class="<?= $this->class ?>">
+  <a href="<?= $this->href ?>" title="<?= $this->title ?>">
+    <h4><?= $this->link ?></h4>
 
-  <h2><a href="<?= $this->href ?>" title="<?= $this->title ?>"><?= $this->link ?></a></h2>
+    <?php if ($this->context): ?>
+    <p class="context"><?= $this->context ?></p>
+    <?php endif; ?>
 
-  <?php if ($this->context): ?>
-    <a href="<?= $this->href ?>" title="<?= $this->title ?>">
-	    <p class="context"><?= $this->context ?></p>
-    </a>
-  <?php endif; ?>
-
-  <p class="url"><a href="<?= $this->href ?>" title="<?= $this->title ?>"><?= $this->url ?></a></p>
-
+    <p class="url"><?= $this->url ?></p>
+  </a>
 </div>

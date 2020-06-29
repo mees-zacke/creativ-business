@@ -13,8 +13,6 @@
   <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= $theDatum ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
   <?php endif; ?>
 
-  <h1 itemprop="name"><?= $this->newsHeadline ?></h1>
-
   <?php if ($this->hasText): ?>
     <?= $this->text ?>
   <?php else: ?>

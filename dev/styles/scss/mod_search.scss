@@ -93,4 +93,15 @@
       font-size: 0.75em;
     }
   }
+  .pagination{
+    ul{
+      li{
+        &.first, &.previous, &.next, &.last{
+         a {
+           width: auto;
+         }
+        }
+      }
+    }
+  }
 }

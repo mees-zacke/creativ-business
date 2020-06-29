@@ -1,0 +1,38 @@
+<div class="event layout_teaser<?= $this->classList ?>" itemscope itemtype="http://schema.org/Event">
+
+    <a href="<?= $this->href ?>" class="link-block">
+        <div class="ce_text block" itemprop="description">
+            <?php if ($this->addImage): ?>
+            <div class="event-image">
+                <figure class="image_container <?= $this->floatClass ?>">
+                    <img src="<?= $this->src ?>" width="<?= $this->width ?>" height="<?= $this->height ?>"
+                         itemprop="name">
+                </figure>
+                <p class="date">
+                  <?php
+                    $Monate = array("Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez");
+                    $Tag = date("d",$this->startTime);
+                    $Monat = date("n",$this->startTime)-1;
+                    $theDatum = $Tag." ".$Monate[$Monat];
+                  ?>
+                    <time datetime="<?= $this->datetime ?>" itemprop="datePublished"><span class="tag"><?= $Tag ?></span><span class="monat"><?= $Monate[$Monat] ?></span></time>
+                </p>
+            </div>
+            <?php endif; ?>
+
+          <h5 itemprop="name"><?= $this->title ?></h5>
+
+  <?php if (!$this->addBefore): ?>
+            <?= $this->teaser ?>
+            <?php endif; ?>
+
+            <?php if ($this->addBefore): ?>
+            <?= $this->teaser ?>
+            <?php endif; ?>
+        </div>
+
+            <div class="more-container">
+                <p class="more weiterlesen">More Information</p>
+            </div>
+    </a>
+</div>

@@ -22,6 +22,11 @@ body {
                 .text {
                   background: none;
 
+                  a{
+                    color: white;
+                    @include hover-background(black);
+                  }
+
                   .weiterlesen {
                     @include hover-background(black);
 
