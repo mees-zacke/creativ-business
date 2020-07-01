@@ -13,7 +13,7 @@
   .ankernav-inner-container {
     @include pageWidth;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     .page-anker{
       grid-column: 1/2;
       grid-row: 1/2;
@@ -23,7 +23,7 @@
           a{
             @include hover-background(white);
             display: block;
-            margin-right: 1rem;
+            margin-right: 0.5rem;
             padding-bottom: 5px;
             font-weight: bold;
           }
@@ -80,6 +80,14 @@
       margin-left: auto;
       padding-left: 0;
       min-width: 80%;
+      &:after{
+        display: none;
+      }
+      @media all and (min-width: $break1){
+        &:after{
+          display: inline-block;
+        }
+      }
       @media all and (min-width: $break3){
         min-width: 0;
       }

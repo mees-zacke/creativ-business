@@ -38,7 +38,7 @@ body {
                       transform: translateY(-2px) translateX($translateX) rotate($rotation * -1);
                     }
                   }
-                  &:hover{
+                  &:hover, &:focus{
                     .line-1{
                       transform: translateY(12.5px) translateX(9px) rotate($rotation);
                     }

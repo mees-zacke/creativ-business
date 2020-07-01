@@ -7,7 +7,10 @@
 
 
 body {
-
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
   #wrapper {
     @include transition(0.3s);
     margin-top: 100px;
@@ -272,6 +275,125 @@ body {
 
           .ce_text {
             @include link-block(black);
+          }
+        }
+      }
+      #seitenbanner{
+        @include transition(0.3s);
+        position: fixed;
+        background-color: rgba(255,255,255,0.75);
+        padding: 5px;
+        width: calc(100vw + 3rem);
+        box-shadow: $shadow;
+        z-index: 200;
+        bottom: 5vh;
+        left: -100vw;
+        &:focus-within{
+          left: 0;
+        }
+        .inside{
+          .mod_navigation{
+            display: flex;
+            ul{
+              display: flex;
+              width: 100vw;
+              padding-right: 5px;
+              justify-content: space-between;
+              li{
+                a, strong{
+                  @include transition();
+                  display: flex;
+                  justify-content: space-between;
+                  @include link-pfeil;
+                  padding-bottom: 0;
+                }
+                a{
+                  color: lighten($fontColor, 60%);
+                  &:after{
+                    margin-left: 1vw;
+                    opacity: 0.75;
+                    width: 17vw;
+                    background-size: cover;
+                    background-position-x: right;
+                  }
+                  &:hover, &:focus{
+                    color: $fontColor;
+                    &:after{
+                      opacity: 1;
+                      background-image: $link-pfeil-schwarz;
+                    }
+                  }
+                }
+                strong{
+                  color: $fontColor;
+                  &:after{
+                    margin-left: 1vw;
+                    opacity: 1;
+                    background-image: $link-pfeil-schwarz;
+                  }
+                  &:hover, &:focus{
+                    &:after{
+                      background-image: $link-pfeil-schwarz;
+                    }
+                  }
+                }
+              }
+            }
+            .seitenbanner-opener{
+              content: "";
+              display: block;
+              background-image: $link-pfeil-schwarz;
+              background-position-x: right;
+              background-repeat: no-repeat;
+              background-size: cover;
+              width: 2.5rem;
+              padding: 4px;
+              opacity: 0.75;
+              &:hover{
+                opacity: 1;
+              }
+            }
+          }
+        }
+        @media all and (min-width: $break2){
+          width: auto;
+          padding-left: 2rem;
+          left: 0;
+          .inside{
+            .mod_navigation{
+              ul{
+                display: block;
+                width: auto;
+                li{
+                  a, strong{
+                  }
+                  a{
+                    @include hover-background(white);
+                    &:after{
+                      background-size: contain;
+                      width: 6rem;
+
+                    }
+                    &:hover, &:focus{
+                      &:after{
+                        background-image: $link-pfeil-weis;
+                      }
+                    }
+                  }
+                  strong{
+                    &:after{
+                    }
+                    &:hover, &:focus{
+                      &:after{
+                      }
+                    }
+                  }
+                }
+              }
+              .seitenbanner-opener{
+                display: none;
+              }
+            }
           }
         }
       }

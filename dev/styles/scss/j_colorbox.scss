@@ -1,8 +1,74 @@
 #colorbox {
+  overflow: visible;
   #cboxWrapper {
+    overflow: visible;
     #cboxContent {
       #cboxLoadedContent {
         border-color: transparent;
+      }
+      #cboxClose, #cboxNext, #cboxPrevious{
+        @include transition(0.3s);
+        width: 40px;
+        height: 75px;
+        background: none;
+        &:after, &:before{
+          content: " ";
+          display: block;
+          background: white;
+          width: $width-line;
+          height: $height-line;
+          position: absolute;
+          left: 0;
+          transition: all $transition-time;
+        }
+      }
+      #cboxClose{
+        height: 40px;
+        right: -45px;
+        &:before {
+          transform: translateY(8.5px) rotate($rotation);
+        }
+
+        &:after {
+          transform: translateY(-13px) rotate($rotation * -1);
+        }
+        &:hover{
+          &:after,&:before{
+            transform-origin: center;
+          }
+          &:before {
+            transform: translateY(8.5px) rotate($rotation) scale(1.25);
+          }
+          &:after {
+            transform: translateY(-13px) rotate($rotation * -1) scale(1.25);
+          }
+        }
+      }
+      #cboxNext{
+        right: -45px;
+        &:before {
+          transform: translateY(-0.5px) rotate($rotation);
+        }
+
+        &:after {
+          transform: translateY(4px) rotate($rotation * -1);
+        }
+        &:hover{
+          right: -55px;
+        }
+      }
+      #cboxPrevious{
+        left: -45px;
+        &:before {
+          transform: translateY(-0.5px) rotate($rotation * -1);
+        }
+
+        &:after {
+          transform: translateY(4px) rotate($rotation);
+        }
+        &:hover{
+          left: -55px;
+        }
       }
     }
   }

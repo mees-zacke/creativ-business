@@ -47,25 +47,35 @@
     }
 
     .weiterlesen {
-      @include link-pfeil;
-      text-decoration: none;
+      a{
+        @include link-pfeil;
+        text-decoration: none;
+      }
     }
   }
 
   ul {
     > li {
-      padding-left: 1.5rem;
+      padding-left: 18%;
       line-height: 1.5;
       margin-bottom: 1rem;
+      @media all and (min-width: $break2){
+        padding-left: 10%;
+      }
 
       &:before {
-        content: '›';
+        content: "";
+        background-image: $link-pfeil-schwarz;
+        background-size: 100% 100%;
+        background-position: right center;
+        background-repeat: no-repeat;
         color: $color1;
         font-size: 1.5rem;
         display: inline-block;
         margin-right: 1rem;
-        margin-left: -1rem;
-        width: 0;
+        margin-left: -7rem;
+        width: 6rem;
+        height: 1rem;
       }
     }
   }
@@ -121,6 +131,7 @@
 
     .text {
       .weiterlesen {
+        @include link-pfeil();
         @include transition();
         background-size: 210%;
         background-position-x: 100%;

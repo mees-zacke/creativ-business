@@ -52,7 +52,7 @@ $(document).ready(function () {
 });
 
 
-// Mobile Menu Navigation Level_2 Openers //
+// Mobile Menu Navigation Openers //
 
 
 function sub_open(id, level) {

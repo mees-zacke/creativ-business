@@ -27,16 +27,22 @@ body {
                     @include hover-background(black);
                   }
 
+                  h2,h3,h4,h5,h6{
+                    color: white;
+                    background: none;
+                  }
+
                   .weiterlesen {
                     @include hover-background(black);
+                    @include link-pfeil();
 
                     &:after {
-                      content: $link-pfeil-weis;
+                      background-image: $link-pfeil-weis;
                     }
 
                     &:hover, &:focus {
                       &:after {
-                        content: $link-pfeil-schwarz;
+                        background-image: $link-pfeil-schwarz;
                       }
                     }
                   }
@@ -53,6 +59,9 @@ body {
                         &:after {
                           content: $link-pfeil-schwarz;
                         }
+                      }
+                      h2,h3,h4,h5,h6{
+                        color: white;
                       }
                     }
                   }

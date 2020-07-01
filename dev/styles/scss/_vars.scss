@@ -190,7 +190,63 @@ $galerieAbstand: 0.5rem;
       color: $background;
     }
   }
+}
 
+@mixin link-pfeil {
+  padding: 5px;
+  white-space: nowrap;
+  font-size: $linkSize;
+  @media all and (max-width: 300px) {
+    font-size: $min-linkSize-rem;
+  }
+  @media all and (min-width: 1600px) {
+    font-size: $max-linkSize-rem;
+  }
+  &:after {
+    @include transition();
+    content: " ";
+    display: inline-block;
+    background-image: $link-pfeil-schwarz;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    height: 1em;
+    width: 6rem;
+    margin-left: 1rem;
+  }
+  &:hover, &:focus {
+    &:after {
+      background-image: $link-pfeil-weis;
+    }
+  }
+}
+
+@mixin link-pfeil-back {
+  padding: 5px;
+  white-space: nowrap;
+  font-size: $linkSize;
+  @media all and (max-width: 300px) {
+    font-size: $min-linkSize-rem;
+  }
+  @media all and (min-width: 1600px) {
+    font-size: $max-linkSize-rem;
+  }
+  &:before {
+    @include transition();
+    content: " ";
+    display: inline-block;
+    background-image: $link-pfeil-schwarz;
+    background-repeat: no-repeat;
+    background-position-y: top;
+    transform: rotate(180deg);
+    height: 1em;
+    width: 6rem;
+    margin-right: 1rem;
+  }
+  &:hover, &:focus {
+    &:before {
+      background-image: $link-pfeil-weis;
+    }
+  }
 }
 
 $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%, $color3 30%, $color4 30%, $color4 40%, $color5 40%, $color5 50%, $color6 50%, $color6 60%, $color1 60%, $color1 68%, $color2 68%, $color2 76%, $color3 76%, $color3 83%, $color4 83%, $color4 88%, $color5 88%, $color5 93%, $color6 93%, $color6 97%, $color1 97%, $color1 100%);
@@ -247,65 +303,6 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
 }
 
 
-@mixin link-pfeil {
-  padding: 5px;
-  white-space: nowrap;
-  font-size: $linkSize;
-  @media all and (max-width: 300px) {
-    font-size: $min-linkSize-rem;
-  }
-  @media all and (min-width: 1600px) {
-    font-size: $max-linkSize-rem;
-  }
-  &:after {
-    @include transition();
-    content: " ";
-    display: inline-block;
-    background-image: $link-pfeil-schwarz;
-    background-repeat: no-repeat;
-    background-position-y: bottom;
-    height: 1em;
-    width: 6rem;
-    margin-left: 1rem;
-  }
-  &:hover, &:focus {
-    &:after {
-      background-image: $link-pfeil-weis;
-    }
-  }
-
-}
-
-@mixin link-pfeil-back {
-  padding: 5px;
-  white-space: nowrap;
-  font-size: $linkSize;
-  @media all and (max-width: 300px) {
-    font-size: $min-linkSize-rem;
-  }
-  @media all and (min-width: 1600px) {
-    font-size: $max-linkSize-rem;
-  }
-  &:before {
-    @include transition();
-    content: " ";
-    display: inline-block;
-    background-image: $link-pfeil-schwarz;
-    background-repeat: no-repeat;
-    background-position-y: top;
-    transform: rotate(180deg);
-    height: 1em;
-    width: 6rem;
-    margin-right: 1rem;
-  }
-  &:hover, &:focus {
-    &:before {
-      background-image: $link-pfeil-weis;
-    }
-  }
-
-}
-
 
 @mixin link-block($background: white) {
   &.link-block {
@@ -319,12 +316,12 @@ $linearGradient: linear-gradient(to right, $color2 0%, $color2 15%, $color3 15%,
     .text, .ce_text {
     }
 
-    .weiterlesen {
-      @include transition();
-      background-size: 210%;
-      background-position-x: 100%;
-      background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
-    }
+      .weiterlesen {
+        @include transition();
+        background-size: 210%;
+        background-position-x: 100%;
+        background-image: linear-gradient(90deg, (invert($background, 100%) 50%), $background 50%);
+      }
 
     &:hover, &:focus {
       h1, h2, h3, h4, h5, h6 {
