@@ -169,3 +169,30 @@ body{
     }
   }
 }
+
+.coursKeyFacts {
+  .text-container {
+    background-color: black;
+    color: white;
+    .text-container-inner {
+      .text {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        >* {
+          padding: 1rem;
+          text-align: center;
+          width: 100%;
+        }
+        @media screen and (min-width: $break1) {
+          >* {
+            width: 50%;
+            text-align: left;
+
+          }
+        }
+
+      }
+    }
+  }
+}
