@@ -3,13 +3,7 @@
 
   <div class="info">
     <p class="date">
-      <?php
-      $Monate = array("Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez");
-      $Tag = date("d",$this->startTime);
-      $Monat = date("n",$this->startTime)-1;
-      $theDatum = $Tag." ".$Monate[$Monat];
-      ?>
-      <time datetime="<?= $this->date ?>" itemprop="datePublished"><span class="tag"><?= $Tag ?></span><span class="monat"><?= $Monate[$Monat] ?></span></time>
+      <time><span class="tag"><?= \Date::parse("d", $this->startTime) ?></span><span class="monat"><?= \Date::parse("M", $this->startTime) ?></span></time>
     </p>
 
     <?php if ($this->time): ?>
