@@ -10,3 +10,38 @@
     margin-bottom: 1em;
   }
 }
+
+.mod_cms_accept_tags{
+  >form{
+    .formbody{
+
+    }
+  }
+}
+
+.ce_optin_fallback{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid lighten($fontColor, 60%);
+  padding: 1rem;
+  height: 400px;
+  width: 100%;
+  text-align: center;
+  &:before{
+    content: url("/files/layout/images/warning.svg");
+    display: block;
+    border: 1px solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    font-size: $h5Size;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 0.5rem;
+  }
+  p{
+    a{
+      @include hover-background();
+    }
+  }
+}

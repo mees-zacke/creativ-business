@@ -6,11 +6,36 @@
       #cboxLoadedContent {
         border-color: transparent;
       }
+      #cboxCurrent{
+        top: -25px;
+      }
       #cboxClose, #cboxNext, #cboxPrevious{
         @include transition(0.3s);
         width: 40px;
         height: 75px;
         background: none;
+      }
+      #cboxNext, #cboxPrevious{
+        top: 32px;
+        width: 65%;
+        height: 100%;
+        color: transparent;
+        &:before {
+          content: " ";
+          @include transition();
+          background-image: url("/files/layout/images/colorbox-pfeil.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position-y: center;
+          position: absolute;
+          width: 50px;
+          height: 60px;
+          top: 42.5%;
+        }
+      }
+      #cboxClose{
+        height: 40px;
+        right: 5px;
         &:after, &:before{
           content: " ";
           display: block;
@@ -18,13 +43,9 @@
           width: $width-line;
           height: $height-line;
           position: absolute;
-          left: 0;
           transition: all $transition-time;
+          left: 0;
         }
-      }
-      #cboxClose{
-        height: 40px;
-        right: -45px;
         &:before {
           transform: translateY(8.5px) rotate($rotation);
         }
@@ -45,29 +66,51 @@
         }
       }
       #cboxNext{
-        right: -45px;
-        &:before {
-          transform: translateY(-0.5px) rotate($rotation);
-        }
-
-        &:after {
-          transform: translateY(4px) rotate($rotation * -1);
+        right: -110px;
+        &:before{
+          right: 120px;
         }
         &:hover{
-          right: -55px;
+          &:before{
+            right: 110px;
+          }
         }
       }
       #cboxPrevious{
-        left: -45px;
-        &:before {
-          transform: translateY(-0.5px) rotate($rotation * -1);
-        }
-
-        &:after {
-          transform: translateY(4px) rotate($rotation);
+        left: -110px;
+        &:before{
+          left: 120px;
+          transform: rotate(180deg);
         }
         &:hover{
-          left: -55px;
+          &:before{
+            left: 110px;
+          }
+        }
+      }
+      @media all and (min-width: $break2){
+        #cboxClose{
+          right: -45px;
+        }
+        #cboxNext{
+          &:before{
+            right: 50px;
+          }
+          &:hover{
+            &:before{
+              right: 40px;
+            }
+          }
+        }
+        #cboxPrevious{
+          &:before{
+            left: 50px;
+          }
+          &:hover{
+            &:before{
+              left: 40px;
+            }
+          }
         }
       }
     }

@@ -298,7 +298,7 @@ body {
               display: flex;
               width: 100vw;
               padding-right: 5px;
-              justify-content: space-between;
+              justify-content: space-around;
               li{
                 a, strong{
                   @include transition();
@@ -419,6 +419,11 @@ body {
           > * {
             &:last-of-type {
               margin-bottom: 4rem;
+            }
+          }
+          &.first{
+            >.first{
+              margin-bottom: 3.4rem;
             }
           }
         }
