@@ -50,6 +50,13 @@ $navColor: white;
         &:last-of-type{
           margin-right: 0;
         }
+        &.trail {
+          a {
+            span {
+              font-weight: 800;
+            }
+          }
+        }
         a{
           &:hover, &:focus {
             &:after{
