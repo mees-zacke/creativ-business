@@ -8,6 +8,7 @@
     grid-column: span 12;
 
     > a {
+      display: block;
       @include link-block();
 
       .event-image {
