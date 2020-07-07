@@ -19,7 +19,7 @@
   <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= $theDatum ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
   <?php endif; ?>
 
-  <h5 itemprop="name"><?= $this->headline ?></h5>
+  <h2 itemprop="name"><?= $this->headline ?></h2>
 
   <div class="ce_text block" itemprop="description">
     <?= $this->teaser ?>

@@ -1,32 +1,31 @@
 <div class="event layout_teaser<?= $this->classList ?>" itemscope itemtype="http://schema.org/Event">
 
-    <a href="<?= $this->href ?>" class="link-block">
+  <a href="<?= $this->href ?>" title="<?= $this->linkTitle; ?>" class="link-block">
         <div class="ce_text block" itemprop="description">
             <?php if ($this->addImage): ?>
-            <div class="event-image">
-                <figure class="image_container <?= $this->floatClass ?>">
-                    <img src="<?= $this->src ?>" width="<?= $this->width ?>" height="<?= $this->height ?>"
-                         itemprop="name">
-                </figure>
-                <p class="date">
-                    <time datetime="<?= $this->datetime ?>" itemprop="datePublished"><span class="tag"><?= \Date::parse("d", $this->startTime) ?></span><span class="monat"><?= \Date::parse("M", $this->startTime) ?></span></time>
-                </p>
-            </div>
+              <div class="event-image">
+                  <figure class="image_container <?= $this->floatClass ?>">
+                      <img src="<?= $this->src ?>" width="<?= $this->width ?>" height="<?= $this->height ?>" itemprop="name">
+                  </figure>
+                  <p class="date">
+                      <time datetime="<?= $this->datetime ?>" itemprop="datePublished"><span class="tag"><?= \Date::parse("d", $this->startTime) ?></span><span class="monat"><?= \Date::parse("M", $this->startTime) ?></span></time>
+                  </p>
+              </div>
             <?php endif; ?>
 
-          <h5 itemprop="name"><?= $this->title ?></h5>
+          <h2 itemprop="name"><?= $this->title ?></h2>
 
-  <?php if (!$this->addBefore): ?>
+          <?php if (!$this->addBefore): ?>
             <?= $this->teaser ?>
-            <?php endif; ?>
+          <?php endif; ?>
 
-            <?php if ($this->addBefore): ?>
+          <?php if ($this->addBefore): ?>
             <?= $this->teaser ?>
-            <?php endif; ?>
+          <?php endif; ?>
         </div>
 
-            <div class="more-container">
-                <p class="more weiterlesen">More Information</p>
-            </div>
+        <div class="more-container">
+            <p class="more weiterlesen">More Information</p>
+        </div>
     </a>
 </div>

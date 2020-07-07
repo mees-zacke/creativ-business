@@ -1,26 +1,35 @@
 .mod_newslist {
   @include grid(12, auto, 2vw, 2vh);
+
   .layout_latest, .layout_short {
     grid-column: span 12;
-    >a{
+
+    > a {
       @include link-block();
-      .info{
+
+      .info {
         font-size: $linkSize;
         color: lighten($fontColor, 60%);
         margin-top: 1em;
         margin-bottom: 0;
       }
-      h5{
+
+      h2 {
         display: inline-block;
+        font-size: 2.25rem;
+        font-weight: 800;
       }
-      .ce_text{
-        p{
+
+      .ce_text {
+        p {
           margin-bottom: 0;
         }
       }
-      .more-container{
+
+      .more-container {
         text-align: end;
-        .more{
+
+        .more {
           font-size: $linkSize;
           color: lighten($fontColor, 60%);
           @include link-pfeil;
@@ -32,13 +41,13 @@
   }
 
   @media screen and (min-width: $break2) {
-    .layout_latest, .layout_short{
+    .layout_latest, .layout_short {
       grid-column: span 6;
       margin-bottom: 2rem;
     }
   }
   @media all and (min-width: $break3) {
-    .layout_latest, .layout_short{
+    .layout_latest, .layout_short {
       grid-column: span 4;
       margin-bottom: 4rem;
     }
@@ -49,22 +58,26 @@
   .layout_full {
     @include grid(12, auto, 2vw, 2vh);
     grid-column: span 12;
-    .info{
+
+    .info {
       margin-top: 2rem;
       grid-column: 11 / span 2;
       margin-bottom: 0;
       font-size: $linkSize;
       color: lighten($fontColor, 60%);
     }
-    h1{
+
+    h1 {
       padding-top: 0;
       grid-column: span 12;
       text-align: center;
     }
   }
-  .back{
+
+  .back {
     margin-top: 3rem;
-    a{
+
+    a {
       @include hover-background(white);
       @include link-pfeil-back;
     }

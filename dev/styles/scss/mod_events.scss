@@ -3,13 +3,17 @@
   @include grid(12, auto, 2vw, 2vh);
   margin-left: ($abstandAussen/-4);
   margin-right: ($abstandAussen/-4);
-  .layout_teaser{
+
+  .layout_teaser {
     grid-column: span 12;
-    >a{
+
+    > a {
       @include link-block();
-      .event-image{
+
+      .event-image {
         position: relative;
-        .date{
+
+        .date {
           background-color: black;
           width: 15%;
           height: 33%;
@@ -17,12 +21,14 @@
           bottom: 0;
           left: 0;
           margin-bottom: 0;
-          time{
-            span{
+
+          time {
+            span {
               color: white;
               display: block;
               text-align: center;
-              &.tag{
+
+              &.tag {
                 line-height: 0.5;
                 font-size: 12vw;
                 margin-top: 30%;
@@ -37,7 +43,8 @@
                   font-size: 64px;
                 }
               }
-              &.monat{
+
+              &.monat {
                 font-size: 8vw;
                 @media all and (min-width: $break2) {
                   font-size: 4vw;
@@ -53,15 +60,21 @@
           }
         }
       }
-      h5{
+
+      h2 {
         display: inline-block;
+        font-size: $h5Size;
+        font-weight: 800;
       }
-        p{
-          margin-bottom: 0;
-        }
-      .more-container{
+
+      p {
+        margin-bottom: 0;
+      }
+
+      .more-container {
         text-align: end;
-        .more{
+
+        .more {
           font-size: $linkSize;
           color: lighten($fontColor, 60%);
           @include link-pfeil;
@@ -71,14 +84,15 @@
       }
     }
   }
+
   @media screen and (min-width: $break2) {
-    .layout_teaser{
+    .layout_teaser {
       grid-column: span 6;
       margin-bottom: 2rem;
     }
   }
   @media all and (min-width: $break3) {
-    .layout_teaser{
+    .layout_teaser {
       grid-column: span 4;
       margin-bottom: 4rem;
     }
@@ -86,15 +100,17 @@
 }
 
 
-.mod_eventreader{
-  .layout_full{
+.mod_eventreader {
+  .layout_full {
     @include grid(12, auto, 2vw, 2vh);
-    .info{
+
+    .info {
       grid-column: span 12;
       display: flex;
       align-items: flex-end;
       margin-left: 10px;
-      .date{
+
+      .date {
         display: inline-block;
         background-color: black;
         padding: 2vw 3vw 0;
@@ -108,12 +124,14 @@
         @media all and (min-width: 1600px) {
           padding: 8px 16px 0;
         }
-        time{
-          span{
+
+        time {
+          span {
             color: white;
             display: block;
             text-align: center;
-            &.tag{
+
+            &.tag {
               line-height: 0.5;
               font-size: 12vw;
               margin-top: 30%;
@@ -128,7 +146,8 @@
                 font-size: 64px;
               }
             }
-            &.monat{
+
+            &.monat {
               font-size: 8vw;
               text-transform: uppercase;
               @media all and (min-width: $break2) {
@@ -144,14 +163,17 @@
           }
         }
       }
-      .time{
+
+      .time {
         margin-right: 2%;
       }
     }
   }
-  .back{
+
+  .back {
     margin-top: 3rem;
-    a{
+
+    a {
       @include hover-background(white);
       @include link-pfeil-back;
     }
