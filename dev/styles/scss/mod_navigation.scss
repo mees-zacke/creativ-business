@@ -42,6 +42,7 @@ $navColor: white;
     ul{
       padding-top: 18px;
       display: flex;
+      align-items: center;
       margin-left: 10px;
       li{
         margin-right: 1rem;
@@ -50,15 +51,6 @@ $navColor: white;
           margin-right: 0;
         }
         a{
-          &:after{
-            @include transition();
-            content: " ";
-            height: 1px;
-            width: 100%;
-            display: block;
-            background-color: black;
-            transform: translateX(-101%);
-          }
           &:hover, &:focus {
             &:after{
               transform: translateX(0);
