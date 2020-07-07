@@ -1,7 +1,7 @@
 
 <div class="layout_short arc_<?= $this->archive->id ?> block<?= $this->class ?>" itemscope itemtype="http://schema.org/Article">
 
-  <a href="<?= $this->link ?>" title="<?= $this->linkTitle; ?>" class="link-block">
+  <a href="<?= $this->link ?>" title="<?= $this->linkTitle; ?>" class="link-block" itemprop="url">
 
     <?php if ($this->hasMetaFields): ?>
       <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= \Date::parse("d. F Y", $this->time) ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
