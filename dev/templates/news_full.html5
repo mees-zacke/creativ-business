@@ -3,14 +3,7 @@
 
 
   <?php if ($this->hasMetaFields): ?>
-  <?php
-      $Monate = array("Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember");
-      $Tag = date("d",$this->time);
-  $Monat = date("n",$this->time)-1;
-  $Jahr = date("Y",$this->time);
-  $theDatum = $Tag." ".$Monate[$Monat]." ".$Jahr;
-  ?>
-  <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= $theDatum ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
+    <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= \Date::parse("d. F Y", $this->time) ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
   <?php endif; ?>
 
   <?php if ($this->hasText): ?>
