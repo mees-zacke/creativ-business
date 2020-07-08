@@ -6,67 +6,69 @@
     filter: grayscale(100%);
 
   }
-  h1,h2,h3,h4,h5,h6 {
-    color: black!important;
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
   }
   .meta, .headersection-1-social, .headersection-2-menu {
-    display: none!important;
+    display: none !important;
   }
   .imageCopy {
     left: 0;
     right: initial;
   }
-  .partner-wrapper {
-    img {
-      max-width: 200px;
+  #ankernav-container {
+    display: none;
+  }
+
+  .coursKeyFacts {
+    .text-container {
+      background-color: initial;
+      color: black;
+      border: 1px solid black;
     }
   }
-  .headersection-1-wrapper {
-    float: left;
-  }
-  .headersection-2-wrapper {
-    background: none!important;
-    img {
-      filter: invert(1);
-    }
-  }
-  .mitHintergrundbild {
-    background: linear-gradient(black, black), url("/files/daten/hintergrundbilder/Kopfbild-KI.jpg")!important;
-    background-blend-mode: saturation!important;
-  }
-  .leaflet-container {
-    img {
-      filter: grayscale(1)!important;
+
+  .ce_swiperStart {
+    .swiper-slide {
+      &.ce_text {
+        .text-container {
+          .headline {
+            background: initial!important;
+          }
+          .text {
+            * {
+              color: black!important;
+            }
+          }
+        }
+      }
     }
   }
   body {
     #wrapper {
-      #header {
-        .inside {
-          .mod_article {
-            display: none;
-          }
-        }
+      margin-top: 0;
 
+      #header {
+        display: none;
       }
 
       #footer {
-        background-color: initial!important;
-        color: black!important;
-        .inside {
-          display: block!important;
-          >* {
-            float: left;
-            margin-right: 20px;
-          }
-          .bildAnsprechpartner {
-            img {
-              max-width: 80px;
-            }
-          }
-          .traeger {
-            img {
-              filter: invert(1);
+        display: none;
+      }
+
+      .custom {
+        #uber-footer {
+          background-color: initial;
+          border: 1px solid black;
+        }
+      }
+    }
+    &.studiengang {
+      #wrapper {
+        #container {
+          #main {
+            .mod_article {
+              padding-top: 2rem;
             }
           }
         }
