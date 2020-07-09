@@ -23,6 +23,7 @@ body {
               .mobile-opener {
                 .hamburger-icon-container {
                   cursor: pointer;
+
                   .hamburger-icon {
                     width: 22px;
 
@@ -38,10 +39,12 @@ body {
                       transform: translateY(-2px) translateX($translateX) rotate($rotation * -1);
                     }
                   }
-                  &:hover, &:focus{
-                    .line-1{
+
+                  &:hover, &:focus {
+                    .line-1 {
                       transform: translateY(12.5px) translateX(9px) rotate($rotation);
                     }
+
                     .line-3 {
                       transform: translateY(-11px) translateX(9px) rotate($rotation * -1);
                     }
@@ -71,7 +74,8 @@ body {
                           outline: none;
                         }
                       }
-                      &:after{
+
+                      &:after {
                         @include transition();
                         content: " ";
                         height: 1px;
@@ -80,8 +84,9 @@ body {
                         background-color: white;
                         transform: translateX(-98%);
                       }
+
                       &:hover, &:focus-within {
-                        &:after{
+                        &:after {
                           transform: translateX(0);
                         }
                       }
@@ -109,6 +114,7 @@ body {
                 li {
                   font-size: 1.625rem;
                   margin-bottom: 10px;
+
                   a {
                     @include hover-background(black);
                   }
@@ -138,13 +144,20 @@ body {
 
                     li {
                       font-size: $fontSize;
-                      .level_3{
+
+                      .level_3 {
                         margin-left: 1rem;
                         display: none;
                         overflow: hidden;
                       }
                     }
                   }
+                  &.trail {
+                    .level_2 {
+                      display: block;
+                    }
+                  }
+
                 }
               }
             }
@@ -159,13 +172,14 @@ body {
               top: -100%;
               box-shadow: $shadow;
               .opener-suche-container {
-                .mobile-opener{
-                  .hamburger-icon-container{
-                    &:hover{
-                      .hamburger-icon{
-                        .line-1{
+                .mobile-opener {
+                  .hamburger-icon-container {
+                    &:hover {
+                      .hamburger-icon {
+                        .line-1 {
                           transform: translateY(12.5px) translateX(9px) rotate($rotation);
                         }
+
                         .line-3 {
                           transform: translateY(8px) translateX(-11px) rotate($rotation * -1);
                         }
@@ -204,7 +218,8 @@ body {
                         span {
                           margin-bottom: 2px;
                         }
-                        .level_3{
+
+                        .level_3 {
                           margin-left: 1rem;
                           display: block;
                         }
