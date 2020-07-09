@@ -17,10 +17,7 @@
 
 
     /*$query = $db->query("SELECT * FROM  tl_search_index WHERE word LIKE '%".$searchTerm."%' GROUP BY word ORDER BY word ASC LIMIT 10");*/
-    $query = $db->query("SELECT *
-FROM  tl_search_index sei
-JOIN tl_search se ON se.id = sei.pid
-WHERE word LIKE '%".$searchTerm."%' AND se.url LIKE '%".$url."%' GROUP BY sei.word ORDER BY sei.word ASC LIMIT 10");
+    $query = $db->query("SELECT * FROM tl_search_index sei JOIN tl_search se ON se.id = sei.pid WHERE word LIKE '%".$searchTerm."%' AND se.url LIKE '%".$url."%' GROUP BY sei.word ORDER BY sei.word ASC LIMIT 10");
 
     	while ($row = $query->fetch_assoc()) {
         	$data[] = utf8_encode($row['word']);

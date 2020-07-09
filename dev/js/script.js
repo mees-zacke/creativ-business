@@ -114,8 +114,8 @@ function setHeaderStates() {
 // Autocomplete
 
 $(function() {
-    $( "#header .opener-suche-container .ui-widget" ).autocomplete({
-        source: 'files/layout/js/live_search.php',
+    $( "#header .opener-suche-container .ui-widget #ctrl_1" ).autocomplete({
+        source: 'files/layout/php/live_search.php',
         minLength: 2,
         contentType: "application/json; charset=utf-8",
         select: function(event, ui) {
@@ -127,18 +127,3 @@ $(function() {
 
     });
 });
-/*
-$(function() {
-    $( "#mobile-menu .opener-suche-container .ui-widget" ).autocomplete({
-        source: 'files/layout/js/live_search.php',
-        minLength: 2,
-        contentType: "application/json; charset=utf-8",
-        select: function(event, ui) {
-            if(ui.item){
-                $(event.target).val(ui.item.value);
-            }
-            $(event.target.form).submit();
-        }
-    });
-});
-*/

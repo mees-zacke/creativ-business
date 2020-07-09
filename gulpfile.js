@@ -39,7 +39,10 @@ function javaScript() {
 			.pipe(dest('dist/files/layout/js'))
 }
 
-
+function phpScript() {
+	return src('dev/php/*.php')
+			.pipe(dest('dist/files/layout/php'))
+}
 
 // Transports
 function templates() {
@@ -114,6 +117,7 @@ function watcher() {
 	watch('dev/fonts/**', fontsTransport);
 	watch('dev/templates/**/*.+(html|html5|tl)', templates);
 	watch('dev/js/**/*.js', javaScript);
+	watch('dev/php/**/*.php', phpScript);
 	watch('dev/config/*.yml', ymlTransport);
 	watch([
 				'dev/contao/dca/**/*.php',
