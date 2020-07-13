@@ -3,10 +3,10 @@
     $url = $_SERVER['HTTP_HOST'];
 
 //    database configuration
-    $dbHost = 'localhost';
-    $dbUsername = 'd0327b5a';
-    $dbPassword = 'Pr793nQyhmz9ZcGV';
-    $dbName = 'd0327b5a';
+    $dbHost = '10.11.0.114';
+    $dbUsername = 'db_user_11037_9';
+    $dbPassword = 'z36$45hzstTZENHF%';
+    $dbName = 'db_11037_9';
     
 //  connect with the database
     $db = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
