@@ -152,7 +152,7 @@ body {
                       }
                     }
                   }
-                  &.trail {
+                  &.trail, &.active {
                     .level_2 {
                       display: block;
                     }
