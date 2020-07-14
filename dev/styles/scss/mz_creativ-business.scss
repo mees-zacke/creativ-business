@@ -281,7 +281,7 @@ body {
       #seitenbanner{
         @include transition(0.3s);
         position: fixed;
-        background-color: rgba(255,255,255,0.75);
+        background-color: rgba(255,255,255,0.9);
         padding: 5px;
         width: calc(100vw + 3rem);
         box-shadow: $shadow;
@@ -308,7 +308,7 @@ body {
                   padding-bottom: 0;
                 }
                 a{
-                  color: lighten($fontColor, 60%);
+                  color: $fontColor;
                   &:after{
                     margin-left: 1vw;
                     opacity: 0.75;
