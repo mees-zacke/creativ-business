@@ -349,6 +349,9 @@ body {
               width: 2.5rem;
               padding: 4px;
               opacity: 0.75;
+              appearance: none;
+              border: none;
+              background-color: transparent;
               &:hover{
                 opacity: 1;
               }
