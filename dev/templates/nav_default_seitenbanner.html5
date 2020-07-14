@@ -8,4 +8,4 @@
     <?php endif; ?>
   <?php endforeach; ?>
 </ul>
-<a href="#" class="seitenbanner-opener"></a>
+<a href="#" title="Kurznavigation öffnen und schließen" class="seitenbanner-opener"></a>
