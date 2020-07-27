@@ -8,9 +8,11 @@
 
 body {
   -ms-overflow-style: none;
-  &::-webkit-scrollbar{
+
+  &::-webkit-scrollbar {
     display: none;
   }
+
   #wrapper {
     @include transition(0.3s);
     margin-top: 100px;
@@ -278,68 +280,77 @@ body {
           }
         }
       }
-      #seitenbanner{
+
+      #seitenbanner {
         @include transition(0.3s);
         position: fixed;
-        background-color: rgba(255,255,255,0.9);
+        background-color: rgba(255, 255, 255, 0.9);
         padding: 5px;
         width: calc(100vw + 3rem);
         box-shadow: $shadow;
         z-index: 200;
         bottom: 5vh;
         left: -100vw;
-        &:focus-within{
-          left: 0;
-        }
-        .inside{
-          .mod_navigation{
+
+        .inside {
+          .mod_navigation {
             display: flex;
-            ul{
+
+            ul {
               display: flex;
               width: 100vw;
               padding-right: 5px;
               justify-content: space-around;
-              li{
-                a, strong{
+
+              li {
+                a, strong {
                   @include transition();
                   display: flex;
                   justify-content: space-between;
                   @include link-pfeil;
                   padding-bottom: 0;
                 }
-                a{
+
+                a {
                   color: $fontColor;
-                  &:after{
+
+                  &:after {
                     margin-left: 1vw;
                     opacity: 0.75;
                     width: 17vw;
                     background-size: cover;
                     background-position-x: right;
                   }
-                  &:hover, &:focus{
+
+                  &:hover, &:focus {
                     color: $fontColor;
-                    &:after{
+
+                    &:after {
                       opacity: 1;
                       background-image: $link-pfeil-schwarz;
                     }
                   }
                 }
-                strong{
+
+                strong {
                   color: $fontColor;
-                  &:after{
+
+                  &:after {
                     margin-left: 1vw;
                     opacity: 1;
                     background-image: $link-pfeil-schwarz;
                   }
-                  &:hover, &:focus{
-                    &:after{
+
+                  &:hover, &:focus {
+                    &:after {
                       background-image: $link-pfeil-schwarz;
                     }
                   }
                 }
               }
             }
-            .seitenbanner-opener{
+
+            .seitenbanner-opener {
               content: "";
               display: block;
               background-image: $link-pfeil-schwarz;
@@ -352,48 +363,57 @@ body {
               appearance: none;
               border: none;
               background-color: transparent;
-              &:hover{
+
+              &:hover {
                 opacity: 1;
               }
             }
           }
         }
-        @media all and (min-width: $break2){
+
+        @media all and (min-width: $break2) {
           width: auto;
           padding-left: 2rem;
           left: 0;
-          .inside{
-            .mod_navigation{
-              ul{
+          .inside {
+            .mod_navigation {
+              ul {
                 display: block;
                 width: auto;
-                li{
-                  a, strong{
+
+                li {
+                  a, strong {
                   }
-                  a{
+
+                  a {
                     @include hover-background(white);
-                    &:after{
+
+                    &:after {
                       background-size: contain;
                       width: 6rem;
 
                     }
-                    &:hover, &:focus{
-                      &:after{
+
+                    &:hover, &:focus {
+                      &:after {
                         background-image: $link-pfeil-weis;
                       }
                     }
                   }
-                  strong{
-                    &:after{
+
+                  strong {
+                    &:after {
                     }
-                    &:hover, &:focus{
-                      &:after{
+
+                    &:hover, &:focus {
+                      &:after {
                       }
                     }
                   }
                 }
               }
-              .seitenbanner-opener{
+
+              .seitenbanner-opener {
                 display: none;
               }
             }
@@ -424,8 +444,9 @@ body {
               margin-bottom: 4rem;
             }
           }
-          &.first{
-            >.first{
+
+          &.first {
+            > .first {
               margin-bottom: 3.4rem;
             }
           }
@@ -513,6 +534,7 @@ body {
 
         #footer-info {
           margin-top: 10px;
+
           .bsp-logo {
             max-width: 500px;
             margin-bottom: 2rem;
@@ -591,7 +613,7 @@ body {
         #header {
           .inside {
             #head-logo-container {
-              figure{
+              figure {
                 padding-left: 45%;
               }
             }

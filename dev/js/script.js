@@ -131,3 +131,21 @@ $(function() {
 
     });
 });
+
+// #seitenbanner toggle
+$(function () {
+    var el = $("#seitenbanner");
+    function toggleBanner () {
+        if ($(window).width() < 768) {
+            if (el.css('left') === '0px') {
+                el.css('left','-100vw');
+            } else {
+                el.css('left','0');
+            }
+        }
+    }
+
+    el.on('touch click', function () {
+        toggleBanner();
+    })
+});
