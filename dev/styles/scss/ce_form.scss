@@ -230,6 +230,100 @@ body {
                 }
 
                 &-upload{
+
+                  // Tooltips
+                  $unit-1: 5px;
+                  $unit-2: 4px;
+                  $zindex: 100;
+                  $zindex-3: 101;
+
+                  .tooltip {
+                    position: relative;
+                    cursor: help;
+                    &::after{
+                      content: "?";
+                      border: 1px solid rgba($fontColor, 0.6);
+                      border-radius: 50%;
+                      display: inline-block;
+                      font-size: 0.75rem;
+                      padding: 0.25rem;
+                      height: 0.5rem;
+
+                    }
+                    &::before {
+                      background: black;
+                      bottom: 100%;
+                      color: white;
+                      content: attr(data-tooltip);
+                      display: block;
+                      font-size: $linkSize;
+                      left: 50%;
+                      opacity: 0;
+                      overflow: hidden;
+                      padding: $unit-1 $unit-2;
+                      pointer-events: none;
+                      position: absolute;
+                      text-overflow: ellipsis;
+                      transform: translate(-50%, $unit-2);
+                      transition: opacity .2s, transform .2s;
+                      white-space: pre;
+                      z-index: $zindex-3;
+                    }
+                    &:focus,
+                    &:hover {
+                      &::before {
+                        opacity: 1;
+                        transform: translate(-50%, -$unit-1);
+                      }
+                    }
+                    &[disabled],
+                    &.disabled {
+                      pointer-events: auto;
+                    }
+
+                    &.tooltip-right {
+                      &::before {
+                        bottom: 50%;
+                        left: 100%;
+                        transform: translate(-$unit-1, 50%);
+                      }
+                      &:focus,
+                      &:hover {
+                        &::before {
+                          transform: translate($unit-1, 50%);
+                        }
+                      }
+                    }
+
+                    &.tooltip-bottom {
+                      &::before {
+                        bottom: auto;
+                        top: 100%;
+                        transform: translate(-50%, -$unit-2);
+                      }
+                      &:focus,
+                      &:hover {
+                        &::before {
+                          transform: translate(-50%, $unit-1);
+                        }
+                      }
+                    }
+
+                    &.tooltip-left {
+                      &::before {
+                        bottom: 50%;
+                        left: auto;
+                        right: 100%;
+                        transform: translate($unit-2, 50%);
+                      }
+                      &:focus,
+                      &:hover {
+                        &::before {
+                          transform: translate(-$unit-1, 50%);
+                        }
+                      }
+                    }
+                  }
                   input{
                     width: 100%;
                     display: block;
