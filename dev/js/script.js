@@ -54,6 +54,10 @@ $(document).ready(function () {
 
 // Mobile Menu Navigation Openers //
 
+$(function open_trail() {
+    $('.trail >ul').addClass('sub-open');
+    $('.active >ul').addClass('sub-open');
+});
 
 function sub_open(id, level) {
     if (window.matchMedia("(max-width: 64em)").matches) {

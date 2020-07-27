@@ -114,6 +114,16 @@ body {
                 li {
                   font-size: 1.625rem;
                   margin-bottom: 10px;
+                  &.trail{
+                    >div{
+                      >a{
+                        >span{
+                          font-weight: 800;
+                          margin-top: -1%;
+                        }
+                      }
+                    }
+                  }
 
                   a {
                     @include hover-background(black);
@@ -123,6 +133,9 @@ body {
                     display: flex;
                     justify-content: space-between;
                     margin-bottom: 0.25em;
+                    >strong{
+                      margin-top: -1%;
+                    }
 
                     .sub-opener {
                       @include transition();
@@ -144,6 +157,11 @@ body {
 
                     li {
                       font-size: $fontSize;
+                      .nav-link-container{
+                        >strong{
+                          margin-top: -2%;
+                        }
+                      }
 
                       .level_3 {
                         margin-left: 1rem;

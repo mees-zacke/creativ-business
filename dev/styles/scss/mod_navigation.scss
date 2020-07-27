@@ -51,11 +51,15 @@ $navColor: white;
           margin-right: 0;
         }
         &.trail {
+          margin-top: -5px;
           a {
             span {
               font-weight: 800;
             }
           }
+        }
+        &.active{
+          margin-top: -5px;
         }
         a{
           &:hover, &:focus {
