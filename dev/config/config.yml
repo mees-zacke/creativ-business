@@ -3,7 +3,7 @@ contao:
     url_suffix: '/'
     image:
         imagine_options:
-            jpeg_quality: 100
+            jpeg_quality: 30
         sizes:
             6zu4:
                 width: 1920
@@ -13,6 +13,7 @@ contao:
                 cssClass: '16zu9-image'
                 densities: '1x, 2x'
                 sizes: '100vw'
+                lazy_loading: true
                 items:
                     - width: 1200
                       height: 800
@@ -44,6 +45,7 @@ contao:
                 cssClass: '16zu9-image'
                 densities: '1x, 2x'
                 sizes: '100vw'
+                lazy_loading: true
                 items:
                     - width: 1200
                       height: 675
@@ -74,6 +76,7 @@ contao:
                 cssClass: '2zu1-image'
                 densities: '1x, 2x'
                 sizes: '100vw'
+                lazy_loading: true
                 items:
                     - width: 1200
                       height: 600
@@ -104,6 +107,7 @@ contao:
                 cssClass: '2zu1-image'
                 densities: '1x, 2x'
                 sizes: '100vw'
+                lazy_loading: true
                 items:
                     - width: 1200
                       height: 900
