@@ -1,0 +1,29 @@
+.ui-autocomplete {
+  $border: 1px solid rgb(220, 220, 220);
+  position: absolute;
+  z-index: 9999999;
+  font-size: 1rem;
+
+  .ui-menu-item {
+    background-color: #fff;
+    text-indent: 2px;
+    cursor: pointer;
+    color: black;
+  }
+
+  .ui-menu-item-wrapper {
+    padding: 4px;
+  }
+
+  .ui-menu-divider {
+    border: 2px solid black;
+  }
+
+  .ui-state-focus, .ui-state-hover, .ui-state-active {
+    background-color: lighten($color1, 65%);
+  }
+}
+
+.ui-helper-hidden-accessible {
+  display: none;
+}

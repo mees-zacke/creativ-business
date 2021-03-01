@@ -1,0 +1,83 @@
+//mobile opener
+$height-icon: 25px;
+$width-line: 40px;
+$height-line: 6px;
+
+$transition-time: 0.4s;
+$rotation: 45deg;
+$translateY: ($height-icon / 2);
+$translateX: 0;
+
+.mobile-opener {
+  @media all and (min-width: $break1) {
+    margin-right: 5rem;
+  }
+
+  .hamburger-icon-container {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+
+    .hamburger-icon {
+      width: $width-line;
+      height: $height-icon;
+      position: relative;
+      display: block;
+      border-bottom: none;
+
+      .line {
+        display: block;
+        background: $color1;
+        width: $width-line;
+        height: $height-line;
+        position: absolute;
+        left: 0;
+        transition: all $transition-time;
+
+        &.line-1 {
+          top: 0;
+          width: 30px;
+          transform-origin: left;
+        }
+
+        &.line-2 {
+          top: 50%;
+          background: $color2;
+
+        }
+
+        &.line-3 {
+          top: 100%;
+          width: 30px;
+          transform-origin: left;
+        }
+      }
+
+      &:hover {
+        .line-1 {
+          transform: scaleX(1.33);
+        }
+
+        .line-3 {
+            transform: scaleX(1.33);
+        }
+
+        &.active {
+          .line-1 {
+            transform: scaleX(1.33);
+          }
+
+          .line-2 {
+            opacity: 0;
+          }
+
+          .line-3 {
+            transform: scaleX(1.33);
+          }
+        }
+      }
+
+
+    }
+  }
+}

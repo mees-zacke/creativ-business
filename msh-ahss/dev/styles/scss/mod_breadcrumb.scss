@@ -1,0 +1,33 @@
+.mod_breadcrumb {
+  font-size: 0.875rem;
+  margin: 20px 0;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 1vw 0;
+
+    > span {
+      margin-right: 0.5rem;
+    }
+
+    li {
+      color: $color1;
+
+      &:after {
+        content: '|';
+        margin: 0 0.5rem;
+      }
+
+      &.last {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}

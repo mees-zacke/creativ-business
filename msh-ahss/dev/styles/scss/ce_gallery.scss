@@ -1,0 +1,108 @@
+.ce_gallery {
+  ul {
+    li {
+      &:first-of-type {
+        figure {
+          margin-left: -($galerieAbstand / 2);
+        }
+      }
+    }
+  }
+
+
+
+
+  .cols_2, .cols_3, .cols_4, .cols_5, .cols_6, .cols_7, .cols_8, .cols_9, .cols_10, .cols_11, .cols_12 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+  }
+
+  @media all and (max-width: $break3){
+    @for $col from 1 through 12{
+      @if($col % 2 == 0){
+        .cols_#{$col}{
+          > li {
+            width: 50%;
+            &:nth-of-type(2n){
+              figure{
+                margin-left: ($galerieAbstand / 2);
+              }
+            }
+            &:nth-of-type(2n+1){
+              figure{
+                margin-left: -($galerieAbstand / 2);
+              }
+            }
+            > * {
+              padding: ($galerieAbstand / 2);
+              width: 100%;
+              margin-bottom: ($galerieAbstand / 2);
+            }
+          }
+        }
+      }
+      @if ($col % 2 != 0){
+        .cols_#{$col}{
+          > li {
+            width: 33.333%;
+            &:nth-of-type(3n){
+              figure{
+                margin-left: ($galerieAbstand / 2);
+              }
+            }
+            &:nth-of-type(3n+1){
+              figure{
+                margin-left: -($galerieAbstand / 2);
+              }
+            }
+            > * {
+              padding: ($galerieAbstand / 2);
+              width: 100%;
+              margin-bottom: ($galerieAbstand / 2);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $break3) {
+    ul {
+      li {
+        &:first-of-type {
+          figure {
+            margin-left: -($galerieAbstand);
+          }
+        }
+      }
+    }
+
+    @for $col from 1 through 12{
+      .cols_#{$col}{
+        >li{
+          width: (100% / $col);
+          &:nth-of-type(#{$col}n){
+            figure{
+              margin-left: $galerieAbstand;
+            }
+          }
+          &:nth-of-type(#{$col}n+1){
+            figure{
+              margin-left: -($galerieAbstand);
+            }
+          }
+          > * {
+            padding: $galerieAbstand;
+            width: 100%;
+            margin-bottom: $galerieAbstand;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ce_galery ende

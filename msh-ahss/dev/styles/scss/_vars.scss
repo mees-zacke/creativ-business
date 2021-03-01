@@ -1,0 +1,333 @@
+// Breakpoints
+$break1: 30em;
+$break2: 48em;
+$break3: 64em;
+$break4: 90em;
+
+// Farben
+$color1: rgb(0, 0, 0);
+$color2: rgb(0, 130, 160);
+$color3: rgb(0, 160, 230);
+$color4: rgb(205, 20, 15);
+$color5: rgb(255, 255, 0);
+$color6: rgb(60, 165, 50);
+
+$colorPG1: rgb(255, 250, 125);
+$colorPG2: rgb(255, 210, 125);
+$colorPG3: rgb(255, 170, 125);
+$colorPG4: rgb(255, 130, 125);
+$colorPG5: rgb(255, 90, 125);
+
+$backgroundColor1: rgb(255, 255, 255);
+
+$shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+
+
+// Schrift
+$font1: 'Montserrat', Helvetica, sans-serif;
+$font2: 'Montserrat', Helvetica, Verdana, sans-serif;
+
+$link-pfeil-schwarz: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
+$link-pfeil-weis: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
+
+// Schrift Farben
+$fontColor: rgb(0, 0, 0);
+$fontColor2: rgb(0, 0, 0);
+
+$hColor: $color1;
+$linkColor: $fontColor;
+$linkColorHover: $color2;
+
+$colorImageCaption: $fontColor;
+
+// Schrift Größen
+
+$max-fontSize: 22; // Font Size bei größter Größe
+$min-fontSize: 18; // Font Size bei mobiler Größe
+
+$max-teaserSize: 27; // Teaser Size bei größter Größe
+$min-teaserSize: 22; // Teaser Size bei mobiler Größe
+
+$max-linkSize: 18; // Link Size bei größter Größe
+$min-linkSize: 14; // Link Size bei mobiler Größe
+
+$fontWidth: 400;
+$lineHeight: 1.5;
+
+// Überschrift Größen
+
+// h1
+$max-h1Size: 54; // h1 Size bei größter Größe
+$min-h1Size: 30; // h1 Size bei mobiler Größe
+
+// h2
+$max-h2Size: 72; // h2 Size bei größter Größe
+$min-h2Size: 35; // h2 Size bei mobiler Größe
+
+// h3
+$max-h3Size: 54; // h3 bei größter Größe
+$min-h3Size: 30; // h3 bei mobiler Größe
+
+// h4
+$max-h4Size: 36; // h4 bei größter Größe
+$min-h4Size: 25; // h4 bei mobiler Größe
+
+// h5
+$max-h5Size: $max-teaserSize; // h5 bei größter Größe
+$min-h5Size: $min-teaserSize; // h5 bei mobiler Größe
+
+// h6
+$max-h6Size: $max-fontSize; // h6 bei größter Größe
+$min-h6Size: $min-fontSize; // h6 bei mobiler Größe
+
+$hWidth: 400;
+$hLineHeight: 1.5;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////// Berechnungen von Schriften ////////////////////////////////////////////////////////////////////////////
+//////////// Fließtext
+$max-fontSize-rem-base: ($max-fontSize / 16);
+$max-fontSize-rem: #{$max-fontSize-rem-base}rem;
+$min-fontSize-rem-base: ($min-fontSize / 16);
+$min-fontSize-rem: #{$min-fontSize-rem-base}rem;
+$fontSize: calc(#{$min-fontSize}px + (#{$max-fontSize} - #{$min-fontSize}) * ((100vw - 320px) / (1600 - 300)));
+//////////// Teasertext
+$max-teaserSize-rem-base: ($max-teaserSize / 16);
+$max-teaserSize-rem: #{$max-teaserSize-rem-base}rem;
+$min-teaserSize-rem-base: ($min-teaserSize / 16);
+$min-teaserSize-rem: #{$min-teaserSize-rem-base}rem;
+$teaserSize: calc(#{$min-teaserSize}px + (#{$max-teaserSize} - #{$min-teaserSize}) * ((100vw - 320px) / (1600 - 300)));
+//////////// Link
+$max-linkSize-rem-base: ($max-linkSize / 16);
+$max-linkSize-rem: #{$max-linkSize-rem-base}rem;
+$min-linkSize-rem-base: ($min-linkSize / 16);
+$min-linkSize-rem: #{$min-linkSize-rem-base}rem;
+$linkSize: calc(#{$min-linkSize}px + (#{$max-linkSize} - #{$min-linkSize}) * ((100vw - 320px) / (1600 - 300)));
+
+//////////// Überschriften
+/////////// h1
+$max-h1Size-rem-base: ($max-h1Size / 16);
+$max-h1Size-rem: #{$max-h1Size-rem-base}rem;
+$min-h1Size-rem-base: ($min-h1Size / 16);
+$min-h1Size-rem: #{$min-h1Size-rem-base}rem;
+$h1Size: calc(#{$min-h1Size}px + (#{$max-h1Size} - #{$min-h1Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////// h2
+$max-h2Size-rem-base: ($max-h2Size / 16);
+$max-h2Size-rem: #{$max-h2Size-rem-base}rem;
+$min-h2Size-rem-base: ($min-h2Size / 16);
+$min-h2Size-rem: #{$min-h2Size-rem-base}rem;
+$h2Size: calc(#{$min-h2Size}px + (#{$max-h2Size} - #{$min-h2Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////// h3
+$max-h3Size-rem-base: ($max-h3Size / 16);
+$max-h3Size-rem: #{$max-h3Size-rem-base}rem;
+$min-h3Size-rem-base: ($min-h3Size / 16);
+$min-h3Size-rem: #{$min-h3Size-rem-base}rem;
+$h3Size: calc(#{$min-h3Size}px + (#{$max-h3Size} - #{$min-h3Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////// h4
+$max-h4Size-rem-base: ($max-h4Size / 16);
+$max-h4Size-rem: #{$max-h4Size-rem-base}rem;
+$min-h4Size-rem-base: ($min-h4Size / 16);
+$min-h4Size-rem: #{$min-h4Size-rem-base}rem;
+$h4Size: calc(#{$min-h4Size}px + (#{$max-h4Size} - #{$min-h4Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////// h5
+$max-h5Size-rem-base: ($max-h5Size / 16);
+$max-h5Size-rem: #{$max-h5Size-rem-base}rem;
+$min-h5Size-rem-base: ($min-h5Size / 16);
+$min-h5Size-rem: #{$min-h5Size-rem-base}rem;
+$h5Size: calc(#{$min-h5Size}px + (#{$max-h5Size} - #{$min-h5Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////// h6
+$max-h6Size-rem-base: ($max-h6Size / 16);
+$max-h6Size-rem: #{$max-h6Size-rem-base}rem;
+$min-h6Size-rem-base: ($min-h6Size / 16);
+$min-h6Size-rem: #{$min-h6Size-rem-base}rem;
+$h6Size: calc(#{$min-h6Size}px + (#{$max-h6Size} - #{$min-h6Size}) * ((100vw - 320px) / (1600 - 300)));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$contentWidth: 100rem;
+@mixin contentWidth {
+  max-width: $contentWidth;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+$abstandAussen: 0.75rem;
+
+$spaltenAbstand: 1rem;
+
+$borderRadius: 3px;
+
+$grid-columns: 5fr 7fr;
+
+$galerieAbstand: 0.5rem;
+
+// MIXINS
+@mixin pageWidth {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: $abstandAussen;
+  padding-right: $abstandAussen;
+}
+
+@mixin transition($time: 0.2s) {
+  -webkit-transition: ease all $time;
+  -moz-transition: ease all $time;
+  -o-transition: ease all $time;
+  transition: ease all $time;
+}
+
+@mixin link($color:$linkColor, $colorHover:$linkColorHover, $colorActive:darken($linkColorHover, 40%), $borderColor:transparent, $borderColorHover:transparent) {
+  @include transition();
+  cursor: pointer;
+  border-bottom: 1px solid $borderColor;
+  color: $color;
+  text-decoration: none;
+  font-weight: 400;
+
+  &:hover, &:focus {
+    color: $linkColorHover;
+    border-color: $borderColorHover;
+  }
+  &:active {
+    color: $colorActive;
+  }
+}
+
+@mixin link-pfeil {
+  padding: 5px;
+  white-space: nowrap;
+  font-size: $linkSize;
+  @media all and (max-width: 300px) {
+    font-size: $min-linkSize-rem;
+  }
+  @media all and (min-width: 1600px) {
+    font-size: $max-linkSize-rem;
+  }
+  &:after {
+    @include transition();
+    content: " ";
+    display: inline-block;
+    background-image: $link-pfeil-schwarz;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    height: 1em;
+    width: 6rem;
+    margin-left: 1rem;
+  }
+}
+
+@mixin link-pfeil-back {
+  padding: 5px;
+  white-space: nowrap;
+  font-size: $linkSize;
+  @media all and (max-width: 300px) {
+    font-size: $min-linkSize-rem;
+  }
+  @media all and (min-width: 1600px) {
+    font-size: $max-linkSize-rem;
+  }
+  &:before {
+    @include transition();
+    content: " ";
+    display: inline-block;
+    background-image: $link-pfeil-schwarz;
+    background-repeat: no-repeat;
+    background-position-y: top;
+    transform: rotate(180deg);
+    height: 1em;
+    width: 6rem;
+    margin-right: 1rem;
+  }
+  &:hover, &:focus {
+    &:before {
+      background-image: $link-pfeil-weis;
+    }
+  }
+}
+
+@mixin button($normal: $color2, $active: white) {
+  position: relative;
+  @include link-pfeil();
+  appearance: none;
+  border: 1px solid $active;
+  padding: 5px;
+  background-color: $normal;
+  font-family: $font1;
+  @include transition();
+  span {
+    @include transition();
+    color: $active;
+    position: relative;
+    margin-right: 2vw;
+    padding-right: 2px;
+    background-color: $normal;
+    z-index: 1;
+    @media all and (min-width: $break2) {
+      margin-right: 5vw;
+    }
+  }
+  &:after {
+    @include transition();
+    position: absolute;
+    top: 15%;
+    right: 5px;
+    content: $link-pfeil-weis;
+    height: 1rem;
+    object-fit: cover;
+    background-image: none;
+  }
+  &:hover, &:focus {
+    background-color: $active;
+    border: 1px solid $normal;
+    cursor: pointer;
+    outline: none;
+
+    span {
+      background-color: $active;
+      color: $normal;
+    }
+
+    &:after {
+      content: $link-pfeil-schwarz;
+      background-image: none;
+    }
+  }
+  @media screen and (min-width: $break2) {
+  }
+}
+
+
+
+@mixin link-block($background: white) {
+  &.link-block {
+    h1, h2, h3, h4, h5, h6 {
+      @include transition();
+      color: invert($background);
+    }
+
+    .text, .ce_text {
+    }
+
+      .weiterlesen {
+        @include transition();
+        color: invert($background)
+      }
+
+    &:hover, &:focus {
+      h1, h2, h3, h4, h5, h6 {
+        color: $color2;
+      }
+
+      .text, .ce_text {
+      }
+
+      .weiterlesen {
+        color: $color2;
+
+        &:after {
+          background-image: $link-pfeil-weis;
+        }
+      }
+    }
+  }
+}

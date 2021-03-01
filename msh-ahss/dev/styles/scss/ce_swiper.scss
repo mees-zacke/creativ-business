@@ -1,0 +1,17 @@
+.ce_swiperStart{
+  .swiper-container{
+    .swiper-wrapper{
+      .swiper-slide{
+        width: 75%;
+        &-active{
+        }
+        @media all and (min-width: $break2){
+          width: 45%;
+        }
+        @media all and (min-width: $break3) {
+          width: 25%;
+        }
+      }
+    }
+  }
+}

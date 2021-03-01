@@ -1,0 +1,239 @@
+.ce_text {
+    grid-column-start: 2;
+  grid-column-end: 13;
+  @media all and (min-width: $break3){
+    grid-column-start: 3;
+    grid-column-end: 11;
+  }
+  &[class*='cce'] {
+    display: grid;
+    grid-template-columns: repeat(($columns - 1), 1fr);
+    grid-template-rows: $rows;
+    grid-column-gap: $column-gap;
+    grid-row-gap: $row-gap;
+    > * {
+      grid-column: span ($columns - 1);
+    }
+    @media all and (min-width: $break3){
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: $rows;
+      grid-column-gap: $column-gap;
+      grid-row-gap: $row-gap;
+      > * {
+        grid-column: span 8;
+      }
+    }
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    & ~ ul, & ~ ol {
+      margin-top: -1em;
+    }
+  }
+
+  .text {
+    .headline {
+      display: inline-block;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: underline;
+      @include link();
+      >*{
+        text-decoration: underline;
+      }
+    }
+
+    .weiterlesen {
+      a{
+        @include link-pfeil;
+        text-decoration: none;
+      }
+    }
+  }
+
+  ul {
+    > li {
+      padding-left: 18%;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      @media all and (min-width: $break2){
+        padding-left: 10%;
+      }
+
+      &:before {
+        content: "";
+        background-image: $link-pfeil-schwarz;
+        background-size: 100% 100%;
+        background-position: right center;
+        background-repeat: no-repeat;
+        color: $color1;
+        font-size: 1.5rem;
+        display: inline-block;
+        margin-right: 1rem;
+        margin-left: -7rem;
+        width: 6rem;
+        height: 1rem;
+      }
+    }
+  }
+
+  figure {
+    margin-bottom: 1em;
+
+    &.float_left, &.float-left {
+      float: left;
+      max-width: 45%;
+      margin-right: 2em;
+    }
+
+    &.float_right, &.float-right {
+      float: right;
+      max-width: 45%;
+      margin-left: 2em;
+    }
+
+    &.float_left, &.float_right, &.float-left, &.float-right {
+      margin-top: 0.3125em;
+      @media screen and (max-width: 650px) {
+        max-width: 100%;
+        float: none;
+      }
+    }
+
+  }
+
+  &.text2columns {
+    column-count: 1;
+    column-gap: initial;
+    @media (min-width: $break2) {
+      column-count: 2;
+      column-gap: $abstandAussen;
+    }
+  }
+
+  &.withoutFigcaption {
+    figcaption {
+      display: none;
+    }
+  }
+
+
+  &.link-block {
+    .headline {
+      @include transition();
+    }
+
+    .text {
+      .weiterlesen {
+        @include link-pfeil();
+        @include transition();
+      }
+    }
+
+    &:hover, &:focus {
+      .text-container {
+        .headline {
+          color: $color2;
+        }
+
+        .text {
+          .weiterlesen {
+            color: $color2;
+          }
+        }
+      }
+    }
+
+  }
+
+  &.links, &.rechts {
+    display: grid;
+    grid-template-columns: repeat(($columns - 1), 1fr);
+    grid-template-rows: $rows;
+    grid-column-gap: $column-gap;
+    grid-row-gap: $row-gap;
+    > * {
+      grid-column: span;
+    }
+    @media all and (min-width: $break3){
+      grid-template-columns: repeat(8 , 1fr);
+    }
+  }
+
+  &.links {
+    figure {
+      grid-column-start: 1;
+      grid-column-end: $columns;
+    }
+
+    .text-container {
+      grid-column-start: 2;
+      grid-column-end: $columns;
+    }
+
+    @media all and (min-width: $break3) {
+      figure {
+        grid-row-start: 1;
+        grid-column: 1/5;
+      }
+
+      .text-container {
+        grid-row-start: 1;
+        grid-column: 6/9;
+      }
+    }
+    @for $k from 1 through 5 {
+      &.image-span-#{$k} {
+        figure {
+          grid-column-start: 1;
+          grid-column-end: ($k + 1);
+        }
+
+        .text-container {
+          grid-column-start: ($k + 2);
+          grid-column-end: 9;
+        }
+      }
+
+    }
+  }
+
+  &.rechts {
+    figure {
+      grid-column: 1/($columns + 1);
+    }
+
+    .text-container {
+      grid-column: 1/($columns - 1);
+    }
+
+    @media all and (min-width: $break3) {
+      figure {
+        grid-row-start: 1;
+        grid-column: 5/9;
+      }
+
+      .text-container {
+        grid-row-start: 1;
+        grid-column: 1/4;
+      }
+    }
+
+    @for $j from 1 through 5 {
+      &.image-span-#{$j} {
+        .text-container {
+          grid-column-start: 1;
+          grid-column-end: (9 - ($j+ 1));
+        }
+
+        figure {
+          grid-column-start: (9 - $j);
+          grid-column-end: 9;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.ce_player {
+  .video_container {
+    max-width: 100%;
+    video {
+      @include transition();
+      filter: grayscale(1);
+      height: 100% !important;
+      width: 100% !important;
+      &:hover, &:active, &:focus, &:focus-within{
+        filter: grayscale(0);
+      }
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<div class="layout_latest arc_<?= $this->archive->id ?> block<?= $this->class ?>" itemscope itemtype="http://schema.org/Article">
+
+  <a href="<?= $this->link ?>" title="<?= $this->linkTitle; ?>" class="link-block" itemprop="url">
+    <?php if ($this->addImage): ?>
+      <figure class="image_container<?= $this->floatClass ?>" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+        <?php $this->insert('picture_default', $this->picture); ?>
+      </figure>
+    <?php endif; ?>
+
+    <?php if ($this->hasMetaFields): ?>
+      <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= \Date::parse("d. F Y", $this->time) ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
+    <?php endif; ?>
+
+    <h2 itemprop="name"><?= $this->headline ?></h2>
+
+    <div class="ce_text block" itemprop="description">
+      <?= $this->teaser ?>
+    </div>
+
+    <?php if ($this->hasText || $this->hasTeaser): ?>
+      <div class="more-container">
+        <p class="more weiterlesen">More Information</p>
+      </div>
+    <?php endif; ?>
+  </a>
+
+</div>
