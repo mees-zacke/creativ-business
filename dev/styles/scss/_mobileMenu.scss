@@ -12,9 +12,15 @@ body {
             left: -100vw;
             width: 100vw;
             height: 100vh;
+            overflow-y: scroll;
             background-color: black;
             padding: 30px;
             position: fixed;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            &::-webkit-scrollbar {
+              display: none;
+            }
 
             .opener-suche-container {
               display: flex;
@@ -187,6 +193,7 @@ body {
             @media all and (min-width: $break3) {
               left: 0;
               height: auto;
+              max-height: 100vh;
               top: -100%;
               box-shadow: $shadow;
               .opener-suche-container {
@@ -211,7 +218,7 @@ body {
 
                 ul.level_1 {
                   display: flex;
-                  justify-content: space-around;
+                  justify-content: space-between;
                   flex-wrap: wrap;
 
                   > li {
