@@ -146,7 +146,15 @@
         }
       }
     }
-
+    &:hover, &:focus{
+      .text{
+        .weiterlesen{
+          &:after{
+            background-image: $link-pfeil-blau;
+          }
+        }
+      }
+    }
   }
 
   &.links, &.rechts {

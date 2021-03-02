@@ -113,7 +113,7 @@ body {
                 width: 100%;
 
                 li {
-                  font-size: 1.625rem;
+                  font-size: $fontSize;
                   margin-bottom: 10px;
                   &.trail{
                     >div{
@@ -157,7 +157,7 @@ body {
                     overflow: hidden;
 
                     li {
-                      font-size: $fontSize;
+                      font-size: calc(#{$linkSize} * 0.8);
                       .nav-link-container{
                         >strong{
                           margin-top: -2%;
@@ -213,12 +213,11 @@ body {
 
                 ul.level_1 {
                   display: flex;
-                  justify-content: space-between;
                   flex-wrap: wrap;
 
                   > li {
-                    font-size: 30px;
-                    margin-right: 1rem;
+                    font-size: $teaserSize;
+                    margin-right: 3rem;
 
                     &:last-of-type {
                       margin-right: 0;
@@ -233,7 +232,7 @@ body {
                       max-width: 8em;
 
                       li {
-                        font-size: 1rem;
+                        font-size: 14px;
 
                         span {
                           margin-bottom: 2px;

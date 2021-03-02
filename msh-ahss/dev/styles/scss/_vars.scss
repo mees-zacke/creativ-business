@@ -29,6 +29,7 @@ $font2: 'Montserrat', Helvetica, Verdana, sans-serif;
 
 $link-pfeil-schwarz: url("/files/layout/images/Link-Pfeil-BsP-FCB.svg");
 $link-pfeil-weis: url("/files/layout/images/Link-Pfeil-BsP-FCB-weis.svg");
+$link-pfeil-blau: url("/files/layout/images/Link-Pfeil-BsP-FCB-blau.svg");
 
 // Schrift Farben
 $fontColor: rgb(0, 0, 0);
@@ -243,7 +244,7 @@ $galerieAbstand: 0.5rem;
   }
   &:hover, &:focus {
     &:before {
-      background-image: $link-pfeil-weis;
+      background-image: $link-pfeil-blau;
     }
   }
 }
