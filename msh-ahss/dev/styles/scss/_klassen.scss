@@ -68,6 +68,12 @@ body {
   }
 }
 
+.farbig{
+  img{
+    filter: none;
+  }
+}
+
 .ganze-breite {
   max-width: 100% !important;
   display: block !important;
@@ -118,11 +124,7 @@ body {
           }
 
           &:hover, &:focus {
-            color: black;
-
-            &:after {
-              background-image: $link-pfeil-schwarz;
-            }
+            color: $color2;
           }
         }
       }
@@ -132,11 +134,8 @@ body {
       &.link-block {
         .text-container {
           .text-container-inner {
-            .headline {
-              @include transition();
-              background-size: 210%;
-              background-position-x: 100%;
-              background-image: linear-gradient(90deg, black 50%, white 50%);
+            .headline{
+              color: $fontColor;
             }
           }
         }
@@ -145,18 +144,12 @@ body {
           .text-container {
             .text-container-inner {
               .headline {
-                background-position-x: -2px;
-                color: white !important;
+                color: $color2 !important;
               }
 
               .text {
                 .weiterlesen {
-                  background-position-x: -2px;
-                  color: black;
-
-                  &:after {
-                    background-image: $link-pfeil-schwarz;
-                  }
+                  color: $color2;
                 }
               }
             }

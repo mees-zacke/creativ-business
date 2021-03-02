@@ -1,71 +1,75 @@
 .mod_eventlist {
+  position: relative;
   margin-top: 4rem;
-  @include grid(12, auto, 2vw, 2vh);
   margin-left: ($abstandAussen/-4);
   margin-right: ($abstandAussen/-4);
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 4rem;
+  $trennerWidth: 10px;
+  grid-column-gap: calc(4rem + #{$trennerWidth});
+  .trenner-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    .trenner{
+      height: 100%;
+      width: $trennerWidth;
+      background-color: $color2;
+    }
+  }
+  @media all and (max-width: 767px){
+    display: block;
+    .layout_teaser{
+      margin-bottom: 4rem;
+    }
+    .trenner-container{
+      display: none;
+    }
+  }
   .layout_teaser {
+    position: relative;
     grid-column: span 12;
 
     > a {
       display: block;
-      @include link-block();
 
-      .event-image {
-        position: relative;
-
-        .date {
-          background-color: black;
-          width: 15%;
-          height: 33%;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          margin-bottom: 0;
-
-          time {
-            span {
-              color: white;
-              display: block;
-              text-align: center;
-
-              &.tag {
-                line-height: 0.5;
-                font-size: 12vw;
-                margin-top: 30%;
-                @media all and (min-width: $break2) {
-                  font-size: 5.5vw;
-                }
-                @media all and (min-width: $break3) {
-                  font-size: 4vw;
-                  line-height: 0.6;
-                }
-                @media all and (min-width: 1600px) {
-                  font-size: 64px;
-                }
-              }
-
-              &.monat {
-                font-size: 8vw;
-                @media all and (min-width: $break2) {
-                  font-size: 4vw;
-                }
-                @media all and (min-width: $break3) {
-                  font-size: 2.4vw;
-                }
-                @media all and (min-width: 1600px) {
-                  font-size: 38.4px;
-                }
-              }
-            }
-          }
-        }
+      .date{
+        font-size: $teaserSize;
+        font-weight: 800;
+        color: $color2;
+        margin-bottom: 1rem;
       }
 
       h2 {
         display: inline-block;
-        font-size: $h5Size;
         font-weight: 800;
+        color: $color2;
+        overflow: hidden;
+        margin-bottom: 0;
+        &:after{
+          content: "";
+          margin-top: 2px;
+          display: block;
+          height: 1px;
+          width: 100%;
+          background-color: $color2;
+          @include transition();
+          transform: translateX(-100%);
+        }
+      }
+
+      h2, p{
+        line-height: 1.2;
+        font-size: $linkSize;
+        color: $color2;
+        @media all and (min-width: 100rem) {
+          font-size: 1rem;
+        }
       }
 
       p {
@@ -83,19 +87,19 @@
 
         }
       }
+      &:hover, &:focus{
+        h2{
+          &:after{
+            transform: translateX(0);
+          }
+        }
+      }
     }
   }
 
   @media screen and (min-width: $break2) {
     .layout_teaser {
-      grid-column: span 6;
-      margin-bottom: 2rem;
-    }
-  }
-  @media all and (min-width: $break3) {
-    .layout_teaser {
-      grid-column: span 4;
-      margin-bottom: 4rem;
+      grid-column: span 1;
     }
   }
 }

@@ -65,16 +65,16 @@
 
       &:before {
         content: "";
-        background-image: $link-pfeil-schwarz;
-        background-size: 100% 100%;
+        background-image: url("/files/layout/images/bsp-listenstrich.svg");
+        background-size: contain;
         background-position: right center;
         background-repeat: no-repeat;
         color: $color1;
         font-size: 1.5rem;
         display: inline-block;
         margin-right: 1rem;
-        margin-left: -7rem;
-        width: 6rem;
+        margin-left: -2rem;
+        width: 1rem;
         height: 1rem;
       }
     }

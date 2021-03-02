@@ -194,9 +194,12 @@ $galerieAbstand: 0.5rem;
 }
 
 @mixin link-pfeil {
+  display: flex;
+  align-items: center;
   padding: 5px;
   white-space: nowrap;
   font-size: $linkSize;
+  height: 1em;
   @media all and (max-width: 300px) {
     font-size: $min-linkSize-rem;
   }
@@ -211,7 +214,7 @@ $galerieAbstand: 0.5rem;
     background-repeat: no-repeat;
     background-position-y: bottom;
     height: 1em;
-    width: 6rem;
+    width: 1rem;
     margin-left: 1rem;
   }
 }
@@ -247,8 +250,8 @@ $galerieAbstand: 0.5rem;
 
 @mixin button($normal: $color2, $active: white) {
   position: relative;
-  @include link-pfeil();
   appearance: none;
+  box-sizing: content-box;
   border: 1px solid $active;
   padding: 5px;
   background-color: $normal;
@@ -258,23 +261,8 @@ $galerieAbstand: 0.5rem;
     @include transition();
     color: $active;
     position: relative;
-    margin-right: 2vw;
     padding-right: 2px;
-    background-color: $normal;
     z-index: 1;
-    @media all and (min-width: $break2) {
-      margin-right: 5vw;
-    }
-  }
-  &:after {
-    @include transition();
-    position: absolute;
-    top: 15%;
-    right: 5px;
-    content: $link-pfeil-weis;
-    height: 1rem;
-    object-fit: cover;
-    background-image: none;
   }
   &:hover, &:focus {
     background-color: $active;
@@ -283,16 +271,8 @@ $galerieAbstand: 0.5rem;
     outline: none;
 
     span {
-      background-color: $active;
       color: $normal;
     }
-
-    &:after {
-      content: $link-pfeil-schwarz;
-      background-image: none;
-    }
-  }
-  @media screen and (min-width: $break2) {
   }
 }
 

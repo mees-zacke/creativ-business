@@ -1,0 +1,11 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <div class="trenner-container">
+    <div class="trenner"></div>
+  </div>
+  <?= $this->events ?>
+  <?= $this->pagination ?>
+
+<?php $this->endblock(); ?>

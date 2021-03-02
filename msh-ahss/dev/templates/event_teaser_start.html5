@@ -1,0 +1,20 @@
+<div class="event layout_teaser<?= $this->classList ?>" itemscope itemtype="http://schema.org/Event">
+
+  <a href="<?= $this->href ?>" title="<?= $this->linkTitle; ?>" class="link-block" itemprop="url">
+      <p class="date">
+              <span class="date">
+                <time><?= \Date::parse("d.m.Y", $this->startDate) ?><?php if ($this->endDate): ?> bis <?= \Date::parse("d.m.Y", $this->endDate) ?>, <?php else: ?>, <?php endif; ?></time>
+              </span>
+          <?php if ($this->addTime): ?>
+          <span class="time"><time datetime="<?= $this->datetime ?>" itemprop="startTime"><?= \Date::parse("H:i", $this->startTime) ?><?php if ( $this->endDate):?><?php if( ($this->startTime - $this->startDate) !== ($this->endTime - $this->endDate) ): ?> bis <?= \Date::parse("H:i", $this->endTime) ?> Uhr<?php else: ?> Uhr<?php endif; ?><?php else: ?><?php if($this->startTime !== $this->endTime ): ?> bis <?= \Date::parse("H:i", $this->endTime) ?> Uhr<?php else: ?> Uhr<?php endif; ?><?php endif; ?></time></span>
+          <?php endif; ?>
+      </p>
+
+      <h2 itemprop="name"><?= $this->title ?></h2>
+
+      <div class="ce_text block" itemprop="description">
+          <?= $this->teaser ?>
+      </div>
+
+    </a>
+</div>
