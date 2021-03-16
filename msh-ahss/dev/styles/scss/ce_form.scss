@@ -455,8 +455,8 @@ body {
           }
 
           &.datenschutz {
-            font-size: calc(11.2px + (16 - 11.2) * ((100vw - 320px) / (1600 - 300)));
-            line-height: calc(16px + (18 - 16) * ((100vw - 320px) / (1600 - 300)));
+            font-size: calc(8px + (16 - 11.2) * ((100vw - 320px) / (1600 - 300)));
+            line-height: calc(18px + (18 - 16) * ((100vw - 320px) / (1600 - 300)));
             margin-bottom: 1rem;
 
             span {
