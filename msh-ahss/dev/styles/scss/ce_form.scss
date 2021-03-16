@@ -4,463 +4,492 @@ body {
       border: 1px solid red;
     }
   }
-  #wrapper {
-    #container {
-      #main {
-        .ce_form {
-          grid-column: 3 / span 7;
 
-          .formbody {
+  .ce_form, .mod_form {
+    grid-column: 3 / span 7;
 
-            > fieldset {
-              margin-bottom: 4rem;
+    .formbody {
 
-              > fieldset{
-                margin-bottom: 2rem;
-                margin-top: 2rem;
-              }
+      > fieldset {
+        margin-bottom: 4rem;
 
-              .error{
-                color: red;
-              }
+        > fieldset {
+          margin-bottom: 2rem;
+          margin-top: 2rem;
+        }
 
-              legend, label {
-                color: lighten($fontColor, 60%);
-                .invisible{
-                  margin: 0 !important;
-                }
-              }
+        .error {
+          color: red;
+        }
 
-              > legend {
-                width: 100%;
-                font-size: $h4Size;
-                border-bottom: 1px solid black;
-                margin-bottom: 2rem;
+        legend, label {
+          color: lighten($fontColor, 60%);
+
+          .invisible {
+            margin: 0 !important;
+          }
+        }
+
+        > legend {
+          width: 100%;
+          font-size: $h4Size;
+          border-bottom: 1px solid black;
+          margin-bottom: 2rem;
+          color: black;
+        }
+
+        .widget {
+          margin-bottom: 1.5rem;
+
+          &-text {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            label {
+              @include transition(0.3s);
+              margin-right: 1rem;
+
+              &:hover, &:focus {
                 color: black;
               }
+            }
 
-              .widget {
-                margin-bottom: 1.5rem;
+            input {
+              @include transition(0.3s);
+              margin-left: auto;
+              height: 1.2em;
+              min-width: 100%;
+              border: 1px solid lighten(black, 60%);
+              border-top: none;
+              border-right: none;
+              padding-left: 0.25rem;
 
-                &-text {
-                  display: flex;
-                  justify-content: space-between;
-                  flex-wrap: wrap;
+              &:focus {
+                outline: none;
+              }
 
-                  label {
-                    @include transition(0.3s);
-                    margin-right: 1rem;
+              &:hover, &:focus {
+                border-color: black;
+              }
 
-                    &:hover, &:focus {
-                      color: black;
-                    }
-                  }
+              @include error();
+            }
 
-                  input {
-                    @include transition(0.3s);
-                    margin-left: auto;
-                    height: 1.2em;
-                    min-width: 100%;
-                    border: 1px solid lighten(black, 60%);
-                    border-top: none;
-                    border-right: none;
-                    padding-left: 0.25rem;
+            @media all and (min-width: $break3) {
+              input {
+                min-width: 70%;
+              }
+            }
+          }
 
-                    &:focus {
-                      outline: none;
-                    }
+          &-select {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
 
-                    &:hover, &:focus {
-                      border-color: black;
-                    }
-                    @include error();
-                  }
-                  @media all and (min-width: $break3){
-                    input{
-                      min-width: 70%;
-                    }
+            label {
+              margin-bottom: 0.5rem;
+            }
+
+            select {
+              @include transition(0.3s);
+              min-width: 100%;
+              border: 1px solid lighten(black, 60%);
+              border-top: none;
+              border-right: none;
+
+              &:focus {
+                outline: none;
+              }
+
+              &:hover, &:focus {
+                border-color: black;
+              }
+
+              @include error();
+            }
+
+            @media all and (min-width: $break3) {
+              select {
+                min-width: 70%;
+              }
+            }
+          }
+
+          &-checkbox {
+            legend {
+              margin-bottom: 0.5rem;
+              border-bottom: 1px solid lighten(black, 60%);
+            }
+
+            span {
+              margin-right: 1rem;
+              position: relative;
+              display: inline-block;
+              margin-bottom: 0.5rem;
+
+              &:last-of-type {
+                margin-right: 0;
+              }
+
+              input {
+                opacity: 0;
+
+                + ::after {
+                  @include transition();
+                  content: " ";
+                  background-image: url("/files/layout/images/checkbox-off.svg");
+                  background-repeat: no-repeat;
+                  background-position: left top;
+                  position: absolute;
+                  top: -2px;
+                  left: 0;
+                  width: 1.25rem;
+                  height: 1.25rem;
+                  display: inline-block;
+                }
+
+                &:hover {
+                  + ::after {
+                    content: " ";
+                    background-image: url("/files/layout/images/checkbox-on.svg");
+                    opacity: 0.5;
                   }
                 }
 
-                &-select {
-                  display: flex;
-                  justify-content: space-between;
-                  flex-wrap: wrap;
-                  margin-bottom: 1rem;
-                  label{
-                    margin-bottom: 0.5rem;
-                  }
-
-                  select {
-                    @include transition(0.3s);
-                    min-width: 100%;
-                    border: 1px solid lighten(black, 60%);
-                    border-top: none;
-                    border-right: none;
-
-                    &:focus {
-                      outline: none;
-                    }
-
-                    &:hover, &:focus {
-                      border-color: black;
-                    }
-                    @include error();
-                  }
-                  @media all and (min-width: $break3){
-                    select{
-                      min-width: 70%;
-                    }
-                  }
-                }
-
-                &-checkbox {
-                  legend {
-                    margin-bottom: 0.5rem;
-                    border-bottom: 1px solid lighten(black, 60%);
-                  }
-
-                  span {
-                    margin-right: 1rem;
-                    position: relative;
+                &:checked {
+                  + ::after {
+                    content: " ";
+                    background-image: url("/files/layout/images/checkbox-on.svg");
+                    position: absolute;
+                    top: -2px;
+                    left: 0;
+                    width: 1.25rem;
                     display: inline-block;
-                    margin-bottom: 0.5rem;
-
-                    &:last-of-type {
-                      margin-right: 0;
-                    }
-
-                    input {
-                      opacity: 0;
-
-                      + ::after {
-                        @include transition();
-                        content: " ";
-                        background-image: url("/files/layout/images/checkbox-off.svg");
-                        background-repeat: no-repeat;
-                        background-position: left top;
-                        position: absolute;
-                        top: -2px;
-                        left: 0;
-                        width: 1.25rem;
-                        height: 1.25rem;
-                        display: inline-block;
-                      }
-
-                      &:hover {
-                        + ::after {
-                          content: " ";
-                          background-image: url("/files/layout/images/checkbox-on.svg");
-                          opacity: 0.5;
-                        }
-                      }
-
-                      &:checked {
-                        + ::after {
-                          content: " ";
-                          background-image: url("/files/layout/images/checkbox-on.svg");
-                          position: absolute;
-                          top: -2px;
-                          left: 0;
-                          width: 1.25rem;
-                          display: inline-block;
-                          opacity: 1;
-                        }
-                      }
-                      @include error();
-                    }
-
-                    label {
-                      margin-left: 0.5rem;
-                    }
+                    opacity: 1;
                   }
                 }
 
-                &-radio {
-                  legend {
-                    margin-bottom: 0.5rem;
-                    border-bottom: 1px solid lighten(black, 60%);
-                  }
+                @include error();
+              }
 
-                  span {
-                    margin-right: 1rem;
-                    position: relative;
-                    display: inline-block;
-                    margin-bottom: 0.5rem;
+              label {
+                margin-left: 0.5rem;
+              }
+            }
+          }
 
-                    &:last-of-type {
-                      margin-right: 0;
-                    }
+          &-radio {
+            legend {
+              margin-bottom: 0.5rem;
+              border-bottom: 1px solid lighten(black, 60%);
+            }
 
-                    input {
-                      opacity: 0;
+            span {
+              margin-right: 1rem;
+              position: relative;
+              display: inline-block;
+              margin-bottom: 0.5rem;
 
-                      + ::after {
-                        @include transition();
-                        content: " ";
-                        background-image: url("/files/layout/images/radio-off.svg");
-                        background-repeat: no-repeat;
-                        background-position: left top;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 0.9rem;
-                        height: 0.9rem;
-                        display: inline-block;
-                      }
+              &:last-of-type {
+                margin-right: 0;
+              }
 
-                      &:hover {
-                        + ::after {
-                          content: " ";
-                          background-image: url("/files/layout/images/radio-on.svg");
-                          opacity: 0.5;
-                        }
-                      }
+              input {
+                opacity: 0;
 
-                      &:checked {
-                        + ::after {
-                          content: " ";
-                          background-image: url("/files/layout/images/radio-on.svg");
-                          opacity: 1;
-                        }
-                      }
-                      @include error();
-                    }
+                + ::after {
+                  @include transition();
+                  content: " ";
+                  background-image: url("/files/layout/images/radio-off.svg");
+                  background-repeat: no-repeat;
+                  background-position: left top;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 0.9rem;
+                  height: 0.9rem;
+                  display: inline-block;
+                }
+
+                &:hover {
+                  + ::after {
+                    content: " ";
+                    background-image: url("/files/layout/images/radio-on.svg");
+                    opacity: 0.5;
                   }
                 }
 
-                &-upload{
-
-                  // Tooltips
-                  $unit-1: 5px;
-                  $unit-2: 4px;
-                  $zindex: 100;
-                  $zindex-3: 101;
-
-                  .tooltip {
-                    position: relative;
-                    cursor: help;
-                    &::after{
-                      content: "?";
-                      border: 1px solid rgba($fontColor, 0.6);
-                      border-radius: 50%;
-                      display: inline-block;
-                      font-size: 0.75rem;
-                      padding: 0.25rem;
-                      height: 0.5rem;
-
-                    }
-                    &::before {
-                      background: black;
-                      bottom: 100%;
-                      color: white;
-                      content: attr(data-tooltip);
-                      display: block;
-                      font-size: $linkSize;
-                      left: 50%;
-                      opacity: 0;
-                      overflow: hidden;
-                      padding: $unit-1 $unit-2;
-                      pointer-events: none;
-                      position: absolute;
-                      text-overflow: ellipsis;
-                      transform: translate(-50%, $unit-2);
-                      transition: opacity .2s, transform .2s;
-                      white-space: pre;
-                      z-index: $zindex-3;
-                    }
-                    &:focus,
-                    &:hover {
-                      &::before {
-                        opacity: 1;
-                        transform: translate(-50%, -$unit-1);
-                      }
-                    }
-                    &[disabled],
-                    &.disabled {
-                      pointer-events: auto;
-                    }
-
-                    &.tooltip-right {
-                      &::before {
-                        bottom: 50%;
-                        left: 100%;
-                        transform: translate(-$unit-1, 50%);
-                      }
-                      &:focus,
-                      &:hover {
-                        &::before {
-                          transform: translate($unit-1, 50%);
-                        }
-                      }
-                    }
-
-                    &.tooltip-bottom {
-                      &::before {
-                        bottom: auto;
-                        top: 100%;
-                        transform: translate(-50%, -$unit-2);
-                      }
-                      &:focus,
-                      &:hover {
-                        &::before {
-                          transform: translate(-50%, $unit-1);
-                        }
-                      }
-                    }
-
-                    &.tooltip-left {
-                      &::before {
-                        bottom: 50%;
-                        left: auto;
-                        right: 100%;
-                        transform: translate($unit-2, 50%);
-                      }
-                      &:focus,
-                      &:hover {
-                        &::before {
-                          transform: translate(-$unit-1, 50%);
-                        }
-                      }
-                    }
-                  }
-                  input{
-                    width: 100%;
-                    display: block;
-                    margin-bottom: 0.25rem;
-                    @include transition(0.3s);
-                    border: 1px solid lighten(black, 60%);
-                    background: none;
-                    color: lighten($fontColor, 60%);
-                    text-align: center;
-                    padding: 1em 0;
-                    @include error();
+                &:checked {
+                  + ::after {
+                    content: " ";
+                    background-image: url("/files/layout/images/radio-on.svg");
+                    opacity: 1;
                   }
                 }
 
-                &-fineuploader{
-                  label{
-                    display: inline-block;
-                    margin-bottom: 0.25rem;
-                  }
-                  margin: 30px 0;
-                  &:first-of-type{
-                    margin-top: 0;
-                  }
-                  &:last-of-type{
-                    margin-bottom: 0;
-                  }
-                  .qq-uploader-selector{
-                    position: relative;
-                    .qq-upload-button{
-                      @include transition(0.3s);
-                      font-size: 1.2rem;
-                      border: 1px solid lighten(black, 60%);
-                      background: none;
-                      width: 100%;
-                      color: lighten($fontColor, 60%);
-                      text-align: center;
-                      i{
-                        display: block;
-                        padding: 15px;
-                      }
-                      &-hover{
-                        color: $fontColor;
-                        border-color: $fontColor;
-                      }
-                      &-focus{
-                        border: 1px solid $fontColor;
-                        outline: none;
-                        color: $color1;
-                      }
-                    }
-                    .qq-upload-drop-area{
-                      *{
-                        @include transition(0.3s);
-                      }
-                      @include transition(0.3s);
-                      position: absolute;
-                      font-size: 1.2rem;
-                      padding: 0.5em 0;
-                      margin: 0;
-                      border: 1px solid lighten(black, 60%);
-                      background-color: white;
-                      width: 100%;
-                      color: lighten($fontColor, 60%);
-                      text-align: center;
-                      span{
-                        font-size: 1.2rem;
-                        position: unset;
-                        margin-top: 0;
-                      }
-                      i{
-                        display: block;
-                        padding: 15px;
-                      }
-                      &-hover{
-                        *{
-                          color: $fontColor;
-                        }
-                        border-color: $fontColor;
-                      }
-                      &-focus{
-                        *{
-                          color: $fontColor;
-                        }
-                        border: 1px solid $fontColor;
-                        outline: none;
-                        color: $color1;
-                      }
-                      &-active{
-                        *{
-                          color: $fontColor;
-                        }
-                        color: $fontColor !important;
-                        border-color: $fontColor !important;
-                      }
-                    }
-                  }
+                @include error();
+              }
+            }
+          }
+
+          &-upload {
+
+            // Tooltips
+            $unit-1: 5px;
+            $unit-2: 4px;
+            $zindex: 100;
+            $zindex-3: 101;
+
+            .tooltip {
+              position: relative;
+              cursor: help;
+
+              &::after {
+                content: "?";
+                border: 1px solid rgba($fontColor, 0.6);
+                border-radius: 50%;
+                display: inline-block;
+                font-size: 0.75rem;
+                padding: 0.25rem;
+                height: 0.5rem;
+
+              }
+
+              &::before {
+                background: black;
+                bottom: 100%;
+                color: white;
+                content: attr(data-tooltip);
+                display: block;
+                font-size: $linkSize;
+                left: 50%;
+                opacity: 0;
+                overflow: hidden;
+                padding: $unit-1 $unit-2;
+                pointer-events: none;
+                position: absolute;
+                text-overflow: ellipsis;
+                transform: translate(-50%, $unit-2);
+                transition: opacity .2s, transform .2s;
+                white-space: pre;
+                z-index: $zindex-3;
+              }
+
+              &:focus,
+              &:hover {
+                &::before {
+                  opacity: 1;
+                  transform: translate(-50%, -$unit-1);
+                }
+              }
+
+              &[disabled],
+              &.disabled {
+                pointer-events: auto;
+              }
+
+              &.tooltip-right {
+                &::before {
+                  bottom: 50%;
+                  left: 100%;
+                  transform: translate(-$unit-1, 50%);
                 }
 
-                &.datenschutz {
-                  font-size: calc(11.2px + (16 - 11.2) * ((100vw - 320px) / (1600 - 300)));
-                  line-height: calc(16px + (18 - 16) * ((100vw - 320px) / (1600 - 300)));
-                  margin-bottom: 1rem;
-
-                  span {
-                    input {
-                      margin-right: -5px;
-
-                      + ::after {
-                        top: 0;
-                        left: 0;
-                        width: 1rem;
-                        height: 1rem;
-                      }
-                    }
+                &:focus,
+                &:hover {
+                  &::before {
+                    transform: translate($unit-1, 50%);
                   }
                 }
+              }
 
-                &-submit {
-                  button {
-                    @include button();
-                    color: white;
-                    font-weight: 800;
-                    letter-spacing: 0.1em;
-                    min-width: 25%;
+              &.tooltip-bottom {
+                &::before {
+                  bottom: auto;
+                  top: 100%;
+                  transform: translate(-50%, -$unit-2);
+                }
 
-                    &:after {
-                      content: "";
-                    }
-
-                    &:hover, &:focus {
-                      color: black;
-
-                      &:after {
-                        content: "";
-                      }
-                    }
+                &:focus,
+                &:hover {
+                  &::before {
+                    transform: translate(-50%, $unit-1);
                   }
+                }
+              }
+
+              &.tooltip-left {
+                &::before {
+                  bottom: 50%;
+                  left: auto;
+                  right: 100%;
+                  transform: translate($unit-2, 50%);
+                }
+
+                &:focus,
+                &:hover {
+                  &::before {
+                    transform: translate(-$unit-1, 50%);
+                  }
+                }
+              }
+            }
+
+            input {
+              width: 100%;
+              display: block;
+              margin-bottom: 0.25rem;
+              @include transition(0.3s);
+              border: 1px solid lighten(black, 60%);
+              background: none;
+              color: lighten($fontColor, 60%);
+              text-align: center;
+              padding: 1em 0;
+              @include error();
+            }
+          }
+
+          &-fineuploader {
+            label {
+              display: inline-block;
+              margin-bottom: 0.25rem;
+            }
+
+            margin: 30px 0;
+
+            &:first-of-type {
+              margin-top: 0;
+            }
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+
+            .qq-uploader-selector {
+              position: relative;
+
+              .qq-upload-button {
+                @include transition(0.3s);
+                font-size: 1.2rem;
+                border: 1px solid lighten(black, 60%);
+                background: none;
+                width: 100%;
+                color: lighten($fontColor, 60%);
+                text-align: center;
+
+                i {
+                  display: block;
+                  padding: 15px;
+                }
+
+                &-hover {
+                  color: $fontColor;
+                  border-color: $fontColor;
+                }
+
+                &-focus {
+                  border: 1px solid $fontColor;
+                  outline: none;
+                  color: $color1;
+                }
+              }
+
+              .qq-upload-drop-area {
+                * {
+                  @include transition(0.3s);
+                }
+
+                @include transition(0.3s);
+                position: absolute;
+                font-size: 1.2rem;
+                padding: 0.5em 0;
+                margin: 0;
+                border: 1px solid lighten(black, 60%);
+                background-color: white;
+                width: 100%;
+                color: lighten($fontColor, 60%);
+                text-align: center;
+
+                span {
+                  font-size: 1.2rem;
+                  position: unset;
+                  margin-top: 0;
+                }
+
+                i {
+                  display: block;
+                  padding: 15px;
+                }
+
+                &-hover {
+                  * {
+                    color: $fontColor;
+                  }
+
+                  border-color: $fontColor;
+                }
+
+                &-focus {
+                  * {
+                    color: $fontColor;
+                  }
+
+                  border: 1px solid $fontColor;
+                  outline: none;
+                  color: $color1;
+                }
+
+                &-active {
+                  * {
+                    color: $fontColor;
+                  }
+
+                  color: $fontColor !important;
+                  border-color: $fontColor !important;
+                }
+              }
+            }
+          }
+
+          &.datenschutz {
+            font-size: calc(11.2px + (16 - 11.2) * ((100vw - 320px) / (1600 - 300)));
+            line-height: calc(16px + (18 - 16) * ((100vw - 320px) / (1600 - 300)));
+            margin-bottom: 1rem;
+
+            span {
+              input {
+                margin-right: -5px;
+
+                + ::after {
+                  top: 0;
+                  left: 0;
+                  width: 1rem;
+                  height: 1rem;
+                }
+              }
+            }
+          }
+
+          &-submit {
+            button {
+              @include button();
+              color: white;
+              font-weight: 800;
+              letter-spacing: 0.1em;
+              min-width: 25%;
+
+              &:after {
+                content: "";
+              }
+
+              &:hover, &:focus {
+                color: black;
+
+                &:after {
+                  content: "";
                 }
               }
             }

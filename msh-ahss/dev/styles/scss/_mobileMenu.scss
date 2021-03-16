@@ -16,6 +16,11 @@ body {
             padding: 30px;
             position: fixed;
             overflow: scroll;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            &::-webkit-scrollbar {
+              display: none;
+            }
 
             .opener-suche-container {
               display: flex;
