@@ -1,0 +1,39 @@
+.mmenu {
+  &-trigger {
+    margin-right: 2rem;
+    .hamburger {
+      height: 4px;
+      width: 48px;
+      margin: 11px;
+      background-color: rgb(236,236,236);
+      display: block;
+      border-radius: 12px;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    a {
+      display: inline-block;
+      &:focus, &:hover {
+        .hamburger {
+          background-color: white;
+        }
+      }
+
+    }
+  }
+
+}
+
+.mm-listitem {
+  &_selected {
+    >.mm-listitem {
+      &__text {
+        font-weight: 800;
+      }
+    }
+  }
+}

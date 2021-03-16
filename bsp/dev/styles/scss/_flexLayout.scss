@@ -1,0 +1,53 @@
+// Klassen für Flex-Leyouts
+
+// 50 - 50
+.flex-50-50-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: flex-start;
+
+  > * {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+
+// 66 - 33
+.flex-66-33-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: flex-start;
+
+  > * {
+    box-sizing: border-box;
+
+    &:nth-child(odd) {
+      width: 66.666%;
+    }
+
+    &:nth-child(even) {
+      width: 33.333%;
+    }
+  }
+}
+
+// 33 - 33 - 33
+.flex-33-33-33-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: flex-start;
+
+  > * {
+    box-sizing: border-box;
+    width: 33%;
+  }
+}

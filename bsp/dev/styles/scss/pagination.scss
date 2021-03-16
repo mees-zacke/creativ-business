@@ -1,0 +1,47 @@
+.pagination {
+  > p {
+    margin-bottom: 0;
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-start;
+
+    li {
+      margin-right: 0.25rem;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      a, .active {
+        padding: .25rem 0.5rem;
+        display: inline-block;
+        font-weight: 300;
+        text-align: center;
+        width: 2rem;
+        height: 2rem;
+      }
+
+      a {
+        border: 1px solid rgb(198, 198, 198);
+        color: $fontColor;
+
+        &:hover, &:focus {
+          background-color: $color1;
+          color: white;
+          border-color: $color2;
+        }
+        &.first, &.previous, &.next, &.last{
+          border: none;
+        }
+      }
+
+      .active {
+        border: 1px solid $color2;
+        background-color: $color1;
+        color: white;
+      }
+    }
+  }
+}

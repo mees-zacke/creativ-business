@@ -1,0 +1,44 @@
+.ce_slick-slider {
+  figure {
+    margin-bottom: 0;
+  }
+  .slick-slider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    background-color: white;
+
+    button {
+      &.slick-arrow {
+        position: absolute;
+        z-index: 1;
+        padding: 0.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: none;
+        color: white;
+        text-shadow: 0 0 0.25rem #000000;
+        font-size: 4rem;
+        &:hover, &:focus {
+          cursor: pointer;
+        }
+        &.slick-prev {
+          left: 0;
+        }
+        &.slick-next {
+          right: 0;
+        }
+      }
+    }
+    .slick-dots {
+      display: inline-flex;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-bottom: 0;
+
+    }
+  }
+}

@@ -1,0 +1,107 @@
+.mod_search {
+  grid-column: 1/ span 12;
+
+  > .searchWrapper {
+    form {
+      .formbody {
+        display: flex;
+        padding: 10px;
+
+        .widget- {
+          &text {
+            width: 175px;
+
+            input {
+              padding: 3px;
+              width: 90%;
+              border: none;
+
+              &:focus {
+                outline: none;
+              }
+            }
+
+            &:after {
+              @include transition();
+              content: " ";
+              height: 1px;
+              width: 100%;
+              display: block;
+              background-color: black;
+              transform: translateX(-98%);
+            }
+
+            &:hover, &:focus-within {
+              &:after {
+                transform: translateX(0);
+              }
+            }
+          }
+
+          &submit {
+            width: 28px;
+            padding: 4px;
+          }
+        }
+      }
+
+      .formbody {
+        .widget {
+          display: inline-block;
+        }
+      }
+    }
+
+    .header {
+      font-size: 0.75rem;
+      font-style: italic;
+      margin-top: 0.5em;
+    }
+  }
+
+  > div {
+    margin: 1rem 0;
+    padding: 1rem 0;
+
+    &:not(.searchWrapper) {
+      @include transition;
+
+      &:hover {
+        background-color: rgb(220, 220, 220);
+      }
+    }
+
+    a {
+      color: $fontColor;
+      display: block;
+    }
+
+    h2 {
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      background-color: transparent;
+      color: $color1;
+    }
+
+    .url {
+      font-size: 0.75em;
+    }
+  }
+  .pagination{
+    ul{
+      li{
+        &.first, &.previous, &.next, &.last{
+         a {
+           width: auto;
+         }
+        }
+      }
+    }
+  }
+}

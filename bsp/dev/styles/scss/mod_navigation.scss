@@ -1,0 +1,81 @@
+//Vars
+$navColor: white;
+
+// Horizontale Navigation
+.mod_navigation {
+  a, span, strong {
+    display: block;
+  }
+
+  strong {
+    color: $navColor;
+  }
+
+  a {
+    color: $navColor;
+    text-decoration: none;
+
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+
+  .trail {
+    color: $navColor;
+  }
+
+  &#mainnav{
+
+    strong {
+      color: black;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+
+    }
+
+    display: block;
+    height: 64px;
+    ul{
+      padding-top: 18px;
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      li{
+        margin-right: 1rem;
+        overflow: hidden;
+        &:last-of-type{
+          margin-right: 0;
+        }
+        &.trail {
+          margin-top: -5px;
+          a {
+            span {
+              font-weight: 800;
+            }
+          }
+        }
+        &.active{
+          margin-top: -5px;
+        }
+        a{
+          &:hover, &:focus {
+            &:after{
+              transform: translateX(0);
+            }
+          }
+          span{
+            transition: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $break1) {
+    display: flex;
+  }
+}

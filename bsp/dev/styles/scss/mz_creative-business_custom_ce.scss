@@ -1,0 +1,76 @@
+body {
+  #wrapper {
+    #container {
+      #main {
+        .inside {
+          .mod_article {
+            .cce-schwarzer-kasten {
+
+              .text-container {
+                text-align: center;
+                .text-container-inner{
+                  display: inline-block;
+                  padding: 1rem;
+                  background-color: black;
+                  color: white;
+                }
+
+                .headline {
+                  color: white;
+                }
+
+                .text {
+                  background: none;
+
+                  a{
+                    color: white;
+                    @include hover-background(black);
+                  }
+
+                  h2,h3,h4,h5,h6{
+                    color: white;
+                    background: none;
+                  }
+
+                  .weiterlesen {
+                    @include hover-background(black);
+                    @include link-pfeil();
+
+                    &:after {
+                      background-image: $link-pfeil-weis;
+                    }
+
+                    &:hover, &:focus {
+                      &:after {
+                        background-image: $link-pfeil-schwarz;
+                      }
+                    }
+                  }
+                }
+              }
+
+              @include link-block(black);
+
+              &.link-block {
+                &:hover, &:focus {
+                  .text-container {
+                    .text {
+                      .weiterlesen {
+                        &:after {
+                          content: $link-pfeil-schwarz;
+                        }
+                      }
+                      h2,h3,h4,h5,h6{
+                        color: white;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

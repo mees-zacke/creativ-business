@@ -1,0 +1,79 @@
+@media print {
+  *, body {
+    font: 10pt Arial, Verdana, sans-serif;
+  }
+  img {
+    filter: grayscale(100%);
+
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+  }
+  .meta, .headersection-1-social, .headersection-2-menu {
+    display: none !important;
+  }
+  .imageCopy {
+    left: 0;
+    right: initial;
+  }
+  #ankernav-container {
+    display: none;
+  }
+
+  .coursKeyFacts {
+    .text-container {
+      background-color: initial;
+      color: black;
+      border: 1px solid black;
+    }
+  }
+
+  .ce_swiperStart {
+    .swiper-slide {
+      &.ce_text {
+        .text-container {
+          .headline {
+            background: initial!important;
+          }
+          .text {
+            * {
+              color: black!important;
+            }
+          }
+        }
+      }
+    }
+  }
+  body {
+    #wrapper {
+      margin-top: 0;
+
+      #header {
+        display: none;
+      }
+
+      #footer {
+        display: none;
+      }
+
+      .custom {
+        #uber-footer {
+          background-color: initial;
+          border: 1px solid black;
+        }
+      }
+    }
+    &.studiengang {
+      #wrapper {
+        #container {
+          #main {
+            .mod_article {
+              padding-top: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
