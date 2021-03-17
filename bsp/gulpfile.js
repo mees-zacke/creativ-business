@@ -30,29 +30,24 @@ function makeCSS() {
 				overrideBrowserslist: ['last 2 version'],
 				cascade: false
 			}))
-			.pipe(dest('dist/files/layout/styles/css'));
+			.pipe(dest('dist/files/layout BSP/styles/css'));
 }
 
 function javaScript() {
 	return src('dev/js/*.js')
 			.pipe(uglify())
-			.pipe(dest('dist/files/layout/js'))
+			.pipe(dest('dist/files/layout BSP/js'))
 }
 
 function phpScript() {
 	return src('dev/php/*.php')
-			.pipe(dest('dist/files/layout/php'))
+			.pipe(dest('dist/files/layout BSP/php'))
 }
 
 // Transports
 function templates() {
 	return src('dev/templates/**/*.+(html|html5|tl)')
 			.pipe(dest('dist/templates'))
-}
-function fontawesome() {
-	return src('dev/fontawesome')
-		.pipe(dest('dist/files/layout/'));
-
 }
 
 function ymlTransport() {
@@ -67,7 +62,7 @@ function appResTransport() {
 
 function fontsTransport() {
 	return src('dev/fonts/**')
-			.pipe(dest('dist/files/layout/fonts/'))
+			.pipe(dest('dist/files/layout BSP/fonts/'))
 }
 
 function htaccess() {
@@ -78,7 +73,7 @@ function htaccess() {
 // PWA
 function pwaFiles() {
 	return src('dev/pwa/files/**')
-			.pipe(dest('dist/files/layout/pwa/'))
+			.pipe(dest('dist/files/layout BSP/pwa/'))
 }
 
 function pwaWeb() {
@@ -108,7 +103,7 @@ function images() {
 						interlaced: true
 					}
 			)))
-			.pipe(dest('dist/files/layout/images/'))
+			.pipe(dest('dist/files/layout BSP/images/'))
 }
 
 //// WATCH
@@ -139,7 +134,7 @@ function clear() {
 
 // Complex Tasks
 const style = series(makeSass, compressCSS, makeCSS);
-const copy = series(templates, fontawesome, ymlTransport, appResTransport, fontsTransport);
+const copy = series(templates, ymlTransport, appResTransport, fontsTransport);
 const pwa = series(pwaFiles, pwaWeb);
 const build = series(clear, parallel(style, javaScript, copy, images));
 

@@ -484,17 +484,31 @@ body {
   #footer {
     background-color: black;
     border-top: 2px solid white;
-
+    .footer-container-inner{
+      display: flex;
+      flex-wrap: nowrap;
+    }
     .inside {
       @include pageWidth;
       padding: 20px;
 
+      .oben{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 5rem;
+        *{
+          margin-bottom: 0;
+        }
+        .ce_image{
+          margin-right: 2rem;
+        }
+      }
+
       nav {
         ul {
           display: flex;
-          width: 100%;
-          justify-content: flex-end;
-          margin-bottom: 5rem;
 
           li {
             margin-left: 2rem;
@@ -512,7 +526,8 @@ body {
 
       #footer-info-container {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
         * {
           color: white;
@@ -715,6 +730,53 @@ body {
                   margin-bottom: 4rem;
                 }
               }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.anmeldeformular-ecampus {
+  margin-left: 3rem;
+  @media all and (max-width: $break1) {
+    margin-left: 0;
+  }
+
+  form {
+    .widget {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+      }
+
+      input {
+        color: $fontColor !important;
+        width: 100%;
+      }
+
+      &-submit {
+        input {
+          @include button();
+          color: white;
+          font-weight: 800;
+          letter-spacing: 0.1em;
+          min-width: 25%;
+          box-sizing: border-box;
+          border: none;
+
+          &:after {
+            content: "";
+          }
+
+          &:hover, &:focus {
+            color: black;
+            border: none;
+
+            &:after {
+              content: "";
             }
           }
         }

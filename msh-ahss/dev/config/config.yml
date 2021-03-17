@@ -10,7 +10,7 @@ contao:
                 height: 1280
                 resizeMode: 'crop'
                 zoom: 100
-                cssClass: '16zu9-image'
+                cssClass: '16zu9-images'
                 densities: '1x, 2x'
                 sizes: '100vw'
                 lazy_loading: true
@@ -42,7 +42,7 @@ contao:
                 height: 1080
                 resizeMode: 'crop'
                 zoom: 100
-                cssClass: '16zu9-image'
+                cssClass: '16zu9-images'
                 densities: '1x, 2x'
                 sizes: '100vw'
                 lazy_loading: true
@@ -73,7 +73,7 @@ contao:
                 height: 960
                 resizeMode: 'crop'
                 zoom: 100
-                cssClass: '2zu1-image'
+                cssClass: '2zu1-images'
                 densities: '1x, 2x'
                 sizes: '100vw'
                 lazy_loading: true
@@ -104,7 +104,7 @@ contao:
                 height: 1440
                 resizeMode: 'crop'
                 zoom: 100
-                cssClass: '2zu1-image'
+                cssClass: '2zu1-images'
                 densities: '1x, 2x'
                 sizes: '100vw'
                 lazy_loading: true
