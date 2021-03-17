@@ -546,6 +546,9 @@ body {
             width: 100%;
             justify-content: space-between;
           }
+          @media all and (min-width: 769px) {
+            width: auto;
+          }
           .logo-buttons-container{
             display: flex;
             align-items: center;
@@ -577,6 +580,7 @@ body {
           }
           .rechter-footer{
             margin-top: 0;
+            width: auto;
             justify-content: flex-start;
           }
         }
